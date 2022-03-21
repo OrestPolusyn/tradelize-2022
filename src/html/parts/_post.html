@@ -1,0 +1,100 @@
+<article class="post inner">
+
+  <div class="post-header">
+    <div class="link-item">
+
+      @include('_avatar.html',{
+      addClass:'',
+      size:'avatar-mid'
+      })
+
+      <div class="name">
+        <h3 class="name-title title-third">
+          Nathan Mckinney
+        </h3>
+
+        <time class="name-date" datetime="2021-09-30">
+          30.09.2021
+        </time>
+      </div>
+    </div>
+
+    <button class="post-btn btn" type="button">
+      <span class="sr-only">
+        Post more
+      </span>
+
+      <svg class="post-more">
+        <use xlink:href="img/sprite.svg#post-more"></use>
+      </svg>
+    </button>
+
+    <ul class="post-dropdown">
+      <li class="post-dropdown-item">
+        <button class="post-dropdown-btn" data-graph-path="complain">
+          Complain
+        </button>
+      </li>
+
+      <li class="post-dropdown-item">
+        <button class="post-dropdown-btn" data-graph-path="">
+          Share
+        </button>
+      </li>
+
+      <li class="post-dropdown-item">
+        <button class="post-dropdown-btn post-dropdown-delete" data-graph-path="delete-post">
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="post-text">
+    <p>
+      Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970 and then the next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000. Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+    </p>
+
+    <p>
+      Next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000.
+      <br>
+      Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+    </p>
+
+    <ul class="post-actions">
+      <li class="post-actions-item">
+        <button class="post-actions-btn @liked" type="button">
+          <svg class="post-actions-icon post-actions-like">
+            <use xlink:href="img/sprite.svg#like"></use>
+          </svg>
+
+          <span>
+            57
+          </span>
+
+          <span>
+            like
+          </span>
+        </button>
+      </li>
+
+      <li class="post-actions-item">
+        <button class="post-actions-btn" type="button">
+          <svg class="post-actions-icon post-actions-comment">
+            <use xlink:href="img/sprite.svg#comment"></use>
+          </svg>
+
+          <span>
+            6
+          </span>
+
+          <span>
+            comments
+          </span>
+        </button>
+      </li>
+    </ul>
+
+    @include('_form-comment.html')
+  </div>
+</article>

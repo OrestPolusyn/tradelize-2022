@@ -1,0 +1,115 @@
+.offer {
+  .bitcoin {
+    &::after {
+      padding: 0;
+    }
+  }
+
+  &-btn {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  &-inner {
+    padding: rem(30);
+  }
+
+  &-row {
+    @include flex-all-sb;
+
+    margin-bottom: 12px;
+    font-size: var(--size-s);
+    line-height: 1.5;
+    letter-spacing: 0.015em;
+
+    &-text {
+      padding-right: 7px;
+    }
+
+    &-tooltip {
+      margin-right: auto;
+      width: 11px;
+      height: 11px;
+    }
+
+    .swhitcher-label {
+      font-size: var(--size-s);
+    }
+  }
+
+  &-input {
+    margin-bottom: rem(30);
+    padding: 10px rem(20);
+    font-size: var(--size-m);
+  }
+
+  &-textarea {
+    font-size: var(--size-m);
+
+    &::placeholder {
+      font-size: var(--size-m);
+    }
+  }
+
+  &-text {
+    margin-top: 12px;
+    padding: 10px rem(20);
+    min-height: 110px;
+  }
+
+  &-dropdown {
+    margin-bottom: rem(30);
+    max-width: 100%;
+
+    &-btn {
+      border-color: transparent;
+      padding: 9px rem(20);
+      text-align: left;
+
+      &::before {
+        right: rem(15);
+        mask-image: url("../img/arrows/drop-offer.svg");
+        width: 6px;
+        height: 6px;
+        background-color: var(--color-dark);
+      }
+    }
+
+    .publish-dropdown {
+      &-list {
+        padding: 0;
+      }
+
+      &-item {
+        margin-bottom: 0;
+        padding: 5px 10px 5px rem(20);
+        transition: background-color 0.1s ease;
+
+        &:hover {
+          background-color: var(--color-gray-100);
+        }
+      }
+    }
+  }
+
+  &-close {
+    min-height: 395px;
+    text-align: center;
+
+    .title {
+      margin-bottom: 15px;
+      padding-top: 60px;
+    }
+
+    .offer-inner {
+      @include flex-all-center;
+
+      flex-direction: column;
+    }
+
+    .content {
+      margin: 0 auto;
+      max-width: 305px;
+    }
+  }
+}

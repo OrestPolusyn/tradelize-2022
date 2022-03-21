@@ -1,0 +1,88 @@
+.percent {
+  position: relative;
+
+  &::after {
+    content: "%";
+  }
+}
+
+.loss {
+  color: var(--color-red);
+
+  &::before {
+    content: "-";
+  }
+}
+
+.profit {
+  color: var(--color-green);
+
+  &::before {
+    content: "+";
+  }
+}
+
+.more {
+  &::before {
+    content: "<";
+  }
+}
+
+.dollar {
+  position: relative;
+
+  &::before {
+    content: "$";
+    margin-right: 6px;
+  }
+
+  &-trade {
+    &::after {
+      content: "$";
+      padding-left: 7px;
+    }
+  }
+}
+
+.plus {
+  &::before {
+    content: "+";
+  }
+}
+
+.minus {
+  &::before {
+    content: "-";
+  }
+}
+
+.from {
+  position: relative;
+
+  &::after {
+    content: "ETH";
+    padding-left: 11px;
+    text-transform: uppercase;
+    color: var(--color-gray-400);
+  }
+}
+
+.bitcoin {
+  position: relative;
+
+  &::after {
+    content: "btc";
+    padding-left: 11px;
+    text-transform: uppercase;
+    color: var(--color-gray-400);
+  }
+}
+
+.usd {
+  position: relative;
+
+  &::after {
+    content: "usd";
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,49 @@
+<div class="charts inner">
+  <h3 class="charts-title title-sec">
+    Charts
+  </h3>
+
+  <div class="tabs-action charts-tabs">
+    <div class="tabs-action-radio">
+
+      <label class="radio" data-chart="contract">
+        <input class="sr-only radio-btn" name="chart-radio" type="radio" checked>
+
+        <span class="radio-text">
+          contract
+        </span>
+      </label>
+
+      <label class="radio" data-chart="spot">
+        <input class="sr-only radio-btn" name="chart-radio" type="radio">
+
+        <span class="radio-text">
+          spot
+        </span>
+      </label>
+
+      <label class="radio" data-chart="exchanges">
+        <input class="sr-only radio-btn" name="chart-radio" type="radio">
+
+        <span class="radio-text">
+          exchanges
+        </span>
+      </label>
+    </div>
+
+    <a class="tabs-action-all btn btn-default" href="#">
+      All positions
+    </a>
+
+  </div>
+
+  <div class="chart-visual">
+    <div class="chart-visual-box">
+      <span class="sr-only">
+        Graph trade data
+      </span>
+    </div>
+
+    @include("../parts/_lock-data.html")
+  </div>
+</div>

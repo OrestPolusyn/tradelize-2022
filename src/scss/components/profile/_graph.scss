@@ -1,0 +1,35 @@
+.graph {
+  &-title {
+    margin-bottom: clamp(1em, rem(22), 40px);
+  }
+
+  &-tabs {
+    margin-bottom: rem(60);
+
+    .radio {
+      padding: 10px 0;
+    }
+
+    .tabs-action-radio {
+      display: grid;
+      text-transform: capitalize;
+      background-color: var(--color-gray-100);
+
+      &:not(:last-child) {
+        margin-right: clamp(1em, rem(30), 40px);
+      }
+
+      &:first-child {
+        grid-template-columns: repeat(2, rem(105));
+      }
+
+      &:last-child {
+        grid-template-columns: repeat(2, rem(64));
+      }
+    }
+  }
+
+  &-visual {
+    position: relative;
+  }
+}

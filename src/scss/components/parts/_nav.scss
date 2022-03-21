@@ -1,0 +1,35 @@
+.nav {
+  width: 100%;
+
+  &-list {
+    @include flex-all-sb;
+
+    width: 100%;
+  }
+
+  &-item {
+
+    &:not(.nav-item-search) {
+      margin-right: clamp(25px, rem(40), 45px);
+    }
+
+    &-search {
+      margin-left: auto;
+      width: 100%;
+      max-width: 260px;
+    }
+  }
+
+  &-link {
+    font-size: var(--size);
+    color: var(--color-gray-400);
+
+    &-active {
+      color: var(--color-main);
+    }
+
+    &:hover {
+      color: var(--color-main);
+    }
+  }
+}

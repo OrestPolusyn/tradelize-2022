@@ -1,0 +1,84 @@
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="offer">
+
+  <form class="graph-modal__content offer">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Create new offer
+      </h3>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="offer-inner">
+
+      <span class="offer-row offer-choose">
+        Choose exchange account
+      </span>
+
+      <div class="publish-dropdown offer-dropdown">
+
+        <button class="publish-dropdown-btn offer-dropdown-btn input" data-toggle="dropdown" type="button">KuCoin</button>
+
+        <ul class="publish-dropdown-list">
+          <li class="publish-dropdown-item">
+            <label class="publish-dropdown-radio">
+              KuCoin
+              <input type="radio" name="publish-radio">
+            </label>
+          </li>
+
+          <li class="publish-dropdown-item">
+            <label class="publish-dropdown-radio">
+              Binance
+              <input type="radio" name="publish-radio">
+            </label>
+          </li>
+
+          <li class="publish-dropdown-item">
+            <label class="publish-dropdown-radio">
+              Crypto.com
+              <input type="radio" name="publish-radio">
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="offer-row">
+
+        <span class="offer-row-text">
+          Subscription cost (BTC)
+        </span>
+
+        <img class="offer-row-tooltip" src="img/dex/tooltip.svg" alt="Subscription cost tooltip" width="11" height="11">
+
+        <div class="swhitcher">
+          <input class="swhitcher-radio sr-only" type="checkbox" id="swhitch-trades" name="switcher">
+          <label class="swhitcher-label" for="swhitch-trades">
+            Free
+          </label>
+        </div>
+      </div>
+
+      <label class="sr-only" for="offer-cost">
+        Subscription cost
+      </label>
+
+      <input class="offer-input input" type="text" name="subscription" placeholder="Enter amount of BTC" id="offer-cost">
+
+      <label class="offer-textarea">
+        Description
+
+        <textarea class="offer-text input" name="offer-textarea" placeholder="Enter description"></textarea>
+
+      </label>
+    </div>
+
+    <div class="graph-modal-btns">
+      <button class="graph-modal-btn btn btn-background" type="submit" disabled>
+        Create
+      </button>
+    </div>
+  </form>
+</div>

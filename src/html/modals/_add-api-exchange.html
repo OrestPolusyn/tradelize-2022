@@ -1,0 +1,59 @@
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="add-exchange">
+
+  <div class="graph-modal__content api">
+
+    <div class="graph-modal-top">
+      <h3 class="api-ttile title title-sec">
+        <span class="api-title-exchange">Binance</span> Api-key
+      </h3>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <ul class="api-list api-list-fields">
+
+      <li class="api-field">
+        <label class="api-label">
+          Title
+          <input class="api-input api-input-exchange input" name="api-title" type="text" readonly value="Binance">
+        </label>
+      </li>
+
+      <li class="api-field">
+        <label class="api-label">
+          <span class="api-label-tooltip">
+            Public key
+            <img class="api-tooltip" src="img/dex/tooltip.svg" alt="Public tooltip" width="14" height="14">
+          </span>
+
+          <input class="api-input input" type="text" name="api-public" value="0xEB2c9970cD25f3eefBA81E89079">
+        </label>
+      </li>
+
+      <li class="api-field">
+        <label class="api-label">
+          <span class="api-label-tooltip">
+            Secret key
+            <img class="api-tooltip" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+          </span>
+
+          <input class="api-input input" type="text" name="api-secret" value="0xEB2c9970cD25f9befd6f8BfC763eefBA81E89079">
+        </label>
+      </li>
+
+      <li class="api-field">
+        <label class="api-label">
+          Description <span class="api-optional">(Optional)</span>
+          <input class="api-input input" type="text" name="api-description" placeholder="Enter description">
+        </label>
+      </li>
+    </ul>
+
+    <div class="graph-modal-btns">
+      <button class="graph-modal-btn btn btn-background" type="submit">
+        Add
+      </button>
+    </div>
+  </div>
+</div>

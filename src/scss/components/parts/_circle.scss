@@ -1,0 +1,39 @@
+.graph-modal {
+  &-loader {
+    padding: rem(20) 0 rem(40);
+  }
+
+  .loader {
+    width: rem(85);
+    height: rem(85);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 4;
+    transform: rotate(-90deg);
+
+    .external-circle {
+      stroke: var(--color-gray-400);
+      stroke-dasharray: 312;
+      stroke-dashoffset: 0;
+      opacity: 1;
+      transform-origin: center;
+      animation: external 1.5s linear infinite;
+    }
+  }
+}
+
+@keyframes external {
+  0% {
+    stroke-dashoffset: 312;
+    transform: rotate(70deg);
+  }
+
+  60% {
+    stroke-dashoffset: -312;
+  }
+
+  100% {
+    stroke-dashoffset: -312;
+    transform: rotate(450deg);
+  }
+}

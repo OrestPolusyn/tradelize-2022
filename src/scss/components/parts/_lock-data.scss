@@ -1,0 +1,30 @@
+.lock-data {
+  @include flex-all-center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  flex-direction: column;
+  min-height: 390px;
+  text-align: center;
+  background-color: var(--color-white);
+  opacity: 0.85;
+
+  &-title {
+    margin-bottom: 10px;
+  }
+
+  &-content {
+    margin-bottom: clamp(0.7em, rem(20), 25px);
+    width: 100%;
+    max-width: 270px;
+  }
+
+  &-btn {
+    width: 100%;
+    max-width: 225px;
+  }
+}

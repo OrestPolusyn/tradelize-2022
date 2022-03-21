@@ -1,0 +1,61 @@
+<div class="graph inner">
+  <h3 class="graph-title title-sec">
+    Perfomance Graph
+  </h3>
+
+  <ul class="tabs-action graph-tabs">
+    <li class="tabs-action-radio">
+
+      <label class="radio radio-balance">
+        <input class="sr-only radio-btn" name="graph-radio" type="radio" checked>
+
+        <span class="radio-text">
+          Perfomance
+        </span>
+      </label>
+
+      <label class="radio radio-balance">
+        <input class="sr-only radio-btn" name="graph-radio" type="radio">
+
+        <span class="radio-text">
+          Balance
+        </span>
+      </label>
+
+    </li>
+
+    <li class="tabs-action-radio">
+
+      <label class="radio radio-type" data-type="area">
+        <input class="sr-only radio-btn" name="type-radio" type="radio" checked>
+
+        <span class="radio-text">
+          Line
+        </span>
+      </label>
+
+      <label class="radio radio-type" data-type="bar">
+        <input class="sr-only radio-btn" name="type-radio" type="radio">
+
+        <span class="radio-text">
+          Bar
+        </span>
+      </label>
+
+    </li>
+  </ul>
+
+  <div class="graph-visual">
+
+    <div class="graph-visual-box">
+      <span class="sr-only">
+        Graph trade data
+      </span>
+    </div>
+
+    @include("../parts/_lock-data.html")
+
+    @include("trader/_no-data.html")
+  </div>
+</div>
+

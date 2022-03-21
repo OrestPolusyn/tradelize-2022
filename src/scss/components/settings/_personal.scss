@@ -1,0 +1,88 @@
+.personal {
+  &-box {
+    padding: clamp(20px, rem(30), 35px) rem(40) rem(40);
+  }
+
+  &-inner {
+    @include flex-ss;
+
+    margin-bottom: rem(85);
+  }
+
+  &-avatar {
+    margin-right: clamp(20px, rem(30), 40px);
+  }
+
+  &-title {
+    margin-bottom: rem(30);
+    border-bottom: 1px solid var(--color-gray-300);
+    padding-bottom: rem(30);
+  }
+
+  &-name {
+    margin-bottom: 6px;
+    font-size: var(--size-lg);
+    line-height: 1.1;
+  }
+
+  &-email {
+    @include flex-all-center;
+
+    font-size: var(--size-m);
+    line-height: 1.5;
+    color: var(--color-gray-400);
+  }
+
+  &-tooltip {
+    margin-left: 7px;
+  }
+
+  &-content {
+    margin-bottom: rem(20);
+    padding: 15px 20px;
+    min-height: 225px;
+  }
+
+  &-areas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 12px;
+    gap: 0 rem(60);
+  }
+
+  &-input {
+    @include adaptive_size("max-width", 70, 50);
+    @include flex-all-center;
+
+    padding-top: 11px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &-characters {
+    font-size: var(--size-s);
+    line-height: 1.6;
+    color: var(--color-gray-400);
+
+    span {
+      color: var(--color-dark);
+    }
+  }
+
+  &-submit {
+    display: block;
+    margin-left: auto;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100%;
+    max-width: 130px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in, visibility 0.2s ease-in;
+
+    &-show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

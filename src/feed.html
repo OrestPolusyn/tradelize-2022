@@ -1,0 +1,77 @@
+@include('html/_head.html',{
+pageTitle:'Feed'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header.html",{
+    activePortfolio:'',
+    activeCopy:'',
+    activeFeed:'nav-link-active',
+    activeTerminal:'',
+    activeTrading:'',
+    })
+
+    <main class="main">
+
+      <div class="container container-feed">
+
+        <h1 class="title title-main">
+          Feed
+        </h1>
+
+        <div class="tabs-nav">
+          <ul class="tabs tabs-feed">
+            @loop("html/parts/_tab.html",[{
+            active:'tabs-link-active',
+            tabText:'All',
+            link:''
+            },
+            {
+            active:'',
+            tabText:'Followers',
+            link:''
+            },
+            ])
+          </ul>
+
+          @include('html/parts/_switcher.html')
+        </div>
+
+        <div class="feed-content">
+
+          @include('html/parts/_publish.html')
+
+          @include('html/parts/_trade.html')
+
+          @include('html/parts/_post.html',{
+          liked:''
+          })
+
+          @include('html/parts/_trade.html')
+
+          @include('html/parts/_post-slider.html',{
+          liked:''
+          })
+
+          @include('html/parts/_post.html',{
+          liked:'liked'
+          })
+
+          <div class="no-data no-data-feed">
+            <h3 class="no-data-title title-sec">
+              Sorry, you don't have any subscription
+            </h3>
+
+            <p class="no-data-content content">
+              Try to find someone and follow so you will see their posts here
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

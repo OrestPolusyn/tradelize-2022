@@ -1,0 +1,44 @@
+.charts {
+  &-title {
+    margin-bottom: rem(25);
+  }
+
+  &-tabs {
+    margin-bottom: rem(55);
+
+    .tabs-action-radio {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(105px, 1fr));
+      text-transform: capitalize;
+      background-color: var(--color-gray-100);
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .radio {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        height: 14px;
+        background-color: var(--color-gray-300);
+        transform: translate(-50%, -50%);
+      }
+
+      &:not(:last-child) {
+        &::before {
+          width: 1px;
+        }
+      }
+    }
+  }
+
+  &-visual {
+    position: relative;
+  }
+}

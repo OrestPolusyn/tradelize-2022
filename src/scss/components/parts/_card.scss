@@ -1,0 +1,136 @@
+.card {
+  position: relative;
+  padding: rem(30) rem(35) rem(40);
+  width: 100%;
+  text-align: center;
+  background-color: var(--color-white);
+
+  .link-item-link {
+    @include adaptive_size("max-width", 45, 35);
+    @include adaptive_size("height", 45, 35);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    &::before {
+      left: 0;
+      width: 200%;
+      height: 160%;
+      transform: translate(-25%, -2px);
+    }
+  }
+
+  .avatar {
+    margin: 0 auto 10px;
+  }
+
+  &-title {
+    font-weight: 700;
+    font-size: var(--size-m);
+    line-height: 1.5;
+  }
+
+  &-icon {
+    margin-right: 5px;
+    width: 11px;
+    height: 11px;
+  }
+
+  &-exchange {
+    @include flex-all-center;
+
+    align-items: baseline;
+    margin: 0 auto rem(26);
+    font-weight: 400;
+    font-size: var(--size-s);
+    line-height: 1.8;
+    text-transform: capitalize;
+    color: var(--color-gray-400);
+  }
+
+  &-result {
+    @include flex;
+
+    justify-content: flex-start;
+    margin-right: 8px;
+    font-weight: 700;
+    font-size: var(--size-lg);
+    line-height: 1.2;
+
+    &.percent {
+      &::after {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &-return {
+    font-weight: 400;
+    font-size: var(--size-s);
+    line-height: 1.9;
+    color: var(--color-gray-400);
+  }
+
+  &-earn {
+    @include flex-all-sb;
+
+    margin-bottom: 23px;
+
+    &-item {
+      position: relative;
+      text-align: left;
+
+      &::before {
+        @include bg-cover;
+
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 8px;
+        height: 10px;
+        transform: translateY(50%);
+      }
+    }
+
+    &-up {
+      &::before {
+        background-image: url("../img/arrows/up.svg");
+      }
+    }
+
+    &-down {
+      &::before {
+        background-image: url("../img/arrows/down.svg");
+      }
+    }
+  }
+
+  &-image {
+    margin-bottom: 14px;
+    height: 30px;
+  }
+
+  &-draw {
+    @include flex-all-center;
+
+    font-size: var(--size-lg);
+    line-height: 1.18;
+  }
+
+  &-drawdown {
+    display: block;
+    margin-bottom: clamp(1em, rem(20), 25px);
+    font-size: var(--size-s);
+    line-height: 1.8;
+    text-align: center;
+    color: var(--color-gray-400);
+  }
+
+  &-btn {
+    display: block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,448 @@
+.step {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 620px;
+  font-size: var(--size-m);
+
+  &-container {
+    @include flex-column;
+
+    height: 80vh;
+
+    &-step {
+      height: auto;
+    }
+  }
+
+  &-radios {
+    margin-bottom: rem(40);
+  }
+
+  &-space {
+    display: block;
+    margin-bottom: rem(20);
+
+    &-double {
+      margin-bottom: rem(40);
+    }
+
+    &-qr {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &-wrap {
+    padding: rem(20);
+    background-color: var(--color-gray-100);
+  }
+
+  &-finish {
+    @include flex-column;
+
+    margin: 0 auto;
+    padding: rem(70) 0 rem(60);
+    width: 100%;
+    min-height: 76vh;
+    max-width: 360px;
+    text-align: center;
+
+    &-img {
+      margin: 0 auto rem(110);
+      width: 100%;
+      max-width: 296px;
+    }
+
+    &-title {
+      margin-bottom: 12px;
+    }
+
+    &-content {
+      margin-bottom: rem(46);
+    }
+
+    &-list {
+      margin-bottom: 20px;
+    }
+
+    &-item {
+      @include flex-all-sb;
+
+      font-size: var(--size-m);
+      line-height: 1.7;
+    }
+
+    &-number {
+      font-weight: 500;
+      color: var(--color-main);
+    }
+
+    &-btn {
+      margin: auto auto 0;
+      padding: 7px 0;
+      width: 100%;
+      max-width: 260px;
+    }
+
+    &-retry {
+      max-width: 500px;
+
+      .step-nav {
+        &-btns {
+          justify-content: center;
+          margin-top: auto;
+        }
+
+        &-btn {
+          max-width: 173px;
+        }
+      }
+    }
+  }
+
+  &-retry {
+    &-content {
+      margin-bottom: rem(30);
+    }
+
+    &-img {
+      max-width: 330px;
+    }
+  }
+
+  &-radio {
+    display: block;
+    margin-bottom: rem(20);
+
+    .custom-radio-content {
+      padding: 8px rem(45);
+      background-color: var(--color-gray-100);
+
+      &::before {
+        left: rem(15);
+        top: 8px;
+      }
+
+      &::after {
+        left: rem(13);
+      }
+    }
+
+    &-currency {
+      display: inline-block;
+      min-width: 45px;
+    }
+  }
+
+  &-attention {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  &-line {
+    text-decoration: underline;
+  }
+
+  &-link {
+    color: var(--color-main);
+
+    &.bitcoin {
+      margin-right: rem(37);
+      font-weight: 500;
+
+      &::after {
+        padding-left: 3px;
+        color: var(--color-main);
+      }
+    }
+  }
+
+  &-nav {
+    margin-top: auto;
+
+    &-list {
+      @include flex-v-center;
+
+      margin-bottom: 20px;
+    }
+
+    &-item {
+      position: relative;
+
+      &:not(:last-child) {
+        margin-right: 18px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          right: -9px;
+          top: 6px;
+          width: 1px;
+          height: 10px;
+          background-color: var(--color-gray-300);
+        }
+      }
+
+      &:not(:first-child) {
+        color: var(--color-gray-400);
+      }
+    }
+
+    &-progress {
+      position: relative;
+      margin-bottom: rem(40);
+      border-radius: var(--radius-main);
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-gray-300);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        border-radius: var(--radius-main);
+        height: 4px;
+        background-color: var(--color-main);
+      }
+
+      &[data-progress="1"] {
+        &::before {
+          width: 25%;
+        }
+      }
+
+      &[data-progress="2"] {
+        &::before {
+          width: 50%;
+        }
+      }
+
+      &[data-progress="3"] {
+        &::before {
+          width: 75%;
+        }
+      }
+
+      &[data-progress="4"] {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+
+    &-btns {
+      @include flex;
+    }
+
+    &-btn {
+      padding-top: 7px;
+      padding-bottom: 7px;
+      width: 100%;
+      font-size: var(--size-sl);
+
+      &:first-of-type {
+        margin-right: 20px;
+      }
+
+      &.btn-default {
+        color: var(--color-dark);
+      }
+    }
+  }
+
+  &-label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: var(--size-m);
+  }
+
+  &-input {
+    padding: 12px 20px;
+
+    &:first-of-type {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &-tooltip {
+    width: 11px;
+    height: 11px;
+  }
+
+  &-pay {
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-main);
+  }
+
+  &-cost {
+    font-weight: 500;
+
+    &.bitcoin {
+      &::after {
+        padding-left: 3px;
+      }
+    }
+  }
+
+  &-qr {
+    @include flex-all-sb;
+
+    margin-bottom: rem(30);
+
+    &-address {
+      width: 100%;
+      max-width: 445px;
+    }
+
+    &-label {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    &-btn {
+      @include flex-all-sb;
+
+      margin-right: 10px;
+      padding: 12px rem(20);
+      width: 100%;
+      background-color: var(--color-gray-100);
+    }
+
+    &-icon {
+      width: 11px;
+      height: 11px;
+    }
+
+    &-show {
+      @include flex-all-center;
+
+      padding: 8px rem(20);
+      width: 100%;
+      max-width: 75px;
+    }
+
+    &-img {
+      width: 20px;
+      height: 20px;
+    }
+
+    &-code {
+      @include flex-all-center;
+
+      margin: 0 auto rem(30);
+      padding: 1px;
+      width: 100%;
+      max-width: 131px;
+      max-height: 131px;
+      background-color: var(--color-dark);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.1s ease, visibility 0.1s ease;
+    }
+
+    &-open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-user {
+    padding: rem(40);
+
+    &-box {
+      margin-bottom: rem(40);
+      border: 1px solid var(--color-gray-300);
+      border-radius: var(--radius-main);
+      padding: 15px 20px;
+    }
+
+    &-content {
+      margin-bottom: rem(40);
+    }
+
+    &-list {
+      @include flex-all-sb;
+
+      justify-content: flex-start;
+    }
+
+    &-item {
+      span {
+        display: flex;
+      }
+
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+
+      &.step-user-avatar {
+        margin-right: 20px;
+      }
+    }
+
+    &-name {
+      font-weight: 500;
+      font-size: var(--size-sl);
+    }
+
+    &-add {
+      font-size: var(--size-s);
+      color: var(--color-gray-400);
+    }
+
+    &-table {
+      overflow: scroll;
+      margin-bottom: 50px;
+      width: 100%;
+      max-height: 210px;
+      text-align: left;
+
+      &-big {
+        max-height: 440px;
+      }
+
+      th {
+        position: sticky;
+        top: 0;
+        border-radius: var(--radius-main);
+        padding: 0 20px 12px;
+        color: var(--color-gray-400);
+        background-color: var(--color-white);
+
+        &:first-child {
+          padding-left: 20px;
+        }
+      }
+
+      tr {
+        &:nth-child(odd) {
+          background-color: var(--color-gray-200);
+        }
+      }
+
+      td {
+        padding: 10px 20px;
+
+        &:first-child {
+          padding-left: 20px;
+        }
+      }
+    }
+
+    &-market {
+      width: 15%;
+    }
+
+    &-quantity {
+      width: 15%;
+    }
+
+    &-usd {
+      width: 15%;
+    }
+
+    &-btc {
+      width: 15%;
+    }
+  }
+}

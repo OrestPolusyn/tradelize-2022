@@ -1,0 +1,55 @@
+@include('html/_head.html',{
+pageTitle:'Portfolio - Copy Trading'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header.html",{
+    activePortfolio:'nav-link-active',
+    activeCopy:'',
+    activeFeed:'',
+    activeTerminal:'',
+    activeTrading:'',
+    })
+    <main class="main">
+
+      <h1 class="sr-only">
+        Portfolio copy trading
+      </h1>
+
+      <div class="container">
+        @include('html/profile/trader/_about.html')
+
+        <div class="tabs-nav">
+          <ul class="tabs">
+            @loop("html/parts/_tab.html",[{
+            active:'',
+            tabText:'Perfomance',
+            link:'index.html'
+            },
+            {
+            active:'tabs-link-active',
+            tabText:'Copy Trading',
+            link:'portfolio-copy-trading.html'
+            },
+            {
+            active:'',
+            tabText:'Feed',
+            link:'portfolio-feed.html'
+            },
+            ])
+          </ul>
+
+          @include('html/profile/trader/_actions.html')
+        </div>
+
+        @include('html/profile/trader/_copy-data.html')
+
+        @include('html/profile/trader/_copiers.html')
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

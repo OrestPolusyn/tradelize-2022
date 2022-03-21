@@ -1,0 +1,131 @@
+.avatar {
+  @include flex-all-center;
+
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: var(--radius-main);
+  width: 100%;
+  line-height: 1;
+  background-color: var(--color-avatar);
+
+  &-big {
+    @include adaptive_size("max-width", 70, 50);
+    @include adaptive_size("height", 70, 50);
+  }
+
+  &-mid {
+    @include adaptive_size("max-width", 45, 35);
+    @include adaptive_size("height", 45, 35);
+
+    margin-right: 15px;
+
+    .avatar-text {
+      @include adaptive_size("width", 45, 35);
+      @include adaptive_size("height", 45, 35);
+
+      font-size: var(--size-sl);
+    }
+  }
+
+  &-small {
+    @include adaptive_size("max-width", 33, 29);
+    @include adaptive_size("height", 33, 29);
+
+    .avatar-text {
+      @include adaptive_size("width", 33, 29);
+      @include adaptive_size("height", 33, 29);
+
+      font-size: var(--size-s);
+    }
+  }
+
+  &-text {
+    @include flex-all-center;
+    @include adaptive_size("max-width", 70, 50);
+    @include adaptive_size("height", 70, 50);
+
+    font-size: var(--size-lg);
+  }
+
+  &[data-color] {
+    color: var(--color-first);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      background-color: var(--color-bg-first);
+      opacity: 1;
+    }
+  }
+
+  &[data-color="1"] {
+    color: var(--color-first);
+
+    &::after {
+      background-color: var(--color-bg-first);
+      opacity: 0.12;
+    }
+  }
+
+  &[data-color="2"] {
+    color: var(--color-second);
+
+    &::after {
+      background-color: var(--color-bg-second);
+    }
+  }
+
+  &[data-color="3"] {
+    color: var(--color-third);
+
+    &::after {
+      background-color: var(--color-bg-third);
+    }
+  }
+
+  &[data-color="4"] {
+    color: var(--color-fourth);
+
+    &::after {
+      background-color: var(--color-bg-fourth);
+    }
+  }
+
+  &[data-color="5"] {
+    color: var(--color-five);
+
+    &::after {
+      background-color: var(--color-bg-five);
+    }
+  }
+
+  &[data-color="6"] {
+    color: var(--color-sixth);
+
+    &::after {
+      background-color: var(--color-bg-sixth);
+    }
+  }
+
+  &[data-color="7"] {
+    color: var(--color-seventh);
+
+    &::after {
+      background-color: var(--color-bg-seventh);
+    }
+  }
+
+  &[data-color="8"] {
+    color: var(--color-eight);
+
+    &::after {
+      background-color: var(--color-bg-eight);
+    }
+  }
+}

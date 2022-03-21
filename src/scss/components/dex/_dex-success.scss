@@ -1,0 +1,24 @@
+.dex-success {
+  text-align: center;
+
+  &-img {
+    margin-bottom: rem(45);
+    padding-top: rem(50);
+    max-width: 170px;
+  }
+
+  &-title {
+    margin-bottom: rem(15);
+  }
+
+  &-text {
+    font-size: var(--size-m);
+    line-height: 1.8;
+    color: var(--color-gray-400);
+  }
+
+  &-link {
+    font-weight: 500;
+    color: var(--color-dark);
+  }
+}

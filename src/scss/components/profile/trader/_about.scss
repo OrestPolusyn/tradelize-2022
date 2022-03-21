@@ -1,0 +1,110 @@
+.about {
+  &-user {
+    padding-bottom: clamp(0.5em, rem(18), 30px);
+  }
+
+  &-top {
+    @include flex-all-sb;
+
+    margin-bottom: clamp(0.5em, rem(25), 30px);
+    border-bottom: 1px solid var(--color-gray-300);
+    padding-bottom: clamp(0.5em, rem(30), 30px);
+
+    .link-item-link {
+      display: none;
+    }
+
+    &-user {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &-info {
+    align-self: flex-start;
+    margin-right: auto;
+  }
+
+  &-name {
+    @include flex-v-center;
+
+    margin-bottom: 6px;
+
+    &-title {
+      margin-right: 15px;
+    }
+  }
+
+  &-follow {
+    @include flex;
+
+    font-size: var(--size-s);
+    line-height: 1.8;
+    color: var(--color-gray-500);
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+
+    &-link {
+      color: var(--color-dark-900);
+    }
+  }
+
+  &-avatar {
+    margin-right: clamp(0.4em, rem(30), 35px);
+  }
+
+  &-flag {
+    width: 100%;
+    height: 15px;
+    max-width: 20px;
+  }
+
+  &-btns {
+    @include flex-v-center;
+
+    align-self: flex-start;
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    .btn {
+      width: 103px;
+    }
+  }
+
+  &-content {
+    @include flex-ss;
+
+    &-inner {
+      width: 100%;
+      max-width: 550px;
+
+      &:first-child {
+        margin-right: clamp(1.2em, rem(78), 90px);
+      }
+    }
+
+    &-title {
+      margin-bottom: clamp(0.5em, rem(12), 20px);
+    }
+
+    &-item {
+      &:last-child {
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: clamp(10px, rem(22), 25px);
+    }
+  }
+}

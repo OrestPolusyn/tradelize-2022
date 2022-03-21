@@ -1,0 +1,67 @@
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="copy-filter">
+
+  <form class="graph-modal__content copy-filter" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Filters
+      </h3>
+
+      <div class="copy-filter-radio">
+        <label class="radio">
+          <input class="sr-only radio-btn" name="filter-radio" type="radio">
+
+          <span class="radio-text">
+            Btc
+          </span>
+        </label>
+
+        <label class="radio">
+          <input class="sr-only radio-btn" name="filter-radio" type="radio" checked>
+
+          <span class="radio-text">
+            Usd
+          </span>
+        </label>
+      </div>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="graph-modal-inner">
+      <ul class="copy-filters">
+        <li class="copy-filter-item">
+          <label class="custom-checkbox">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Binance
+            </span>
+          </label>
+        </li>
+
+        <li class="copy-filter-item">
+          <label class="custom-checkbox">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Bitmex
+            </span>
+          </label>
+        </li>
+
+        <li class="copy-filter-item">
+          <label class="custom-checkbox">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Bybit
+            </span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <button class="graph-modal-btn btn btn-background" type="submit">
+      Apply
+    </button>
+  </form>
+</div>

@@ -1,0 +1,75 @@
+.management {
+  &-top {
+    @include flex-all-sb;
+
+    margin-bottom: rem(30);
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: rem(30);
+  }
+
+  .btn {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100%;
+    max-width: 130px;
+    font-weight: 400;
+  }
+
+  &-table {
+    text-align: left;
+
+    th {
+      padding: rem(15);
+      text-transform: capitalize;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    td {
+      padding: rem(15);
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .table {
+    &-number {
+      width: 3%;
+    }
+
+    &-api {
+      width: 17%;
+    }
+
+    &-title {
+      width: 20%;
+    }
+
+    &-key {
+      width: 21%;
+    }
+
+    &-status {
+      width: 15%;
+    }
+
+    &-more {
+      position: relative;
+      padding-right: 0;
+      width: 2%;
+
+      .post-dropdown {
+        right: 0;
+        top: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.invest {
+  @include flex-v-center;
+
+  padding: rem(65) rem(40);
+
+  &-text {
+    margin-right: clamp(0.5em, rem(40), 35px);
+    width: auto;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: nowrap;
+
+    &-number {
+      font-weight: 700;
+    }
+  }
+
+  &-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-right: rem(60);
+    gap: 0 20px;
+
+    .radio {
+      @include flex-all-center;
+
+      padding: 0;
+
+      &-text {
+        overflow: hidden;
+        border-radius: var(--radius-main);
+        padding: 11px rem(34);
+        white-space: nowrap;
+      }
+    }
+
+    .radio-btn {
+
+      &:checked+.radio-text {
+        font-weight: 400;
+        background-color: var(--color-gray-100);
+      }
+    }
+  }
+
+  &-dash {
+    margin-right: auto;
+    width: auto;
+    font-weight: 200;
+    font-size: 24px;
+  }
+
+  &-result {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1;
+  }
+
+  &-btn {
+    margin-left: auto;
+    padding: 4px clamp(1em, rem(48), 50px);
+    width: rem(195);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}

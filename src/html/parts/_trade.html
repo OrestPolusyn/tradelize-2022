@@ -1,0 +1,86 @@
+<article class="trade inner visuallyhidden hidden">
+
+  <div class="trade-header ">
+    <div class="link-item">
+      @include('../parts/_avatar.html',{
+      addClass:'trade-avatar',
+      size:'avatar-mid'
+      })
+
+      <div class="name">
+        <h3 class="name-title title-third">
+          Nathan Mckinney
+        </h3>
+
+        <time class="name-date" datetime="2021-09-30">
+          30.09.2021
+        </time>
+      </div>
+    </div>
+
+    <div class="trade-number profit dollar-trade">
+      10 720,88
+    </div>
+
+    <ul class="trade-list">
+      <li class="trade-item">
+        <img class="trade-verify" src="img/verify-check.svg" loading="lazy" alt="Verify icon" height="12" width="12">
+      </li>
+
+      <li class="trade-item trade-company">
+        <svg class="trade-icon">
+          <use xlink:href="img/sprite.svg#binance"></use>
+        </svg>
+
+        <span class="trade-item-exchange">
+          binance
+        </span>
+      </li>
+
+      <li class="trade-item">
+        <span class="trade-pair">
+          btc/usdt
+        </span>
+      </li>
+
+      <li class="trade-item trade-item-position positive">
+        Long
+      </li>
+
+      <li class="trade-item trade-item-level">
+        125x
+      </li>
+    </ul>
+  </div>
+
+  <div class="trade-footer">
+    <ul class="trade-footer-list">
+      <li class="trade-footer-item">
+        <span class="trade-footer-name">
+          Execute price:
+        </span>
+
+        <span class="trade-footer-number">
+          85 800,888
+        </span>
+      </li>
+
+      <li class="trade-footer-item">
+        <span class="trade-footer-name">
+          Time:
+        </span>
+
+        <time class="trade-footer-number" datetime="2021-08-18 00:05:28">
+          2021-08-18 00:05:82
+        </time>
+      </li>
+    </ul>
+
+    <button class="trade-btn btn btn-default" type="button">
+      <svg class="trade-btn-icon">
+        <use xlink:href="img/sprite.svg#share"></use>
+      </svg>
+      Share
+    </button>
+  </div>
+</article>

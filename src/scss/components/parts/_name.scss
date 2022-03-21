@@ -1,0 +1,32 @@
+.name {
+  @include flex-column-start;
+
+  &-title {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  &-date {
+    position: relative;
+    z-index: 1;
+    font-size: var(--size-s);
+    line-height: 2;
+    color: var(--color-gray-400);
+  }
+
+  &-dex {
+    position: relative;
+    z-index: 1;
+    font-size: var(--size-s);
+
+    &-link {
+      position: absolute;
+      right: rem(-35);
+    }
+
+    &-error {
+      color: var(--color-red);
+    }
+  }
+}

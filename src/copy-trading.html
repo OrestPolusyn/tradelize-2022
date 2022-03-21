@@ -1,0 +1,104 @@
+@include('html/_head.html',{
+pageTitle:'Copy trading'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header.html",{
+    activePortfolio:'',
+    activeCopy:'nav-link-active',
+    activeFeed:'',
+    activeTerminal:'',
+    activeTrading:'',
+    })
+
+    <main class="main">
+
+      <div class="container">
+
+        <h1 class="title title-main">
+          Follow The Leader
+        </h1>
+
+        <div class="tabs-nav">
+          <ul class="tabs tabs-double">
+            @loop("html/parts/_tab.html",[{
+            active:'tabs-link-active',
+            tabText:'Posts',
+            link:'copy-trading.html'
+            },
+            {
+            active:'',
+            tabText:'Reverse',
+            link:''
+            }
+            ])
+          </ul>
+
+          @include('html/copy-trading/_tabs-action.html')
+        </div>
+
+        <ul class="list-cards">
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+        </ul>
+
+        <span class="content content-search">
+          Showing 3 results for:
+        </span>
+
+        <h1 class="title title-main">
+          Barack Obama
+        </h1>
+
+        <ul class="list-cards">
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+        </ul>
+
+        <div class="search-empty">
+          <h2 class="title-sec title-sec-empty">
+            Sorry, your search was not successful!
+          </h2>
+
+          <p class="content content-empty">
+            Try some different keywords or use more general keywords.
+          </p>
+        </div>
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

@@ -1,0 +1,28 @@
+.portfolio {
+  &-top {
+    @include flex-all-sb;
+
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: rem(30);
+  }
+
+  &-data {
+    position: relative;
+  }
+
+  &-title {
+    font-weight: 500;
+  }
+
+  &-link {
+    font-size: var(--size-s);
+    letter-spacing: 0.015em;
+
+    .wallet-info-icon {
+      margin-right: 0;
+      margin-left: 10px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@include('html/_head.html',{
+pageTitle:'Portfolio - User Followers'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header.html",{
+    activePortfolio:'nav-link-active',
+    activeCopy:'',
+    activeFeed:'',
+    activeTerminal:'',
+    activeTrading:'',
+    })
+    <main class="main">
+
+      <h1 class="sr-only">
+        Portfolio page
+      </h1>
+
+      <div class="container">
+        @include('html/profile/user/_about.html')
+
+        <h2 class="title-follow">
+          Followers
+        </h2>
+
+        <ul class="list-cards">
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+
+          <li class="list-card">
+            @include('html/parts/_card.html')
+          </li>
+        </ul>
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

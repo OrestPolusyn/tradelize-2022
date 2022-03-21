@@ -1,0 +1,62 @@
+<div class="publish inner">
+  <h2 class="publish-title title-third">
+    What’s new? Share your mind...
+  </h2>
+
+  <form class="publish-form" action="#">
+    <label class="sr-only" for="publish">
+      Send comment post
+    </label>
+
+    <textarea class="publish-input input" name="publish" id="publish" rows="1" placeholder="Write something..."></textarea>
+
+    <div class="publish-action">
+      <div class="publish-box">
+        <div class="publish-img-wrap"></div>
+
+        <div class="publish-box-btn">
+          <label class="publish-box-input btn btn-default">
+            <span class="publish-box-text">Photo</span>
+            <input class="publish-inputfile sr-only" name="image-area" type="file" data-max-length="4">
+          </label>
+        </div>
+      </div>
+
+      <div class="publish-dropdown">
+
+        <button class="publish-dropdown-btn" data-toggle="dropdown" type="button">Only Me</button>
+
+        <ul class="publish-dropdown-list">
+          <li class="publish-dropdown-item">
+            <label class="publish-dropdown-radio">
+              Only Me
+              <input type="radio" name="publish-radio">
+            </label>
+          </li>
+
+          <li class="publish-dropdown-item">
+            <label class="publish-dropdown-radio">
+              Diary
+              <input type="radio" name="publish-radio">
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="publish-length">
+        Max characters:
+        <span>1000</span>
+      </div>
+
+      <div class="publish-btns">
+        <button class="publish-reset btn btn-default" type="reset">
+          Cancel
+        </button>
+
+        <button class="publish-submit btn btn-background" type="submit" disabled>
+          Publish
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

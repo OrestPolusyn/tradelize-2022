@@ -1,0 +1,36 @@
+<header class="header">
+
+  <a class="logo" href="#">
+    <img class="logo-img" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
+  </a>
+
+  <div class="container">
+    @include("parts/_menu-dex.html",{
+    activePortfolio:'@activePortfolio',
+    activeCopy:'@activeCopy',
+    activeFeed:'@activeFeed',
+    activeTerminal:'@activeTerminal',
+    activeTrading:'@activeTrading',
+    })
+  </div>
+
+  <ul class="action">
+    <li class="action-item">
+      <a class="action-link action-notifications" href="#" aria-label="Notifications">
+        <img class="action-notifications-icon" loading="lazy" src="img/bell.svg" width="13" height="15" alt="Profile avatar" />
+      </a>
+    </li>
+
+    <li class="action-item avatar">
+      <button class="@addClass avatar avatar-small" data-color="4">
+        <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
+        <span class="avatar-text">
+          TM
+        </span>
+      </button>
+
+    </li>
+
+  </ul>
+
+</header>

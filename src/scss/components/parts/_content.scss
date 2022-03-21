@@ -1,0 +1,28 @@
+.content {
+  width: 100%;
+  font-weight: 400;
+  font-size: var(--size-m);
+  line-height: 1.7;
+  color: var(--color-gray-400);
+
+  &-search {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  &-empty {
+    max-width: 240px;
+  }
+
+  &-wallet {
+    @include flex-all-center;
+
+    padding: 15px 0;
+    font-size: var(--size-s);
+    color: var(--color-gray-400);
+  }
+
+  &-offer {
+    padding: 0 rem(25);
+  }
+}

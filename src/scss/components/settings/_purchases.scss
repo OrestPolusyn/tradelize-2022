@@ -1,0 +1,157 @@
+.purchases {
+  &-title {
+    margin-bottom: rem(35);
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: rem(30);
+  }
+
+  &-list {
+    display: grid;
+    grid-auto-rows: minmax(355px, auto);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  &-item {
+    @include flex-column;
+
+    position: relative;
+    border-radius: var(--radius-main);
+    padding: rem(30);
+    background-color: var(--color-gray-100);
+  }
+
+  &-header {
+    @include flex;
+
+    position: relative;
+    margin-bottom: rem(30);
+    width: fit-content;
+  }
+
+  &-price {
+    margin-bottom: rem(30);
+
+    span {
+      display: block;
+    }
+
+    &-usd {
+      font-weight: 500;
+    }
+
+    &-fixed {
+      font-size: var(--size-m);
+    }
+  }
+
+  &-manage {
+    @include flex-all-sb;
+
+    border-radius: var(--radius-main);
+    padding: 8px 12px;
+    font-size: var(--size-s);
+    background-color: var(--color-white);
+
+    &-text {
+      min-width: 45px;
+      line-height: 1.65;
+    }
+
+    &-price {
+      min-width: 65px;
+    }
+
+    .btn {
+      padding-top: 2px;
+      padding-bottom: 2px;
+      font-size: var(--size-s);
+    }
+  }
+
+  &-error {
+    border-color: var(--color-red);
+    border-radius: var(--radius-main);
+    padding: 10px rem(20);
+    font-size: var(--size-s);
+    text-align: center;
+    color: var(--color-white);
+    background-color: var(--color-red);
+  }
+
+  &-btn {
+    margin-top: auto;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100%;
+  }
+
+  &-icon {
+    border-radius: var(--radius-main);
+    padding: 4px;
+    width: 100%;
+    height: 19px;
+    max-width: 19px;
+    background-color: var(--color-gray-300);
+  }
+
+  &-dex {
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+
+      .btn {
+        padding: 2px 0;
+        width: 100%;
+        max-width: 50px;
+      }
+    }
+
+    &-link {
+      position: absolute;
+      right: rem(30);
+      top: rem(30);
+      font-size: var(--size-s);
+    }
+  }
+
+  &-modal {
+    min-height: auto;
+
+    &-text {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &-balance {
+    display: block;
+    margin-bottom: 10px;
+    font-size: var(--size-s);
+    letter-spacing: 0.015em;
+  }
+
+  &-currency {
+    display: block;
+    margin-bottom: rem(30);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  &-amount {
+    &-text {
+      display: block;
+      margin-bottom: 12px;
+      font-size: var(--size-s);
+      line-height: 1.5;
+      letter-spacing: 0.015em;
+    }
+
+    &-input {
+      display: block;
+      padding: 10px rem(20);
+      font-size: var(--size-m);
+    }
+  }
+}

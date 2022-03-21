@@ -1,0 +1,36 @@
+@include('html/_head.html',{
+pageTitle:'Copy trading'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header-dex.html",{
+    activePortfolio:'',
+    activeCopy:'',
+    activeFeed:'',
+    activeTerminal:'',
+    activeTrading:'nav-link-active',
+    })
+
+    <main class="main">
+
+      <div class="container">
+
+        <h1 class="title title-main">
+          Copy any BSC wallet
+        </h1>
+
+        @include("html/dex/_dex-search.html")
+
+        @include("html/dex/_dex-list.html")
+
+        <p class="dex-beta content">
+          Carefully, this project is in beta.
+        </p>
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

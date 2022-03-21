@@ -1,0 +1,38 @@
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="wallet-info">
+
+  <form class="graph-modal__content wallet-info" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Your wallet
+      </h3>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <ul class="wallet-info-list">
+      <li class="wallet-info-item">
+        <button class="wallet-info-btn copy-content" type="button">
+          <svg class="wallet-info-icon">
+            <use xlink:href="img/sprite.svg#copy"></use>
+          </svg>
+          0x6B675fCA4Ee493...27dAE5f1ebae7307
+        </button>
+      </li>
+
+      <li class="wallet-info-item">
+        <a class="wallet-info-btn" href="https://docs.bscscan.com/">
+          <svg class="wallet-info-icon">
+            <use xlink:href="img/sprite.svg#bscscan"></use>
+          </svg>
+          View on BscScan
+        </a>
+      </li>
+    </ul>
+
+    <button class="graph-modal-btn btn btn-background" type="submit">
+      Disconnect
+    </button>
+  </form>
+</div>

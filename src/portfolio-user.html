@@ -1,0 +1,52 @@
+@include('html/_head.html',{
+pageTitle:'Portfolio - User'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header.html",{
+    activePortfolio:'nav-link-active',
+    activeCopy:'',
+    activeFeed:'',
+    activeTerminal:'',
+    activeTrading:'',
+    })
+    <main class="main">
+
+      <h1 class="sr-only">
+        Portfolio user page
+      </h1>
+
+      <div class="container">
+        @include('html/profile/user/_about.html')
+
+        <div class="tabs-nav">
+          <ul class="tabs">
+            @loop("html/parts/_tab.html",[{
+            active:'tabs-link-active',
+            tabText:'Perfomance',
+            link:'portfolio-user.html'
+            },
+            {
+            active:'',
+            tabText:'Feed',
+            link:'portfolio-user-feed.html'
+            },
+            ])
+          </ul>
+
+          @include('html/profile/trader/_actions.html')
+        </div>
+
+        @include('html/profile/trader/_perfomance-data.html')
+
+        @include('html/profile/_graph.html')
+
+        @include('html/profile/_charts.html')
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

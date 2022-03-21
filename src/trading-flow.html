@@ -1,0 +1,36 @@
+@include('html/_head.html',{
+pageTitle:'Copy Trading Flow'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header.html",{
+    activePortfolio:'',
+    activeCopy:'nav-link-active',
+    activeFeed:'',
+    activeTerminal:'',
+    activeTrading:'',
+    })
+
+    <main class="main">
+
+      <div class="container">
+
+        <h1 class="sr-only">
+          Copy Trading Flow
+        </h1>
+
+        @include('html/trading-flow/_choose-exchange.html')
+
+        @include('html/trading-flow/_pay-attention.html')
+
+        @include('html/trading-flow/_close-user.html')
+
+        @include('html/trading-flow/_choose-subscribe.html')
+
+      </div>
+    </main>
+
+    @include('html/_footer.html')

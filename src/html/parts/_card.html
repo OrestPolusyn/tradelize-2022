@@ -1,0 +1,59 @@
+<div class="card">
+  @include('../parts/_avatar.html',{
+  addClass:'trade-avatar',
+  size:'avatar-mid'
+  })
+
+  <h3 class="card-title">
+    TrueTrustTeam
+  </h3>
+
+  <span class="card-exchange">
+    <img class="card-icon" src="img/exchanges/binance-color.svg" loading="lazy" alt="Exchange name" width="11" height="11">
+
+    <span class="card-exchange-name">
+      binance
+    </span>
+  </span>
+
+  <ul class="card-earn">
+    <li class="card-earn-item card-earn-up">
+      <span class="card-result percent plus">
+        60.88
+      </span>
+
+      <span class="card-return">
+        Return(30d)
+      </span>
+    </li>
+
+    <li class="card-earn-item card-earn-down">
+      <span class="card-result percent minus">
+        240.88
+      </span>
+
+      <span class="card-return">
+        Return(year)
+      </span>
+    </li>
+  </ul>
+
+
+  <canvas class="card-chart">
+    <span class="sr-only">
+      Trader card chart
+    </span>
+  </canvas>
+
+  <span class="card-draw percent minus">
+    14.80
+  </span>
+
+  <span class="card-drawdown">
+    Max drawdown (year)
+  </span>
+
+  <a class="card-btn btn btn-background" href="#">
+    Explore
+  </a>
+</div>

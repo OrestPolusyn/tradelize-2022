@@ -1,0 +1,37 @@
+@include('html/_head.html',{
+pageTitle:'Copy trading'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header-dex.html",{
+    activePortfolio:'',
+    activeCopy:'',
+    activeFeed:'',
+    activeTerminal:'',
+    activeTrading:'nav-link-active',
+    })
+
+    <main class="main">
+
+      <div class="container">
+
+        <h1 class="title title-main">
+          Results for your request
+        </h1>
+
+        @include("html/dex/_dex-result.html")
+
+        @include("html/dex/_dex-copy.html")
+
+        @include("html/dex/_dex-portfolio.html")
+
+        @include("html/dex/_dex-activity.html")
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

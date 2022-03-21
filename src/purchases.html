@@ -1,0 +1,60 @@
+@include('html/_head.html',{
+pageTitle:'Copy trading'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header.html",{
+    activePortfolio:'',
+    activeCopy:'',
+    activeFeed:'',
+    activeTerminal:'',
+    activeTrading:'',
+    })
+
+    <main class="main">
+
+      <div class="container">
+
+        <h1 class="title title-main">
+          Settings
+        </h1>
+
+        <ul class="tabs tabs-settings">
+          @loop("html/parts/_tab.html",[{
+          active:'',
+          tabText:'Account',
+          link:'settings.html'
+          },
+          {
+          active:'',
+          tabText:'API management',
+          link:'management.html'
+          },
+          {
+          active:'',
+          tabText:'Offers',
+          link:'offers.html'
+          },
+          {
+          active:'',
+          tabText:'Security',
+          link:'security.html'
+          },
+          {
+          active:'tabs-link-active',
+          tabText:'purchases',
+          link:'purchases.html'
+          },
+          ])
+        </ul>
+
+        @include('html/settings/_purchases.html')
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

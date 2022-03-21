@@ -1,0 +1,118 @@
+.trade {
+  padding-top: clamp(20px, rem(27), 35px);
+  transition: all 0.1s ease-in-out;
+
+  &-header {
+    @include flex-all-sb;
+
+    margin-bottom: rem(20);
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: rem(25);
+  }
+
+  &-number {
+    @include flex;
+
+    font-weight: 700;
+    font-size: 19px;
+  }
+
+  &-list {
+    @include flex-all-center;
+
+    margin-left: auto;
+  }
+
+  &-item {
+    position: relative;
+    font-size: var(--size-m);
+
+    &:not(:last-child) {
+      margin-right: rem(60);
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: rem(-30);
+        top: 50%;
+        width: 1px;
+        height: 15px;
+        background-color: var(--color-gray-200);
+        transform: translateY(-55%);
+      }
+    }
+
+    &-position {
+      text-transform: capitalize;
+    }
+
+    &-exchange {
+      font-size: var(--size-m);
+      text-transform: capitalize;
+    }
+  }
+
+  &-pair {
+    text-transform: uppercase;
+  }
+
+  &-company {
+    @include flex-all-center;
+  }
+
+  &-verify {
+    width: 12px;
+    height: 12px;
+  }
+
+  &-icon {
+    margin-right: 6px;
+    width: 15px;
+    height: 15px;
+  }
+
+  &-footer {
+    @include flex-all-sb;
+
+    &-list {
+      @include flex-all-sb;
+
+      font-size: var(--size-s);
+      line-height: 1.8;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: rem(123);
+      }
+    }
+
+    &-name {
+      margin-right: clamp(10px, rem(15), 20px);
+      color: var(--color-gray-400);
+    }
+
+    &-number {
+      font-weight: 500;
+    }
+  }
+
+  &-btn {
+    margin-left: auto;
+    padding-right: clamp(1em, rem(27), 30px);
+    padding-left: clamp(1em, rem(27), 30px);
+    font-size: var(--size-sl);
+    color: var(--color-dark);
+
+    &-icon {
+      margin-right: 12px;
+      width: 9px;
+      height: 11px;
+      fill: currentColor;
+    }
+  }
+
+  &-hidden {
+    display: none;
+  }
+}
