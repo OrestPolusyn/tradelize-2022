@@ -7,6 +7,8 @@
   &-sec {
     @include adaptive_size("font-size", 19, 15);
 
+    font-weight: 500;
+
     &-empty {
       margin-bottom: 10px;
     }
@@ -34,4 +36,5 @@
   &-main {
     margin-bottom: rem(30);
   }
+
 }

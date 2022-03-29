@@ -8,8 +8,21 @@
   &-list {
     display: grid;
     grid-auto-rows: minmax(355px, auto);
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     gap: 20px;
+
+    @include for-width(-mobile-l) {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    @include for-width(-mobile-md) {
+      justify-content: center;
+      grid-template-columns: 375px;
+    }
+
+    @include for-width(-mobile-sl) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &-item {

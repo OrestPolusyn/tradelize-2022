@@ -29,43 +29,66 @@
   <div class="site-container">
 
     <header class="header">
+  <button class="burger" aria-label="Open menu" aria-expanded="false" data-burger>
+    <span class="burger-line"></span>
+  </button>
 
   <a class="logo" href="#">
     <img class="logo-img" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
   </a>
 
-  <nav class="nav" title="Main menu web portal">
+  <nav class="nav" title="Main menu web portal" data-menu>
   <div class="container">
     <ul class="nav-list">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="index.html" data-menu-item>
           Portfolio
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link " href="copy-trading.html">
+        <a class="nav-link " href="copy-trading.html" data-menu-item>
           Copy Trading
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link nav-link-active" href="feed.html">
+        <a class="nav-link nav-link-active" href="feed.html" data-menu-item>
           Feed
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link " href="#">
+        <a class="nav-link " href="#" data-menu-item>
           Terminal
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link " href="dex.html">
+        <a class="nav-link " href="dex.html" data-menu-item>
           Dex Trading
         </a>
+      </li>
+
+      <li class="nav-item nav-sing">
+        <ul class="nav-sing-list">
+          <li class="nav-sing-item">
+            <a class="nav-sing-link" href="#">
+              Sign in
+            </a>
+          </li>
+
+          <li class="nav-sing-item">
+            <a class="nav-sing-link" href="#">
+              Sign up
+            </a>
+          </li>
+        </ul>
+
+        <button class="nav-sing-link nav-sing-logout" type="button">
+          Log out
+        </button>
       </li>
 
       <li class="nav-item nav-item-search">
@@ -80,13 +103,13 @@
 </nav>
 
   <ul class="action">
-    <li class="action-item">
+    <li class="action-item action-item-notifications">
       <a class="action-link action-notifications" href="#" aria-label="Notifications">
         <img class="action-notifications-icon" loading="lazy" src="img/bell.svg" width="13" height="15" alt="Profile avatar" />
       </a>
     </li>
 
-    <li class="action-item">
+    <li class="action-item avatar">
       <button class="action-dropdown avatar avatar-small" data-color="4">
         <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
         <span class="avatar-text">
@@ -141,7 +164,7 @@
           Feed
         </h1>
 
-        <div class="tabs-nav">
+        <div class="tabs-nav tabs-nav-feed">
           <ul class="tabs tabs-feed">
             <li class="tabs-item">
   <a class="tabs-link tabs-link-active" href="">
@@ -156,9 +179,9 @@
 
           </ul>
 
-          <div class="swhitcher">
-  <input class="swhitcher-radio sr-only" type="checkbox" name="switcher" id="swhitch-trades">
-  <label class="swhitcher-label" for="swhitch-trades">
+          <div class="switcher">
+  <input class="switcher-radio sr-only" type="checkbox" name="switcher" id="swhitch-trades">
+  <label class="switcher-label" for="swhitch-trades">
     Show trades
   </label>
 </div>
@@ -180,8 +203,9 @@
     <textarea class="publish-input input" name="publish" id="publish" rows="1" placeholder="Write something..."></textarea>
 
     <div class="publish-action">
+      <div class="publish-img-wrap"></div>
+
       <div class="publish-box">
-        <div class="publish-img-wrap"></div>
 
         <div class="publish-box-btn">
           <label class="publish-box-input btn btn-default">
@@ -189,32 +213,32 @@
             <input class="publish-inputfile sr-only" name="image-area" type="file" data-max-length="4">
           </label>
         </div>
-      </div>
 
-      <div class="publish-dropdown">
+        <div class="publish-dropdown">
 
-        <button class="publish-dropdown-btn" data-toggle="dropdown" type="button">Only Me</button>
+          <button class="publish-dropdown-btn" data-toggle="dropdown" type="button">Only Me</button>
 
-        <ul class="publish-dropdown-list">
-          <li class="publish-dropdown-item">
-            <label class="publish-dropdown-radio">
-              Only Me
-              <input type="radio" name="publish-radio">
-            </label>
-          </li>
+          <ul class="publish-dropdown-list">
+            <li class="publish-dropdown-item">
+              <label class="publish-dropdown-radio">
+                Only Me
+                <input type="radio" name="publish-radio">
+              </label>
+            </li>
 
-          <li class="publish-dropdown-item">
-            <label class="publish-dropdown-radio">
-              Diary
-              <input type="radio" name="publish-radio">
-            </label>
-          </li>
-        </ul>
-      </div>
+            <li class="publish-dropdown-item">
+              <label class="publish-dropdown-radio">
+                Diary
+                <input type="radio" name="publish-radio">
+              </label>
+            </li>
+          </ul>
+        </div>
 
-      <div class="publish-length">
-        Max characters:
-        <span>1000</span>
+        <div class="publish-length">
+          Max characters:
+          <span>1000</span>
+        </div>
       </div>
 
       <div class="publish-btns">
@@ -584,26 +608,23 @@
         <use xlink:href="img/sprite.svg#post-more"></use>
       </svg>
     </button>
-
-    <ul class="post-list">
-      <li class="post-list-item">
-
+    <ul class="post-dropdown">
+      <li class="post-dropdown-item">
+        <button class="post-dropdown-btn" data-graph-path="complain">
+          Complain
+        </button>
       </li>
 
-      <li class="post-list-item">
-
+      <li class="post-dropdown-item">
+        <button class="post-dropdown-btn" data-graph-path="">
+          Share
+        </button>
       </li>
 
-      <li class="post-list-item">
-
-      </li>
-
-      <li class="post-list-item">
-
-      </li>
-
-      <li class="post-list-item">
-
+      <li class="post-dropdown-item">
+        <button class="post-dropdown-btn post-dropdown-delete" data-graph-path="delete-post">
+          Delete
+        </button>
       </li>
     </ul>
   </div>
@@ -631,19 +652,18 @@
 
         <li class="swiper-slide">
           <picture class="post-slider-picture">
-            <source srcset="img/post-slider/post-img.avif" type="image/avif">
-            <source srcset="img/post-slider/post-img.webp" type="image/webp">
-            <img class="post-slider-image" loading="lazy" src="img/post-slider/post-img.jpg" width="820" height="280" alt="Slider image">
+            <source srcset="img/post-slider/post-img-white.avif" type="image/avif">
+            <source srcset="img/post-slider/post-img-white.webp" type="image/webp">
+            <img class="post-slider-image" loading="lazy" src="img/post-slider/post-img-white.jpg" width="820" height="280" alt="Slider image">
           </picture>
         </li>
       </ul>
-
-      <div class="swiper-pagination"></div>
 
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
 
     </div>
+    <div class="swiper-pagination"></div>
 
     <ul class="post-actions">
       <li class="post-actions-item">
@@ -847,6 +867,66 @@
 
 <div class="graph-modal">
 
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="currency-exchange">
+
+  <form class="graph-modal__content copy-filter" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Sort by Exchange
+      </h3>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="graph-modal-inner">
+      <ul class="copy-filters">
+        <li class="copy-filter-item">
+          <label class="custom-checkbox custom-checkbox-portfolio">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Binance
+              <span class="custom-checkbox-wallet">
+                **** 0RYf
+              </span>
+            </span>
+
+          </label>
+        </li>
+
+        <li class="copy-filter-item">
+          <label class="custom-checkbox custom-checkbox-portfolio">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Bitmex
+              <span class="custom-checkbox-wallet">
+                **** 0RYf
+              </span>
+            </span>
+          </label>
+        </li>
+
+        <li class="copy-filter-item">
+          <label class="custom-checkbox custom-checkbox-portfolio">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Bybit
+              <span class="custom-checkbox-wallet">
+                **** 0RYf
+              </span>
+            </span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <button class="graph-modal-btn btn btn-background" type="submit">
+      Apply
+    </button>
+  </form>
+</div>
+
   <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="copy-filter">
 
   <form class="graph-modal__content copy-filter" action="#">
@@ -909,9 +989,11 @@
       </ul>
     </div>
 
-    <button class="graph-modal-btn btn btn-background" type="submit">
-      Apply
-    </button>
+    <div class="graph-modal-btns">
+      <button class="graph-modal-btn btn btn-background" type="submit">
+        Apply
+      </button>
+    </div>
   </form>
 </div>
 
@@ -1565,9 +1647,9 @@
 
         <img class="offer-row-tooltip" src="img/dex/tooltip.svg" alt="Subscription cost tooltip" width="11" height="11">
 
-        <div class="swhitcher">
-          <input class="swhitcher-radio sr-only" type="checkbox" id="swhitch-trades" name="switcher">
-          <label class="swhitcher-label" for="swhitch-trades">
+        <div class="switcher">
+          <input class="switcher-radio sr-only" type="checkbox" id="swhitch-trades" name="switcher">
+          <label class="switcher-label" for="swhitch-trades">
             Free
           </label>
         </div>

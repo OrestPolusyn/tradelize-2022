@@ -1,0 +1,48 @@
+@include('html/_head.html',{
+pageTitle:'Notifications'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header.html",{
+    activePortfolio:'',
+    activeCopy:'',
+    activeFeed:'',
+    activeTerminal:'',
+    activeTrading:'',
+    })
+
+    <main class="main notifications">
+      <h1 class="sr-only">
+        Notifications
+      </h1>
+      @include('html/notifications/_header.html')
+
+      <div class="notifications-content">
+        <ul class="notification-list">
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+          @include('html/notifications/_notification.html')
+        </ul>
+
+        <div class="notifications-aside">
+          @include('html/notifications/_aside.html')
+        </div>
+      </div>
+    </main>
+
+    @include('html/_footer.html')

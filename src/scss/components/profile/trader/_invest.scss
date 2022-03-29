@@ -1,6 +1,7 @@
 .invest {
   @include flex-v-center;
 
+  flex-wrap: wrap;
   padding: rem(65) rem(40);
 
   &-text {
@@ -14,12 +15,21 @@
     &-number {
       font-weight: 700;
     }
+
+    @include for-width(-tablet) {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    @include for-width(-mobile-l) {
+      text-align: left;
+    }
   }
 
   &-tabs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-right: rem(60);
+    margin-right: 20px;
     gap: 0 20px;
 
     .radio {
@@ -32,36 +42,83 @@
         border-radius: var(--radius-main);
         padding: 11px rem(34);
         white-space: nowrap;
+
+        @include for-width(-mobile-l) {
+          width: 100%;
+        }
       }
     }
 
     .radio-btn {
-
       &:checked+.radio-text {
         font-weight: 400;
         background-color: var(--color-gray-100);
       }
     }
+
+    @include for-width(-tablet) {
+      gap: 0 30px;
+    }
+
+    @include for-width(-mobile-l) {
+      margin-right: 0;
+      margin-bottom: 20px;
+      gap: 0 15px;
+    }
+
+    @include for-width(-mobile-sl) {
+      grid-template-columns: 1fr;
+      gap: 20px 0;
+    }
   }
 
   &-dash {
-    margin-right: auto;
+    margin: 0 auto;
     width: auto;
     font-weight: 200;
     font-size: 24px;
+
+    @include for-width(-mobile-l) {
+      display: none;
+    }
   }
 
   &-result {
+    vertical-align: middle;
+    margin: 0 20px;
     font-weight: 700;
     font-size: 25px;
     line-height: 1;
+    white-space: nowrap;
+
+    @include for-width(-mobile-sl) {
+      display: block;
+      margin-bottom: 20px;
+      text-align: center;
+    }
   }
 
   &-btn {
     margin-left: auto;
-    padding: 4px clamp(1em, rem(48), 50px);
-    width: rem(195);
+    padding: 4px 6px;
+    width: 100%;
+    min-width: 110px;
+    max-width: rem(195);
     font-size: 15px;
     line-height: 1.8;
+
+    @include for-width(-tablet) {
+      margin-left: 0;
+    }
+
+    @include for-width(-mobile-sl) {
+      max-width: 100%;
+    }
+  }
+
+  @include for-width(-mobile-l) {
+    display: block;
+    padding: 40px 20px;
+    text-align: right;
   }
 }

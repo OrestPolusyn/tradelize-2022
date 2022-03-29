@@ -1,21 +1,35 @@
 <header class="header">
+  <button class="burger" aria-label="Open menu" aria-expanded="false" data-burger>
+    <span class="burger-line"></span>
+  </button>
 
   <a class="logo" href="#">
     <img class="logo-img" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
   </a>
 
-  <div class="container">
-    @include("parts/_menu-dex.html",{
-    activePortfolio:'@activePortfolio',
-    activeCopy:'@activeCopy',
-    activeFeed:'@activeFeed',
-    activeTerminal:'@activeTerminal',
-    activeTrading:'@activeTrading',
-    })
-  </div>
+  @include("parts/_menu.html",{
+  activePortfolio:'@activePortfolio',
+  activeCopy:'@activeCopy',
+  activeFeed:'@activeFeed',
+  activeTerminal:'@activeTerminal',
+  activeTrading:'@activeTrading',
+  })
 
   <ul class="action">
+
     <li class="action-item">
+      <button class="btn btn-background" data-graph-path="wallet" type="button">
+        wallet
+      </button>
+    </li>
+
+    <!-- <li class="action-item">
+      <button class="btn btn-background" data-graph-path="wallet-info" type="button">
+        0x1k...067c
+      </button>
+    </li> -->
+
+    <li class="action-item action-item-notifications">
       <a class="action-link action-notifications" href="#" aria-label="Notifications">
         <img class="action-notifications-icon" loading="lazy" src="img/bell.svg" width="13" height="15" alt="Profile avatar" />
       </a>

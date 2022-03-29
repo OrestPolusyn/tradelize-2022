@@ -29,12 +29,12 @@
   }
 
   &-small {
-    @include adaptive_size("max-width", 33, 29);
-    @include adaptive_size("height", 33, 29);
+    @include adaptive_size("max-width", 35, 30);
+    @include adaptive_size("height", 35, 30);
 
     .avatar-text {
-      @include adaptive_size("width", 33, 29);
-      @include adaptive_size("height", 33, 29);
+      @include adaptive_size("width", 35, 30);
+      @include adaptive_size("height", 35, 30);
 
       font-size: var(--size-s);
     }
@@ -43,7 +43,7 @@
   &-text {
     @include flex-all-center;
     @include adaptive_size("max-width", 70, 50);
-    @include adaptive_size("height", 70, 50);
+    @include adaptive_size("height", 70, 45);
 
     font-size: var(--size-lg);
   }

@@ -2,7 +2,6 @@
   padding-top: clamp(0.5em, rem(26), 40px);
   padding-bottom: clamp(0.5em, rem(40), 50px);
 
-
   &-title {
     margin-bottom: rem(28);
     border-bottom: 1px solid var(--color-gray-200);
@@ -10,6 +9,7 @@
   }
 
   &-table {
+    overflow-x: auto;
     width: 100%;
 
     .table {
@@ -59,6 +59,7 @@
       margin-bottom: rem(30);
       padding-bottom: 14px;
       font-weight: 400;
+      white-space: nowrap;
       text-align: left;
 
       &:first-of-type {
@@ -82,7 +83,8 @@
         transition: background-color 0.2s linear;
 
         td {
-          padding: 8px 0;
+          padding: 8px;
+          white-space: nowrap;
 
           &:first-of-type {
             padding-left: 10px;
@@ -94,7 +96,7 @@
         }
 
         &:hover {
-          background-color: var(--color-gray-200);
+          background-color: var(--color-gray-100);
         }
       }
     }
@@ -107,6 +109,12 @@
     margin: 0 auto;
 
     &-item {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    &-link {
       @include flex-all-center;
 
       border: 1px solid var(--color-gray-200);
@@ -115,6 +123,10 @@
       width: 100%;
       height: 23px;
       max-width: 32px;
+      font-weight: 500;
+      font-size: var(--size-s);
+      line-height: 1.3;
+      transition: background-color 0.2s linear;
 
       &:not(:last-child) {
         margin-right: 6px;
@@ -123,19 +135,26 @@
       &-dots {
         border-color: transparent;
       }
+
+      &-active {
+        background-color: var(--color-gray-100);
+      }
+
+      &:hover {
+        background-color: var(--color-gray-50);
+      }
     }
 
-    &-link {
-      font-weight: 500;
-      font-size: var(--size-s);
-      line-height: 1.3;
+    &-active {
+      .copiers-pagination-icon {
+        fill: var(--color-dark-900);
+      }
     }
 
     &-icon {
       width: 8px;
       height: 8px;
-      fill: var(--color-gray-200);
-      stroke: var(--color-gray-200);
+      fill: var(--color-gray-400);
     }
   }
 }

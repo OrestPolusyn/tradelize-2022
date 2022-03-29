@@ -1,0 +1,37 @@
+.activity-title {
+  border-bottom: 1px solid var(--color-gray-200);
+  padding-bottom: rem(30);
+}
+.activity-table {
+  position: relative;
+  overflow-x: auto;
+  padding-top: rem(30);
+  font-size: var(--size-m);
+}
+.activity-table .table {
+  width: 100%;
+  text-align: left;
+}
+.activity-table .table-arrow {
+  width: 15%;
+}
+.activity-table .table-time {
+  width: 12%;
+}
+.activity-table .table-to {
+  width: 15%;
+}
+.activity-table th {
+  padding: rem(15);
+  font-weight: 400;
+}
+.activity-table td {
+  padding: rem(15);
+}
+.activity-table-icon {
+  height: 7px;
+  max-width: 18px;
+}
+.activity.inner {
+  margin-bottom: 0;
+}

@@ -1,13 +1,18 @@
 .radio {
   display: inline-block;
-  padding: 10px rem(20);
+  padding: 10px clamp(15px, rem(20), 20px);
   line-height: 1;
   text-align: center;
   cursor: pointer;
 
+  &-text {
+    color: var(--color-gray-400);
+  }
+
   &-btn {
     &:checked+.radio-text {
       font-weight: 500;
+      color: var(--color-dark-900);
     }
   }
 }

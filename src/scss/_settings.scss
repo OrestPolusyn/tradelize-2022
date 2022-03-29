@@ -25,6 +25,10 @@
     font-size: 16px;
   }
 
+  @include for-width(-desktop-med) {
+    font-size: 0.9vw;
+  }
+
   @include for-width(-mobile-l) {
     font-size: 13px;
   }
@@ -34,7 +38,7 @@
   display: none;
 }
 
-.visuallyhidden {
+.visually-hidden {
   opacity: 0;
 }
 
@@ -80,15 +84,37 @@
 
 .main {
   position: relative;
-  padding: clamp(20px, rem(38), 40px) 0;
+  padding: clamp(20px, rem(40), 40px) 0;
+
+  .container {
+    @include for-width(-mobile-sl) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .title:not(.about-name-title) {
+    padding: 0 24px;
+  }
 }
 
 .inner {
   position: relative;
-  margin-bottom: clamp(0.5em, rem(28), 40px);
   padding: clamp(0.5em, rem(40), 40px);
   padding-bottom: clamp(0.5em, rem(28), 40px);
   background-color: var(--color-white);
+
+  &:not(:last-child) {
+    margin-bottom: clamp(30px, rem(40), 50px);
+  }
+
+  @include for-width(-mobile-l) {
+    padding: 20px;
+  }
+
+  @include for-width(-mobile-sl) {
+    padding: 15px;
+  }
 }
 
 .positive {
@@ -99,7 +125,7 @@
   color: var(--color-red);
 }
 
-.portfilio-feed {
+.portfolio-feed {
   >* {
     margin-bottom: clamp(0.5em, rem(30), 40px);
   }
@@ -121,13 +147,22 @@
       width: 100%;
     }
   }
+
+  @include for-width(-mobile-l) {
+    margin-right: rem(50);
+  }
 }
 
 .list {
   &-cards {
     display: grid;
-    grid-template-columns: repeat(5, minmax(225px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-template-rows: auto;
     gap: rem(30) rem(36);
+
+    @include for-width(-mobile-l) {
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    }
   }
 }
 
@@ -146,12 +181,18 @@ table {
   border: none;
   border-collapse: collapse;
   width: 100%;
+  min-width: 845px;
   font-weight: 400;
   font-size: var(--size-m);
   letter-spacing: 0.03em;
 
+  thead {
+    color: var(--color-gray-400);
+  }
+
   th {
     font-weight: 400;
+    white-space: nowrap;
 
     &:first-child {
       padding-left: 0;
@@ -159,8 +200,21 @@ table {
   }
 
   td {
+    white-space: nowrap;
+
     &:first-child {
       padding-left: 0;
     }
+  }
+}
+
+.burger {
+  @include burger;
+
+  display: none;
+
+  @include for-width(-mobile-l) {
+    display: block;
+    margin-right: 20px;
   }
 }

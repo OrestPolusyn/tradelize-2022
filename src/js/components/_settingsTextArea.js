@@ -15,7 +15,7 @@ if (settingsAbout.length > 0) {
         element.nextElementSibling.querySelector('span').innerText = 100 - textAreaPersonal;
       }
 
-      if (vars.personalAbout.value.length >= 100 && vars.personalStrategy.value.length >= 100) {
+      if (vars.personalAbout.value.length >= 100 || vars.personalStrategy.value.length >= 100) {
         vars.personalBtn.disabled = false
       } else {
         vars.personalBtn.disabled = true

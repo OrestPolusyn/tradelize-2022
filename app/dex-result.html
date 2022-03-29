@@ -29,72 +29,94 @@
   <div class="site-container">
 
     <header class="header">
+  <button class="burger" aria-label="Open menu" aria-expanded="false" data-burger>
+    <span class="burger-line"></span>
+  </button>
 
   <a class="logo" href="#">
     <img class="logo-img" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
   </a>
 
+  <nav class="nav" title="Main menu web portal" data-menu>
   <div class="container">
-    <nav class="nav" title="Main menu web portal">
-  <ul class="nav-list">
+    <ul class="nav-list">
 
-    <li class="nav-item">
-      <a class="nav-link " href="index.html">
-        Portfolio
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link " href="index.html" data-menu-item>
+          Portfolio
+        </a>
+      </li>
 
-    <li class="nav-item">
-      <a class="nav-link " href="copy-trading.html">
-        Copy Trading
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link " href="copy-trading.html" data-menu-item>
+          Copy Trading
+        </a>
+      </li>
 
-    <li class="nav-item">
-      <a class="nav-link " href="feed.html">
-        Feed
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link " href="feed.html" data-menu-item>
+          Feed
+        </a>
+      </li>
 
-    <li class="nav-item">
-      <a class="nav-link " href="#">
-        Terminal
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#" data-menu-item>
+          Terminal
+        </a>
+      </li>
 
-    <li class="nav-item">
-      <a class="nav-link nav-link-active" href="dex.html">
-        Dex Trading
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-active" href="dex.html" data-menu-item>
+          Dex Trading
+        </a>
+      </li>
 
-    <li class="nav-item">
+      <li class="nav-item nav-sing">
+        <ul class="nav-sing-list">
+          <li class="nav-sing-item">
+            <a class="nav-sing-link" href="#">
+              Sign in
+            </a>
+          </li>
+
+          <li class="nav-sing-item">
+            <a class="nav-sing-link" href="#">
+              Sign up
+            </a>
+          </li>
+        </ul>
+
+        <button class="nav-sing-link nav-sing-logout" type="button">
+          Log out
+        </button>
+      </li>
+
+      <li class="nav-item nav-item-search">
+        <label for="search" class="sr-only">
+          Search on portal by traders…
+        </label>
+
+        <input class="input" type="search" id="search" name="search-field" placeholder="Search by traders...">
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <ul class="action">
+
+    <li class="action-item">
       <button class="btn btn-background" data-graph-path="wallet" type="button">
         wallet
       </button>
     </li>
 
-    <li class="nav-item">
+    <!-- <li class="action-item">
       <button class="btn btn-background" data-graph-path="wallet-info" type="button">
-        0×1k…067c
+        0x1k...067c
       </button>
-    </li>
+    </li> -->
 
-    <li class="nav-item nav-item-search">
-      <label for="search" class="sr-only">
-        Search on portal by traders…
-      </label>
-
-      <input class="input" type="search" id="search" name="search-field" placeholder="Search by traders...">
-    </li>
-  </ul>
-
-</nav>
-
-  </div>
-
-  <ul class="action">
-    <li class="action-item">
+    <li class="action-item action-item-notifications">
       <a class="action-link action-notifications" href="#" aria-label="Notifications">
         <img class="action-notifications-icon" loading="lazy" src="img/bell.svg" width="13" height="15" alt="Profile avatar" />
       </a>
@@ -526,6 +548,66 @@
 
 <div class="graph-modal">
 
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="currency-exchange">
+
+  <form class="graph-modal__content copy-filter" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Sort by Exchange
+      </h3>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="graph-modal-inner">
+      <ul class="copy-filters">
+        <li class="copy-filter-item">
+          <label class="custom-checkbox custom-checkbox-portfolio">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Binance
+              <span class="custom-checkbox-wallet">
+                **** 0RYf
+              </span>
+            </span>
+
+          </label>
+        </li>
+
+        <li class="copy-filter-item">
+          <label class="custom-checkbox custom-checkbox-portfolio">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Bitmex
+              <span class="custom-checkbox-wallet">
+                **** 0RYf
+              </span>
+            </span>
+          </label>
+        </li>
+
+        <li class="copy-filter-item">
+          <label class="custom-checkbox custom-checkbox-portfolio">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Bybit
+              <span class="custom-checkbox-wallet">
+                **** 0RYf
+              </span>
+            </span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <button class="graph-modal-btn btn btn-background" type="submit">
+      Apply
+    </button>
+  </form>
+</div>
+
   <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="copy-filter">
 
   <form class="graph-modal__content copy-filter" action="#">
@@ -588,9 +670,11 @@
       </ul>
     </div>
 
-    <button class="graph-modal-btn btn btn-background" type="submit">
-      Apply
-    </button>
+    <div class="graph-modal-btns">
+      <button class="graph-modal-btn btn btn-background" type="submit">
+        Apply
+      </button>
+    </div>
   </form>
 </div>
 
@@ -1244,9 +1328,9 @@
 
         <img class="offer-row-tooltip" src="img/dex/tooltip.svg" alt="Subscription cost tooltip" width="11" height="11">
 
-        <div class="swhitcher">
-          <input class="swhitcher-radio sr-only" type="checkbox" id="swhitch-trades" name="switcher">
-          <label class="swhitcher-label" for="swhitch-trades">
+        <div class="switcher">
+          <input class="switcher-radio sr-only" type="checkbox" id="swhitch-trades" name="switcher">
+          <label class="switcher-label" for="swhitch-trades">
             Free
           </label>
         </div>

@@ -8,7 +8,7 @@ function ImgUpload() {
 
   $(".publish-inputfile").each(function () {
     $(this).on("change", function (e) {
-      imgWrap = $(this).closest(".publish-box").find(".publish-img-wrap");
+      imgWrap = $(this).closest(".publish-action").find(".publish-img-wrap");
       const maxLength = $(this).attr("data-max-length");
 
       const files = e.target.files;

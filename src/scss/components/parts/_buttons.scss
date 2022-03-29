@@ -25,14 +25,21 @@
     background-color: var(--color-main);
   }
 
+  &-reset {
+    border-color: var(--color-gray-100);
+    color: var(--color-dark);
+    background-color: var(--color-gray-100);
+  }
+
   &-delete {
     color: var(--color-white);
     background-color: var(--color-red);
   }
 
   &-disconnect {
-    border-color: var(--color-gray-400);
+    border-color: var(--color-gray-100);
     color: var(--color-red);
+    background-color: var(--color-gray-100);
   }
 
   &:disabled {

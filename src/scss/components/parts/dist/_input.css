@@ -1,0 +1,22 @@
+.input {
+  overflow: hidden;
+  border-radius: var(--radius-main);
+  width: 100%;
+  background-color: var(--color-gray-100);
+  cursor: default;
+}
+.input::placeholder {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.1s linear, visibility 0.1s linear;
+}
+.input:focus::placeholder {
+  opacity: 0;
+  visibility: hidden;
+}
+.input[type=search] {
+  padding: 6px 15px;
+  font-size: var(--size-s);
+  line-height: 1.6;
+  color: var(--color-gray-400);
+}

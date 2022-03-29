@@ -4,14 +4,26 @@
   &-item {
     position: relative;
 
-    &:not(.avatar) {
+    &:not(:last-child) {
       margin-right: clamp(15px, rem(20), 20px);
+    }
+
+    &-notifications.action-item {
+      @include for-width(-mobile-l) {
+        margin-right: 0;
+      }
+    }
+
+    &.avatar {
+      @include for-width(-mobile-l) {
+        display: none;
+      }
     }
   }
 
   &-notifications {
-    @include adaptive_size("width", 33, 29);
-    @include adaptive_size("height", 33, 29);
+    @include adaptive_size("width", 35, 25);
+    @include adaptive_size("height", 35, 25);
     @include flex-all-center;
 
     position: relative;
@@ -25,6 +37,11 @@
       width: 13px;
       height: 15px;
       fill: var(--color-icon);
+    }
+
+    @include for-width(-mobile-md) {
+      width: 28px;
+      height: 28px;
     }
   }
 }

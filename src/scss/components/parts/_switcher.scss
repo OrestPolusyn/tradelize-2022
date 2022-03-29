@@ -1,4 +1,4 @@
-.swhitcher {
+.switcher {
   &-label {
     position: relative;
     display: flex;
@@ -41,7 +41,7 @@
 
   &-radio {
     &:checked {
-      +.swhitcher-label {
+      +.switcher-label {
         &::before {
           background-color: var(--color-main);
         }
@@ -53,7 +53,7 @@
     }
 
     &:disabled {
-      +.swhitcher-label {
+      +.switcher-label {
         &::before {
           background-color: var(--color-gray-200);
         }

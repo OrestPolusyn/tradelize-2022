@@ -1,0 +1,26 @@
+.graph-title {
+  margin-bottom: clamp(1em, rem(22), 40px);
+  font-weight: 500;
+}
+.graph-tabs {
+  margin-bottom: rem(60);
+}
+.graph-tabs .radio {
+  padding: 10px 0;
+}
+.graph-tabs .tabs-action-radio {
+  text-transform: capitalize;
+  background-color: var(--color-gray-100);
+}
+.graph-tabs .tabs-action-radio:not(:last-child) {
+  margin-right: clamp(1em, rem(30), 40px);
+}
+.graph-tabs .tabs-action-radio:first-child {
+  grid-template-columns: repeat(2, 105px);
+}
+.graph-tabs .tabs-action-radio:last-child {
+  grid-template-columns: repeat(2, 65px);
+}
+.graph-visual {
+  position: relative;
+}

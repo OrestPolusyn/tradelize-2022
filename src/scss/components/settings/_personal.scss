@@ -1,6 +1,10 @@
 .personal {
   &-box {
     padding: clamp(20px, rem(30), 35px) rem(40) rem(40);
+
+    @include for-width(-mobile-md) {
+      padding: 20px;
+    }
   }
 
   &-inner {
@@ -14,9 +18,13 @@
   }
 
   &-title {
-    margin-bottom: rem(30);
+    margin-bottom: clamp(30px, rem(40), 50px);
     border-bottom: 1px solid var(--color-gray-300);
     padding-bottom: rem(30);
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 
   &-name {
@@ -28,9 +36,18 @@
   &-email {
     @include flex-all-center;
 
+    justify-content: flex-start;
     font-size: var(--size-m);
     line-height: 1.5;
     color: var(--color-gray-400);
+
+    @include for-width(-mobile-sl) {
+      font-size: var(--size-sl);
+    }
+
+    @include for-width(-mobile-sm) {
+      font-size: var(--size-s);
+    }
   }
 
   &-tooltip {
@@ -48,6 +65,20 @@
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 12px;
     gap: 0 rem(60);
+
+    @include for-width(-tablet) {
+      display: block;
+    }
+  }
+
+  &-area {
+    @include flex-column;
+
+    &:not(:last-child) {
+      @include for-width(-tablet) {
+        margin-bottom: 30px;
+      }
+    }
   }
 
   &-input {
@@ -55,6 +86,7 @@
     @include flex-all-center;
 
     padding-top: 11px;
+    font-size: var(--size-m);
     text-align: center;
     cursor: pointer;
   }

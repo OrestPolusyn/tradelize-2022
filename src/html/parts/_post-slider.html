@@ -28,26 +28,23 @@
         <use xlink:href="img/sprite.svg#post-more"></use>
       </svg>
     </button>
-
-    <ul class="post-list">
-      <li class="post-list-item">
-
+    <ul class="post-dropdown">
+      <li class="post-dropdown-item">
+        <button class="post-dropdown-btn" data-graph-path="complain">
+          Complain
+        </button>
       </li>
 
-      <li class="post-list-item">
-
+      <li class="post-dropdown-item">
+        <button class="post-dropdown-btn" data-graph-path="">
+          Share
+        </button>
       </li>
 
-      <li class="post-list-item">
-
-      </li>
-
-      <li class="post-list-item">
-
-      </li>
-
-      <li class="post-list-item">
-
+      <li class="post-dropdown-item">
+        <button class="post-dropdown-btn post-dropdown-delete" data-graph-path="delete-post">
+          Delete
+        </button>
       </li>
     </ul>
   </div>
@@ -75,19 +72,18 @@
 
         <li class="swiper-slide">
           <picture class="post-slider-picture">
-            <source srcset="img/post-slider/post-img.avif" type="image/avif">
-            <source srcset="img/post-slider/post-img.webp" type="image/webp">
-            <img class="post-slider-image" loading="lazy" src="img/post-slider/post-img.jpg" width="820" height="280" alt="Slider image">
+            <source srcset="img/post-slider/post-img-white.avif" type="image/avif">
+            <source srcset="img/post-slider/post-img-white.webp" type="image/webp">
+            <img class="post-slider-image" loading="lazy" src="img/post-slider/post-img-white.jpg" width="820" height="280" alt="Slider image">
           </picture>
         </li>
       </ul>
-
-      <div class="swiper-pagination"></div>
 
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
 
     </div>
+    <div class="swiper-pagination"></div>
 
     <ul class="post-actions">
       <li class="post-actions-item">

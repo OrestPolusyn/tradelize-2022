@@ -10,6 +10,7 @@
 
     &-input.input {
       padding: 10px rem(60) 10px rem(20);
+      color: var(--color-dark);
       cursor: text;
     }
 
@@ -25,15 +26,21 @@
     &-icon {
       width: 14px;
       height: 14px;
+      fill: var(--color-icon);
     }
-
 
     &.inner {
       padding: rem(40);
+
+      @include for-width(-mobile-l) {
+        padding: 20px;
+      }
     }
   }
 
   &-list {
+    padding: rem(55) rem(40);
+
     &-title {
       margin-bottom: rem(60);
       text-align: center;
@@ -42,12 +49,24 @@
     &.inner {
       padding-bottom: rem(60);
     }
+
+    @include for-width(-mobile-md) {
+      padding: 30px 15px;
+    }
   }
 
   &-steps {
     @include flex-all-sb;
 
     justify-content: space-evenly;
+
+    @include for-width(-desktop-med) {
+      justify-content: space-between;
+    }
+
+    @include for-width(-tablet) {
+      display: block;
+    }
   }
 
   &-step {
@@ -70,6 +89,7 @@
 
     &-img {
       margin-bottom: rem(34);
+      max-height: 140px;
     }
 
     &-picture {
@@ -79,6 +99,15 @@
 
     &:nth-child(2) {
       max-width: 260px;
+
+      @include for-width(-tablet) {
+        max-width: 475px;
+      }
+    }
+
+    @include for-width(-tablet) {
+      margin: 0 auto 50px;
+      max-width: 475px;
     }
   }
 

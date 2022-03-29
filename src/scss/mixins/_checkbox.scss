@@ -4,6 +4,21 @@
   position: relative;
   width: 100%;
 
+  &-portfolio {
+    display: flex;
+
+    .custom-checkbox__content {
+      display: flex;
+    }
+  }
+
+  &-wallet {
+    margin-right: 35px;
+    margin-left: auto;
+    font-size: var(--size-m);
+    color: var(--color-gray-400);
+  }
+
   &__field {
     appearance: none;
     position: absolute;

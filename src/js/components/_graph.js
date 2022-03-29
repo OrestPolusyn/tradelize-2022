@@ -1,5 +1,4 @@
 import vars from '../_vars'
-import ApexCharts from 'apexcharts'
 
 const chartBtn = [...vars.graphRadio]
 

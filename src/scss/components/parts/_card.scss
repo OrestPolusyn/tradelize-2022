@@ -1,6 +1,6 @@
 .card {
   position: relative;
-  padding: rem(30) rem(35) rem(40);
+  padding: clamp(20px, rem(25), 30px);
   width: 100%;
   text-align: center;
   background-color: var(--color-white);
@@ -23,10 +23,11 @@
   }
 
   .avatar {
-    margin: 0 auto 10px;
+    margin: 0 auto 12px;
   }
 
   &-title {
+    margin-bottom: 2px;
     font-weight: 700;
     font-size: var(--size-m);
     line-height: 1.5;
@@ -42,7 +43,7 @@
     @include flex-all-center;
 
     align-items: baseline;
-    margin: 0 auto rem(26);
+    margin: 0 auto rem(30);
     font-weight: 400;
     font-size: var(--size-s);
     line-height: 1.8;
@@ -75,8 +76,6 @@
 
   &-earn {
     @include flex-all-sb;
-
-    margin-bottom: 23px;
 
     &-item {
       position: relative;

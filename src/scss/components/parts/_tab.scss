@@ -22,12 +22,133 @@
     &::first-letter {
       text-transform: uppercase;
     }
+
+    @include for-width(-mobile-sl) {
+      padding: 5px rem(15);
+    }
   }
 
   &-nav {
     @include flex-all-sb;
 
     margin-bottom: 1.25em;
+
+    &-double {
+      .tabs {
+        &-item {
+          &:not(:last-child) {
+            @include for-width(-mobile-l) {
+              margin-right: 20px;
+            }
+          }
+
+          @include for-width(-mobile-l) {
+            width: 100%;
+          }
+        }
+
+        @include for-width(-tablet) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include for-width(-mobile-l) {
+          @include flex-all-sb;
+
+          margin-bottom: 20px;
+        }
+
+        @include for-width(-mobile-sl) {
+          display: grid;
+          grid-template-columns: 1fr;
+          margin-right: 20px;
+          margin-bottom: 0;
+          width: 100%;
+          gap: 20px 0;
+        }
+      }
+
+      .tabs-action {
+        &-item {
+          display: flex;
+          justify-content: center;
+
+          &:not(:last-child) {
+            @include for-width(-mobile-sl) {
+              margin: 0;
+            }
+          }
+
+          @include for-width(-mobile-l) {
+            width: 100%;
+          }
+        }
+
+        .btn {
+          @include for-width(-mobile-l) {
+            padding: 9px 0;
+          }
+        }
+
+        .radio {
+          @include for-width(-mobile-l) {
+            width: 100%;
+          }
+        }
+
+        @include for-width(-mobile-l) {
+          @include flex-all-sb;
+        }
+
+        @include for-width(-mobile-sl) {
+          display: grid;
+          grid-template-columns: 1fr;
+          width: 100%;
+          gap: 20px 0;
+        }
+      }
+
+      .tabs-copy {
+        @include for-width(-mobile-sl) {
+          margin-right: 0;
+        }
+      }
+
+      @include for-width(-mobile-l) {
+        display: block;
+      }
+
+      @include for-width(-mobile-sl) {
+        @include flex-s-sb;
+      }
+    }
+
+    &-switcher {
+      .tabs {
+        @include for-width(-mobile-md) {
+          margin-bottom: 20px;
+        }
+
+        @include for-width(-mobile-sl) {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px 0;
+        }
+      }
+
+      @include for-width(-mobile-md) {
+        display: block;
+      }
+    }
+
+    &-feed {
+      @include for-width(-mobile-s) {
+        display: block;
+      }
+    }
+
+    @include for-width(-mobile-sl) {
+      padding: 0 24px;
+    }
   }
 
   &-action {
@@ -162,10 +283,22 @@
     .tabs-link-active {
       font-weight: 500;
     }
+
+    @include for-width(-mobile-sl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include for-width(-mobile-s) {
+      margin-bottom: 20px;
+    }
   }
 
   &-settings {
     grid-template-columns: repeat(5, 143px);
     margin-bottom: rem(30);
+
+    @include for-width(-tablet) {
+      overflow-x: auto;
+    }
   }
 }

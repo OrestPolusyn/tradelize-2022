@@ -6,6 +6,11 @@
       opacity: 1;
       visibility: visible;
       transition: all 0.1s ease-in-out;
+
+      @include for-width(-mobile-l) {
+        display: block;
+        padding-top: 0;
+      }
     }
   }
 
@@ -15,13 +20,12 @@
   }
 
   &-input {
+    display: block;
     padding: 12px rem(20);
     min-height: 39px;
     max-height: 94px;
     font-size: var(--size-m);
     line-height: 1.7;
-
-
   }
 
   &-box {
@@ -30,6 +34,14 @@
     margin-right: rem(20);
     border-radius: var(--radius-main);
     width: fit-content;
+
+    &-btn {
+      margin-right: 20px;
+
+      @include for-width(-mobile-sl) {
+        margin-right: 10px;
+      }
+    }
 
     &-input.btn {
       padding: 5px 24px 4px 19px;
@@ -41,22 +53,54 @@
         content: "+";
         margin-right: 8px;
       }
+
+      @include for-width(-mobile-sl) {
+        padding: 5px 10px;
+      }
     }
 
     &-text {
       font-size: var(--size-sl);
+    }
+
+    @include for-width(-mobile-l) {
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--color-gray-200);
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100%;
+    }
+
+    @include for-width(-mobile-s) {
+      flex-wrap: wrap;
     }
   }
 
   &-img {
     &-wrap {
       display: flex;
+
+      @include for-width(-mobile-l) {
+        overflow-x: auto;
+      }
     }
 
     &-box {
       margin-right: clamp(1em, rem(20), 25px);
       width: 73px;
       height: 29px;
+
+      @include for-width(-mobile-l) {
+        margin-top: 15px;
+        width: 32px;
+        height: 29px;
+      }
+
+      @include for-width(-mobile-sl) {
+        margin-top: 26px;
+        height: 58px;
+        min-width: 120px;
+      }
     }
 
     &-close {
@@ -115,9 +159,22 @@
 
   &-length {
     font-size: var(--size-sl);
+    white-space: nowrap;
 
     span {
       font-weight: 500;
+    }
+
+    @include for-width(-mobile-l) {
+      margin-left: auto;
+    }
+
+    @include for-width(-mobile-s) {
+      margin-left: 0;
+    }
+
+    @include for-width(-mobile-sm) {
+      padding-top: 10px;
     }
   }
 
@@ -200,11 +257,15 @@
 
     position: relative;
     border-radius: var(--radius-main);
-    height: 29px;
+    height: 100%;
     background-size: 100% 100%;
   }
 
   &.inner {
     padding: clamp(1em, rem(30), 40px) clamp(1em, rem(40), 40px);
+
+    @include for-width(-mobile-md) {
+      padding: 30px 24px;
+    }
   }
 }

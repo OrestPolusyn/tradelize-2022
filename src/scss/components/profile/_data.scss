@@ -1,7 +1,7 @@
 .data {
   display: grid;
   justify-items: center;
-  grid-template-columns: 1.2fr 1.8fr 2.2fr 2fr 1.4fr;
+  grid-template-columns: 1.2fr 1.8fr 2.2fr 2.1fr 1.3fr;
   padding-top: clamp(30px, rem(55), 50px);
   padding-bottom: clamp(30px, rem(60), 50px);
 
@@ -14,20 +14,40 @@
         content: "";
         position: absolute;
         right: 0;
-        top: 4px;
+        top: 0;
         width: 1px;
-        height: 44px;
-        background-color: var(--color-gray-400);
+        height: 100%;
+        background-color: var(--color-gray-300);
+
+        @include for-width(-mobile-l) {
+          width: 0;
+        }
       }
     }
 
     &:not(:first-child) {
       padding-left: rem(80);
+
+      @include for-width(-tablet) {
+        padding-left: rem(30);
+      }
+
+      @include for-width(-mobile-l) {
+        padding-left: 0;
+      }
     }
 
     span {
       position: relative;
       display: flex;
+
+      @include for-width(-mobile-l) {
+        font-size: var(--size-m);
+      }
+    }
+
+    @include for-width(-mobile-l) {
+      @include flex-all-sb;
     }
   }
 
@@ -69,11 +89,13 @@
       padding-bottom: clamp(0.5em, rem(49), 50px);
     }
 
-    .data-item:not(:last-child) {
-      &::before {
-        top: 4px;
-        height: 44px;
-      }
+    @include for-width(-tablet) {
+      grid-template-columns: 2fr 2.3fr 2.3fr 2.6fr 1.7fr;
     }
+  }
+
+  @include for-width(-mobile-l) {
+    grid-template-columns: 1fr;
+    gap: 20px 0;
   }
 }

@@ -1,9 +1,12 @@
 .graph {
   &-title {
     margin-bottom: clamp(1em, rem(22), 40px);
+    font-weight: 500;
   }
 
   &-tabs {
+    @include flex;
+
     margin-bottom: rem(60);
 
     .radio {
@@ -16,20 +19,48 @@
       background-color: var(--color-gray-100);
 
       &:not(:last-child) {
-        margin-right: clamp(1em, rem(30), 40px);
+        margin-right: clamp(0.5em, rem(30), 40px);
+
+        @include for-width(-mobile-sl) {
+          margin-right: 13px;
+        }
       }
 
       &:first-child {
-        grid-template-columns: repeat(2, rem(105));
+        grid-template-columns: repeat(2, 105px);
+
+        @include for-width(-mobile-sl) {
+          grid-template-columns: repeat(2, rem(100));
+        }
       }
 
       &:last-child {
-        grid-template-columns: repeat(2, rem(64));
+        grid-template-columns: repeat(2, 65px);
+
+        @include for-width(-mobile-sl) {
+          grid-template-columns: repeat(2, rem(65));
+        }
       }
+
+      @include for-width(-mobile-s) {
+        margin-bottom: 10px;
+      }
+    }
+
+    @include for-width(-mobile-s) {
+      flex-wrap: wrap;
     }
   }
 
   &-visual {
     position: relative;
+  }
+
+  .tabs-action-radio {
+    &::before {
+      @include for-width(-mobile-s) {
+        left: 53%;
+      }
+    }
   }
 }

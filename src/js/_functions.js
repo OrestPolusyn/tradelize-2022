@@ -21,7 +21,9 @@
 // import './functions/fix-fullheight';
 
 // Реализация бургер-меню
-// import { burger } from './functions/burger';
+import {
+  burger
+} from './functions/burger';
 
 // Реализация остановки скролла (не забудьте вызвать функцию)
 // import { disableScroll } from './functions/disable-scroll';
@@ -55,10 +57,6 @@ const modal = new GraphModal();
 // const swiper = new Swiper(el, {
 //   slidesPerView: 'auto',
 // });
-
-// Подключение анимаций по скроллу
-// import AOS from 'aos';
-// AOS.init();
 
 // Подключение параллакса блоков при скролле
 // import Rellax from 'rellax';

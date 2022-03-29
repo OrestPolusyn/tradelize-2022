@@ -1,18 +1,18 @@
 const trade = document.querySelectorAll('.trade')
-const swhitcherTrade = document.querySelector('.swhitcher-label')
+const switcherTrade = document.querySelector('.switcher-label')
 
 if ([...trade].length > 0) {
-  swhitcherTrade.addEventListener(
+  switcherTrade.addEventListener(
     'click',
     function () {
       trade.forEach((element) => {
         if (element.classList.contains('hidden')) {
           element.classList.remove('hidden')
           setTimeout(function () {
-            element.classList.remove('visuallyhidden')
+            element.classList.remove('visually-hidden')
           }, 20)
         } else {
-          element.classList.add('visuallyhidden')
+          element.classList.add('visually-hidden')
           element.addEventListener(
             'transitionend',
             function (e) {

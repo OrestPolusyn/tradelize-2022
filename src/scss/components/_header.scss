@@ -4,11 +4,15 @@
   position: sticky;
   top: 0;
   z-index: 2;
-  border-bottom: 2px solid var(--color-gray-200);
+  border-bottom: 1px solid rgba(17, 20, 30, 0.06);
   padding: rem(30) rem(40);
   background-color: var(--color-white);
 
   @include for-width(-mobile-l) {
     padding: rem(20);
+  }
+
+  @include for-width(-mobile-md) {
+    padding: 16px 24px;
   }
 }

@@ -29,43 +29,66 @@
   <div class="site-container">
 
     <header class="header">
+  <button class="burger" aria-label="Open menu" aria-expanded="false" data-burger>
+    <span class="burger-line"></span>
+  </button>
 
   <a class="logo" href="#">
     <img class="logo-img" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
   </a>
 
-  <nav class="nav" title="Main menu web portal">
+  <nav class="nav" title="Main menu web portal" data-menu>
   <div class="container">
     <ul class="nav-list">
 
       <li class="nav-item">
-        <a class="nav-link nav-link-active" href="index.html">
+        <a class="nav-link nav-link-active" href="index.html" data-menu-item>
           Portfolio
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link " href="copy-trading.html">
+        <a class="nav-link " href="copy-trading.html" data-menu-item>
           Copy Trading
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link " href="feed.html">
+        <a class="nav-link " href="feed.html" data-menu-item>
           Feed
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link " href="#">
+        <a class="nav-link " href="#" data-menu-item>
           Terminal
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link " href="dex.html">
+        <a class="nav-link " href="dex.html" data-menu-item>
           Dex Trading
         </a>
+      </li>
+
+      <li class="nav-item nav-sing">
+        <ul class="nav-sing-list">
+          <li class="nav-sing-item">
+            <a class="nav-sing-link" href="#">
+              Sign in
+            </a>
+          </li>
+
+          <li class="nav-sing-item">
+            <a class="nav-sing-link" href="#">
+              Sign up
+            </a>
+          </li>
+        </ul>
+
+        <button class="nav-sing-link nav-sing-logout" type="button">
+          Log out
+        </button>
       </li>
 
       <li class="nav-item nav-item-search">
@@ -80,13 +103,13 @@
 </nav>
 
   <ul class="action">
-    <li class="action-item">
+    <li class="action-item action-item-notifications">
       <a class="action-link action-notifications" href="#" aria-label="Notifications">
         <img class="action-notifications-icon" loading="lazy" src="img/bell.svg" width="13" height="15" alt="Profile avatar" />
       </a>
     </li>
 
-    <li class="action-item">
+    <li class="action-item avatar">
       <button class="action-dropdown avatar avatar-small" data-color="4">
         <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
         <span class="avatar-text">
@@ -259,7 +282,7 @@
   </div>
 </div>
 
-        <div class="tabs-nav">
+        <div class="tabs-nav tabs-nav-double">
           <ul class="tabs">
             <li class="tabs-item">
   <a class="tabs-link " href="index.html">
@@ -279,13 +302,12 @@
 
           </ul>
 
-          <ul class="tabs-action">
+          <ul class="tabs-action ">
   <li class="tabs-action-item">
-    <button class="btn btn-currency" data-graph-path="currency" type="button">
+    <button class="btn btn-currency" data-graph-path="currency-exchange" type="button">
       <svg class="btn-icon">
         <use xlink:href="img/sprite.svg#profile-settings"></use>
       </svg>
-
       Binance
     </button>
   </li>
@@ -295,7 +317,6 @@
       <svg class="btn-icon">
         <use xlink:href="img/sprite.svg#calendar"></use>
       </svg>
-
       Month
     </button>
   </li>
@@ -702,63 +723,62 @@
       </tbody>
     </table>
 
-    <ul class="copiers-pagination">
-      <li class="copiers-pagination-item copiers-pagination-prev">
-        <a class="copiers-pagination-link" href="#">
-          <span class="sr-only">
-            Prev page
-          </span>
-          <svg class="copiers-pagination-icon">
-            <use xlink:href="img/sprite.svg#fill-prev"></use>
-          </svg>
-        </a>
-      </li>
-
-      <li class="copiers-pagination-item">
-        <a class="copiers-pagination-link copiers-pagination-link-active" href="#">
-          5
-        </a>
-      </li>
-
-      <li class="copiers-pagination-item">
-        <a class="copiers-pagination-link" href="#">
-          6
-        </a>
-      </li>
-
-      <li class="copiers-pagination-item">
-        <a class="copiers-pagination-link" href="#">
-          7
-        </a>
-      </li>
-
-      <li class="copiers-pagination-item copiers-pagination-item-dots">
-        <span class="copiers-pagination-dots">
-         …
-        </span>
-      </li>
-
-      <li class="copiers-pagination-item">
-        <a class="copiers-pagination-link" href="#">
-          52
-        </a>
-      </li>
-
-      <li class="copiers-pagination-item copiers-pagination-next">
-        <a class="copiers-pagination-link" href="#">
-          <span class="sr-only">
-            Next page
-          </span>
-
-          <svg class="copiers-pagination-icon">
-            <use xlink:href="img/sprite.svg#fill-next"></use>
-          </svg>
-        </a>
-      </li>
-
-    </ul>
   </div>
+  <ul class="copiers-pagination">
+    <li class="copiers-pagination-item copiers-pagination-prev">
+      <a class="copiers-pagination-link copiers-pagination-active" href="#">
+        <span class="sr-only">
+          Prev page
+        </span>
+        <svg class="copiers-pagination-icon">
+          <use xlink:href="img/sprite.svg#fill-prev"></use>
+        </svg>
+      </a>
+    </li>
 
+    <li class="copiers-pagination-item">
+      <a class="copiers-pagination-link copiers-pagination-link-active" href="#">
+        5
+      </a>
+    </li>
+
+    <li class="copiers-pagination-item">
+      <a class="copiers-pagination-link" href="#">
+        6
+      </a>
+    </li>
+
+    <li class="copiers-pagination-item">
+      <a class="copiers-pagination-link" href="#">
+        7
+      </a>
+    </li>
+
+    <li class="copiers-pagination-item copiers-pagination-item-dots">
+      <span class="copiers-pagination-dots">
+       …
+      </span>
+    </li>
+
+    <li class="copiers-pagination-item">
+      <a class="copiers-pagination-link" href="#">
+        52
+      </a>
+    </li>
+
+    <li class="copiers-pagination-item copiers-pagination-next">
+      <a class="copiers-pagination-link" href="#">
+        <span class="sr-only">
+          Next page
+        </span>
+
+        <svg class="copiers-pagination-icon">
+          <use xlink:href="img/sprite.svg#fill-next"></use>
+        </svg>
+      </a>
+    </li>
+
+  </ul>
 </div>
 
       </div>
@@ -771,6 +791,66 @@
 </div>
 
 <div class="graph-modal">
+
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="currency-exchange">
+
+  <form class="graph-modal__content copy-filter" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Sort by Exchange
+      </h3>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="graph-modal-inner">
+      <ul class="copy-filters">
+        <li class="copy-filter-item">
+          <label class="custom-checkbox custom-checkbox-portfolio">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Binance
+              <span class="custom-checkbox-wallet">
+                **** 0RYf
+              </span>
+            </span>
+
+          </label>
+        </li>
+
+        <li class="copy-filter-item">
+          <label class="custom-checkbox custom-checkbox-portfolio">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Bitmex
+              <span class="custom-checkbox-wallet">
+                **** 0RYf
+              </span>
+            </span>
+          </label>
+        </li>
+
+        <li class="copy-filter-item">
+          <label class="custom-checkbox custom-checkbox-portfolio">
+            <input type="checkbox" class="custom-checkbox__field" name="exchange-filter">
+            <span class="custom-checkbox__content">
+              Bybit
+              <span class="custom-checkbox-wallet">
+                **** 0RYf
+              </span>
+            </span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <button class="graph-modal-btn btn btn-background" type="submit">
+      Apply
+    </button>
+  </form>
+</div>
 
   <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="copy-filter">
 
@@ -834,9 +914,11 @@
       </ul>
     </div>
 
-    <button class="graph-modal-btn btn btn-background" type="submit">
-      Apply
-    </button>
+    <div class="graph-modal-btns">
+      <button class="graph-modal-btn btn btn-background" type="submit">
+        Apply
+      </button>
+    </div>
   </form>
 </div>
 
@@ -1490,9 +1572,9 @@
 
         <img class="offer-row-tooltip" src="img/dex/tooltip.svg" alt="Subscription cost tooltip" width="11" height="11">
 
-        <div class="swhitcher">
-          <input class="swhitcher-radio sr-only" type="checkbox" id="swhitch-trades" name="switcher">
-          <label class="swhitcher-label" for="swhitch-trades">
+        <div class="switcher">
+          <input class="switcher-radio sr-only" type="checkbox" id="swhitch-trades" name="switcher">
+          <label class="switcher-label" for="swhitch-trades">
             Free
           </label>
         </div>

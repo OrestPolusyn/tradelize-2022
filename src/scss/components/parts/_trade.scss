@@ -1,5 +1,5 @@
 .trade {
-  padding-top: clamp(20px, rem(27), 35px);
+  padding: rem(30) rem(40) rem(20);
   transition: all 0.1s ease-in-out;
 
   &-header {
@@ -8,6 +8,10 @@
     margin-bottom: rem(20);
     border-bottom: 1px solid var(--color-gray-200);
     padding-bottom: rem(25);
+
+    @include for-width(-mobile-l) {
+      flex-wrap: wrap;
+    }
   }
 
   &-number {
@@ -21,6 +25,10 @@
     @include flex-all-center;
 
     margin-left: auto;
+
+    @include for-width(-mobile-l) {
+      padding-top: 20px;
+    }
   }
 
   &-item {
@@ -39,6 +47,34 @@
         height: 15px;
         background-color: var(--color-gray-200);
         transform: translateY(-55%);
+
+        @include for-width(-mobile-md) {
+          right: rem(-25);
+        }
+
+        @include for-width(-mobile-sl) {
+          right: -10px;
+        }
+
+        @include for-width(-mobile-s) {
+          right: -5px;
+        }
+      }
+
+      @include for-width(-mobile-md) {
+        margin-right: 40px;
+      }
+
+      @include for-width(-mobile-sl) {
+        margin-right: 20px;
+      }
+
+      @include for-width(-mobile-s) {
+        margin-right: 12px;
+      }
+
+      @include for-width(-mobile-sm) {
+        margin-right: 10px;
       }
     }
 
@@ -61,6 +97,7 @@
   }
 
   &-verify {
+    vertical-align: middle;
     width: 12px;
     height: 12px;
   }
@@ -79,11 +116,31 @@
 
       font-size: var(--size-s);
       line-height: 1.8;
+
+      @include for-width(-mobile-md) {
+        display: block;
+      }
     }
 
     &-item {
+      white-space: nowrap;
+
       &:not(:last-child) {
         margin-right: rem(123);
+
+        @include for-width(-mobile-l) {
+          margin-right: rem(50);
+        }
+
+        @include for-width(-mobile-s) {
+          margin-right: 0;
+        }
+      }
+
+      @include for-width(-mobile-s) {
+        @include flex-all-sb;
+
+        width: 100%;
       }
     }
 
@@ -95,14 +152,22 @@
     &-number {
       font-weight: 500;
     }
+
+    @include for-width(-mobile-s) {
+      display: block;
+    }
   }
 
   &-btn {
+    @include flex-v-center;
+
     margin-left: auto;
+    border-color: var(--color-gray-100);
     padding-right: clamp(1em, rem(27), 30px);
     padding-left: clamp(1em, rem(27), 30px);
     font-size: var(--size-sl);
-    color: var(--color-dark);
+    color: var(--color-icon);
+    background-color: var(--color-gray-100);
 
     &-icon {
       margin-right: 12px;
@@ -110,9 +175,25 @@
       height: 11px;
       fill: currentColor;
     }
+
+    @include for-width(-mobile-s) {
+      position: absolute;
+      right: 20px;
+      top: 62px;
+    }
   }
 
   &-hidden {
     display: none;
+  }
+
+  .link-item {
+    @include for-width(-mobile-sl) {
+      margin-right: 10px;
+    }
+  }
+
+  @include for-width(-mobile-md) {
+    padding: 20px;
   }
 }

@@ -16,3 +16,5 @@ import './components/_apiCheck';
 import './components/_securityPassword';
 import './components/_showQr';
 import './components/_headerDropdown';
+import './components/_notificationBtn';
+import './components/_notificationItem';

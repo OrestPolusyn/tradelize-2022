@@ -1,35 +1,55 @@
-<nav class="nav" title="Main menu web portal">
+<nav class="nav" title="Main menu web portal" data-menu>
   <div class="container">
     <ul class="nav-list">
 
       <li class="nav-item">
-        <a class="nav-link @activePortfolio" href="index.html">
+        <a class="nav-link @activePortfolio" href="index.html" data-menu-item>
           Portfolio
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link @activeCopy" href="copy-trading.html">
+        <a class="nav-link @activeCopy" href="copy-trading.html" data-menu-item>
           Copy Trading
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link @activeFeed" href="feed.html">
+        <a class="nav-link @activeFeed" href="feed.html" data-menu-item>
           Feed
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link @activeTerminal" href="#">
+        <a class="nav-link @activeTerminal" href="#" data-menu-item>
           Terminal
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link @activeTrading" href="dex.html">
+        <a class="nav-link @activeTrading" href="dex.html" data-menu-item>
           Dex Trading
         </a>
+      </li>
+
+      <li class="nav-item nav-sing">
+        <ul class="nav-sing-list">
+          <li class="nav-sing-item">
+            <a class="nav-sing-link" href="#">
+              Sign in
+            </a>
+          </li>
+
+          <li class="nav-sing-item">
+            <a class="nav-sing-link" href="#">
+              Sign up
+            </a>
+          </li>
+        </ul>
+
+        <button class="nav-sing-link nav-sing-logout" type="button">
+          Log out
+        </button>
       </li>
 
       <li class="nav-item nav-item-search">

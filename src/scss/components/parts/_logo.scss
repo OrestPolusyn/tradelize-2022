@@ -1,6 +1,21 @@
 .logo {
-  display: inline-block;
-  margin-right: clamp(45px, rem(70), 70px);
+  @include flex-v-center;
+
+  margin-right: rem(70);
   height: 20px;
   max-width: 142px;
+
+  &-img {
+    @include for-width(-mobile-l) {
+      height: 14px;
+    }
+  }
+
+  @include for-width(-tablet) {
+    margin-right: 5px;
+  }
+
+  @include for-width(-mobile-l) {
+    margin-right: auto;
+  }
 }

@@ -28,4 +28,5 @@ export default {
   passwordBtns: document.querySelectorAll('.security-password-btn'),
   qrBtn: document.querySelector('.step-qr-show'),
   headerBtn: document.querySelector('.action-dropdown'),
+  notificationItems: document.querySelectorAll('.notification-item'),
 };

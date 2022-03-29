@@ -1,0 +1,15 @@
+.notification-item {
+  position: relative;
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: rem(20) rem(40);
+}
+.notification-item .custom-checkbox {
+  top: 50%;
+}
+.notification-item .custom-checkbox__content::after, .notification-item .custom-checkbox__content::before {
+  right: auto;
+}
+.notification-avatar {
+  margin-left: rem(45);
+}
