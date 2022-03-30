@@ -1,5 +1,6 @@
 .radio {
-  display: inline-block;
+  @include flex-all-center;
+
   padding: 10px clamp(15px, rem(20), 20px);
   line-height: 1;
   text-align: center;
