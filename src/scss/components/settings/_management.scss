@@ -25,6 +25,10 @@
     overflow-x: auto;
     text-align: left;
 
+    .post-dropdown {
+      z-index: 1;
+    }
+
     th {
       padding: rem(15);
       text-transform: capitalize;
@@ -35,6 +39,7 @@
     }
 
     td {
+      position: relative;
       padding: rem(15);
 
       &::first-letter {

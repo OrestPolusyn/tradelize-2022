@@ -11,14 +11,15 @@
     <textarea class="publish-input input" name="publish" id="publish" rows="1" placeholder="Write something..."></textarea>
 
     <div class="publish-action">
-      <div class="publish-img-wrap"></div>
+      <div class="publish-img-wrap">
+      </div>
 
       <div class="publish-box">
 
         <div class="publish-box-btn">
           <label class="publish-box-input btn btn-default">
             <span class="publish-box-text">Photo</span>
-            <input class="publish-inputfile sr-only" name="image-area" type="file" data-max-length="4">
+            <input class="publish-inputfile sr-only" name="image-area" type="file" id="publish-image" data-max-length="4" data-graph-path="cropp" accept="image/*">
           </label>
         </div>
 

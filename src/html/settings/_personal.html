@@ -7,7 +7,7 @@
   <div class="personal-inner">
     <div class="personal-avatar">
       <div class="avatar avatar-text" data-color="4">
-        <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" />
+        <img class="avatar-img" id="personal-avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" />
         <!-- <span class="avatar-text">
         TM
       </span> -->
@@ -17,7 +17,7 @@
         Change
       </label>
 
-      <input class="sr-only" type="file" id="personal-avatar" accept="image/png, image/jpg, image/gif" name="personal-avatar">
+      <input class="sr-only" type="file" id="personal-avatar" accept="image/*" name="personal-avatar" data-graph-path="cropp-avatar">
     </div>
 
     <div class="personal-private">

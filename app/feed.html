@@ -159,7 +159,6 @@
     <main class="main">
 
       <div class="container container-feed">
-
         <h1 class="title title-main">
           Feed
         </h1>
@@ -180,8 +179,8 @@
           </ul>
 
           <div class="switcher">
-  <input class="switcher-radio sr-only" type="checkbox" name="switcher" id="swhitch-trades">
-  <label class="switcher-label" for="swhitch-trades">
+  <input class="switcher-radio sr-only" type="checkbox" name="switcher" id="switch-trades">
+  <label class="switcher-label" for="switch-trades">
     Show trades
   </label>
 </div>
@@ -203,14 +202,15 @@
     <textarea class="publish-input input" name="publish" id="publish" rows="1" placeholder="Write something..."></textarea>
 
     <div class="publish-action">
-      <div class="publish-img-wrap"></div>
+      <div class="publish-img-wrap">
+      </div>
 
       <div class="publish-box">
 
         <div class="publish-box-btn">
           <label class="publish-box-input btn btn-default">
             <span class="publish-box-text">Photo</span>
-            <input class="publish-inputfile sr-only" name="image-area" type="file" data-max-length="4">
+            <input class="publish-inputfile sr-only" name="image-area" type="file" id="publish-image" data-max-length="4" data-graph-path="cropp" accept="image/*">
           </label>
         </div>
 
@@ -382,10 +382,6 @@
       <span class="sr-only">
         Post more
       </span>
-
-      <svg class="post-more">
-        <use xlink:href="img/sprite.svg#post-more"></use>
-      </svg>
     </button>
 
     <ul class="post-dropdown">
@@ -603,11 +599,8 @@
       <span class="sr-only">
         Post more
       </span>
-
-      <svg class="post-more">
-        <use xlink:href="img/sprite.svg#post-more"></use>
-      </svg>
     </button>
+
     <ul class="post-dropdown">
       <li class="post-dropdown-item">
         <button class="post-dropdown-btn" data-graph-path="complain">
@@ -753,10 +746,6 @@
       <span class="sr-only">
         Post more
       </span>
-
-      <svg class="post-more">
-        <use xlink:href="img/sprite.svg#post-more"></use>
-      </svg>
     </button>
 
     <ul class="post-dropdown">
@@ -1550,7 +1539,7 @@
       <li class="api-field">
         <label class="api-label">
           Title
-          <input class="api-input api-input-exchange input" name="api-title" type="text" readonly value="Binance">
+          <input class="api-input api-input-exchange input" name="api-title" type="text" value="Binance">
         </label>
       </li>
 
@@ -1648,8 +1637,8 @@
         <img class="offer-row-tooltip" src="img/dex/tooltip.svg" alt="Subscription cost tooltip" width="11" height="11">
 
         <div class="switcher">
-          <input class="switcher-radio sr-only" type="checkbox" id="swhitch-trades" name="switcher">
-          <label class="switcher-label" for="swhitch-trades">
+          <input class="switcher-radio sr-only" type="checkbox" id="switch-cost" name="switcher">
+          <label class="switcher-label" for="switch-cost">
             Free
           </label>
         </div>
@@ -1659,7 +1648,7 @@
         Subscription cost
       </label>
 
-      <input class="offer-input input" type="text" name="subscription" placeholder="Enter amount of BTC" id="offer-cost">
+      <input class="offer-input input" type="number" name="subscription" placeholder="Enter amount of BTC" id="offer-cost">
 
       <label class="offer-textarea">
         Description
@@ -1867,6 +1856,68 @@
       </a>
     </div>
   </div>
+</div>
+
+  <div class="graph-modal__container graph-modal__container--cropp" role="dialog" aria-modal="true" data-graph-target="cropp">
+
+  <form class="graph-modal__content delete" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Crop image
+      </h3>
+
+      <button class="btn-reset graph-modal-close btn-cropp" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="graph-modal-cropp">
+
+      <img id='previewProfilePicture'>
+
+    </div>
+
+    <div class="graph-modal-btns">
+      <button class="graph-modal-close graph-modal-btn btn btn-default btn-cropp" type="button">
+        Cancel
+      </button>
+
+      <button class="graph-modal-btn graph-modal-close btn btn-background btn-cropp" id='done' type="button">
+        Crop
+      </button>
+    </div>
+  </form>
+</div>
+
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="cropp-avatar">
+
+  <form class="graph-modal__content delete" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Crop avatar
+      </h3>
+
+      <button class="btn-reset graph-modal-close btn-cropp" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="graph-modal-cropp">
+
+      <img id='previewProfileAvatar'>
+
+    </div>
+
+    <div class="graph-modal-btns">
+      <button class="graph-modal-close graph-modal-btn btn btn-default btn-cropp" type="button">
+        Cancel
+      </button>
+
+      <button class="graph-modal-btn graph-modal-close btn btn-background btn-cropp" id='done-avatar' type="button">
+        Crop
+      </button>
+    </div>
+  </form>
 </div>
 
 </div>

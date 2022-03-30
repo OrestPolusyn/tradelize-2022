@@ -1,9 +1,9 @@
 .data {
   display: grid;
   justify-items: center;
-  grid-template-columns: 1.2fr 1.8fr 2.2fr 2.1fr 1.3fr;
-  padding-top: clamp(30px, rem(55), 50px);
-  padding-bottom: clamp(30px, rem(60), 50px);
+  grid-template-columns: 1.2fr 1.85fr 2.2fr 2.1fr 1.3fr;
+  padding-top: clamp(30px, rem(50), 50px);
+  padding-bottom: clamp(30px, rem(57), 60px);
 
   &-item {
     position: relative;
@@ -52,7 +52,7 @@
   }
 
   &-title {
-    margin-bottom: 6px;
+    margin-bottom: 14px;
     font-size: var(--size-s);
     line-height: 1.35;
     color: var(--color-gray-400);
@@ -62,7 +62,7 @@
     @include adaptive_size("font-size", 21, 15);
 
     font-weight: 500;
-    line-height: 1.7;
+    line-height: 1;
   }
 
   &-copy {

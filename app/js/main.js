@@ -36,6 +36,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_notificationBtn__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/_notificationBtn */ "./src/js/components/_notificationBtn.js");
 /* harmony import */ var _components_notificationBtn__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_components_notificationBtn__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _components_notificationItem__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/_notificationItem */ "./src/js/components/_notificationItem.js");
+/* harmony import */ var _components_offerFree__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/_offerFree */ "./src/js/components/_offerFree.js");
+/* harmony import */ var _components_offerFree__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_components_offerFree__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _components_avatarSettingsCropp__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/_avatarSettingsCropp */ "./src/js/components/_avatarSettingsCropp.js");
+/* harmony import */ var _components_avatarSettingsCropp__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_components_avatarSettingsCropp__WEBPACK_IMPORTED_MODULE_21__);
+
+
 
 
 
@@ -102,10 +108,6 @@ var modal = new graph_modal__WEBPACK_IMPORTED_MODULE_1__["default"](); // Реа
 // Подключение плагина кастом-скролла
 // import 'simplebar';
 // Подключение плагина для позиционирования тултипов
-// import { createPopper, right} from '@popperjs/core';
-// createPopper(el, tooltip, {
-//   placement: 'right'
-// });
 // Подключение свайпера
 // import Swiper, { Navigation, Pagination } from 'swiper';
 // Swiper.use([Navigation, Pagination]);
@@ -215,6 +217,58 @@ if (checkItemApi.length > 0) {
         _vars__WEBPACK_IMPORTED_MODULE_0__["default"].apiInputTitle.value = exchangeText;
       }
     });
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/components/_avatarSettingsCropp.js":
+/*!***************************************************!*\
+  !*** ./src/js/components/_avatarSettingsCropp.js ***!
+  \***************************************************/
+/***/ (() => {
+
+if (document.querySelector('#personal-avatar')) {
+  document.querySelector('#personal-avatar').addEventListener('change', function () {
+    var files = document.getElementById('personal-avatar').files;
+
+    if (!files || !files[0]) {
+      return;
+    }
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      document.getElementById('previewProfileAvatar').src = e.target.result; //alert(e.target.result);
+
+      var c = new Croppie(document.getElementById('previewProfileAvatar'), {
+        viewport: {
+          width: 150,
+          height: 150,
+          type: 'square'
+        },
+        boundary: {
+          width: 250,
+          height: 250
+        },
+        enableOrientation: true,
+        enableExif: true
+      });
+      document.querySelectorAll('.btn-cropp').forEach(function (element) {
+        element.addEventListener('click', function () {
+          c.result('base64').then(function (base64) {
+            document.getElementById('personal-avatar-img').src = base64;
+          });
+          c.destroy();
+        });
+      });
+      return;
+      croppie.bind({
+        url: e.target.result
+      });
+    };
+
+    reader.readAsDataURL(files[0]);
   });
 }
 
@@ -696,6 +750,24 @@ if (items.length > 0) {
 
 /***/ }),
 
+/***/ "./src/js/components/_offerFree.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/_offerFree.js ***!
+  \*****************************************/
+/***/ (() => {
+
+var _document;
+
+(_document = document) === null || _document === void 0 ? void 0 : _document.querySelector('#switch-cost').addEventListener('click', function () {
+  if (document.querySelector('#switch-cost').checked) {
+    document.querySelector('.offer-input.input').disabled = true;
+  } else {
+    document.querySelector('.offer-input.input').disabled = false;
+  }
+});
+
+/***/ }),
+
 /***/ "./src/js/components/_postDropdown.js":
 /*!********************************************!*\
   !*** ./src/js/components/_postDropdown.js ***!
@@ -724,16 +796,24 @@ var postBtn = _toConsumableArray(_vars__WEBPACK_IMPORTED_MODULE_0__["default"].p
 if (postBtn.length > 0) {
   postBtn.forEach(function (element) {
     element.addEventListener('click', function (e) {
+      cleanClass();
       var currentPostBtn = e.currentTarget;
-      currentPostBtn.classList.add('post-btn-open');
-      currentPostBtn.nextElementSibling.classList.toggle('post-dropdown-open');
+      currentPostBtn.classList.toggle('post-btn-open');
+      currentPostBtn.nextElementSibling.classList.add('post-dropdown-open');
     });
   });
-  document.querySelectorAll('.post-dropdown-btn').forEach(function (element) {
-    element.addEventListener('click', function (e) {
-      var currentDropBtn = e.currentTarget;
-      currentDropBtn.parentNode.parentNode.classList.remove('post-dropdown-open');
-    });
+  document.querySelector('body').addEventListener('click', function (e) {
+    e.target.parentNode.parentNode.classList.remove('post-dropdown-open');
+    if (!e.target.classList.contains('post-btn')) cleanClass();
+  });
+}
+
+function cleanClass() {
+  document.querySelectorAll('.post-dropdown').forEach(function (element) {
+    element.classList.remove('post-dropdown-open');
+  });
+  document.querySelectorAll('.post-btn').forEach(function (element) {
+    element.classList.remove('post-btn-open');
   });
 }
 
@@ -810,67 +890,87 @@ if (_vars__WEBPACK_IMPORTED_MODULE_0__["default"] !== null && _vars__WEBPACK_IMP
   \************************************************/
 /***/ (() => {
 
-jQuery(document).ready(function () {
-  ImgUpload();
-});
+var imgWrap = "";
+var imgArray = [];
+$(".publish-inputfile").each(function () {
+  $(this).on("change", function (e) {
+    imgWrap = $(this).closest(".publish-action").find(".publish-img-wrap");
+    var maxLength = $(this).attr("data-max-length");
+    var files = e.target.files;
+    var filesArr = Array.prototype.slice.call(files);
+    var iterator = 0;
+    filesArr.forEach(function (f, index) {
+      if (!f.type.match("image.*")) {
+        return;
+      }
 
-function ImgUpload() {
-  var imgWrap = "";
-  var imgArray = [];
-  $(".publish-inputfile").each(function () {
-    $(this).on("change", function (e) {
-      imgWrap = $(this).closest(".publish-box").find(".publish-img-wrap");
-      var maxLength = $(this).attr("data-max-length");
-      var files = e.target.files;
-      var filesArr = Array.prototype.slice.call(files);
-      var iterator = 0;
-      filesArr.forEach(function (f, index) {
-        if (!f.type.match("image.*")) {
-          return;
+      if (imgArray.length > maxLength - 1) {
+        return false;
+      } else {
+        var len = 0;
+
+        for (var i = 0; i < imgArray.length; i++) {
+          if (imgArray[i] !== undefined) {
+            len++;
+          }
         }
 
-        if (imgArray.length > maxLength - 1) {
+        if (len > maxLength - 1) {
           return false;
         } else {
-          var len = 0;
+          imgArray.push(f);
+          var reader = new FileReader();
 
-          for (var i = 0; i < imgArray.length; i++) {
-            if (imgArray[i] !== undefined) {
-              len++;
-            }
-          }
+          reader.onload = function (e) {
+            document.getElementById('previewProfilePicture').src = e.target.result;
+            var c = new Croppie(document.getElementById('previewProfilePicture'), {
+              viewport: {
+                width: '80%',
+                height: 300,
+                type: 'square'
+              },
+              boundary: {
+                width: '100%',
+                height: 410
+              },
+              enableExif: true,
+              enableOrientation: true,
+              enableResize: true
+            });
+            document.getElementById('done').addEventListener('click', function () {
+              c.result('base64').then(function (base64) {
+                var html = "<div class='publish-img-box'><div class='img-bg' style='background-image: url(" + base64 + ")' data-number='" + $(".publish-img-close").length + "' data-file='" + f.name + "'><button class='publish-img-close' type='button'></button></div></div>";
+                imgWrap.append(html);
+                iterator++;
+              });
+              c.destroy();
+              document.getElementById('previewProfilePicture').src = '';
+            });
+            document.querySelectorAll('.graph-modal-close').forEach(function (element) {
+              element.addEventListener('click', function () {
+                document.getElementById('previewProfilePicture').src = '';
+              });
+            });
+          };
 
-          if (len > maxLength - 1) {
-            return false;
-          } else {
-            imgArray.push(f);
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-              var html = "<div class='publish-img-box'><div class='img-bg' style='background-image: url(" + e.target.result + ")' data-number='" + $(".publish-img-close").length + "' data-file='" + f.name + "'><button class='publish-img-close' type='button'></button></div></div>";
-              imgWrap.append(html);
-              iterator++;
-            };
-
-            reader.readAsDataURL(f);
-          }
+          reader.readAsDataURL(f);
         }
-      });
+      }
     });
   });
-  $("body").on("click", ".publish-img-close", function (e) {
-    var file = $(this).parent().data("file");
+});
+$("body").on("click", ".publish-img-close", function (e) {
+  var file = $(this).parent().data("file");
 
-    for (var i = 0; i < imgArray.length; i++) {
-      if (imgArray[i].name === file) {
-        imgArray.splice(i, 1);
-        break;
-      }
+  for (var i = 0; i < imgArray.length; i++) {
+    if (imgArray[i].name === file) {
+      imgArray.splice(i, 1);
+      break;
     }
+  }
 
-    $(this).parent().parent().remove();
-  });
-}
+  $(this).parent().parent().remove();
+});
 
 /***/ }),
 

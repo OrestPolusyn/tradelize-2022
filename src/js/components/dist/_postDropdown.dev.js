@@ -17,15 +17,23 @@ var postBtn = _toConsumableArray(_vars["default"].postDropdownBtn);
 if (postBtn.length > 0) {
   postBtn.forEach(function (element) {
     element.addEventListener('click', function (e) {
+      cleanClass();
       var currentPostBtn = e.currentTarget;
-      currentPostBtn.classList.add('post-btn-open');
-      currentPostBtn.nextElementSibling.classList.toggle('post-dropdown-open');
+      currentPostBtn.classList.toggle('post-btn-open');
+      currentPostBtn.nextElementSibling.classList.add('post-dropdown-open');
     });
   });
-  document.querySelectorAll('.post-dropdown-btn').forEach(function (element) {
-    element.addEventListener('click', function (e) {
-      var currentDropBtn = e.currentTarget;
-      currentDropBtn.parentNode.parentNode.classList.remove('post-dropdown-open');
-    });
+  document.querySelector('body').addEventListener('click', function (e) {
+    e.target.parentNode.parentNode.classList.remove('post-dropdown-open');
+    if (!e.target.classList.contains('post-btn')) cleanClass();
+  });
+}
+
+function cleanClass() {
+  document.querySelectorAll('.post-dropdown').forEach(function (element) {
+    element.classList.remove('post-dropdown-open');
+  });
+  document.querySelectorAll('.post-btn').forEach(function (element) {
+    element.classList.remove('post-btn-open');
   });
 }

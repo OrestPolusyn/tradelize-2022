@@ -1,14 +1,19 @@
 .logo {
   @include flex-v-center;
 
-  margin-right: rem(70);
+  margin-right: rem(110);
   height: 20px;
-  max-width: 142px;
+  min-width: 142px;
 
   &-img {
     @include for-width(-mobile-l) {
       height: 14px;
     }
+  }
+
+  @include for-width(-desktop-med) {
+    margin-right: rem(20);
+    min-width: 120px;
   }
 
   @include for-width(-tablet) {

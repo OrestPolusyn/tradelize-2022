@@ -18,3 +18,5 @@ import './components/_showQr';
 import './components/_headerDropdown';
 import './components/_notificationBtn';
 import './components/_notificationItem';
+import './components/_offerFree';
+import './components/_avatarSettingsCropp';

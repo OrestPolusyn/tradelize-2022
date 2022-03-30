@@ -46,10 +46,8 @@ const modal = new GraphModal();
 // import 'simplebar';
 
 // Подключение плагина для позиционирования тултипов
-// import { createPopper, right} from '@popperjs/core';
-// createPopper(el, tooltip, {
-//   placement: 'right'
-// });
+
+
 
 // Подключение свайпера
 // import Swiper, { Navigation, Pagination } from 'swiper';

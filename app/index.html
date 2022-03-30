@@ -205,10 +205,9 @@
       </div>
 
       <ul class="about-btns">
-        <li class="about-btns-item">
-          <button class="btn btn-default" type="button">
-            Follow
-          </button>
+
+        <li class="about-btns-item about-btns-cost">
+          Cost: <span>0.002</span> BTC/month
         </li>
 
         <li class="about-btns-item">
@@ -216,8 +215,13 @@
             Copy Trade
           </a>
         </li>
-      </ul>
 
+        <li class="about-btns-item">
+          <button class="btn btn-default" type="button">
+            Follow
+          </button>
+        </li>
+      </ul>
     </div>
 
     <div class="about-content">
@@ -252,7 +256,7 @@
           My Strategy
         </h3>
 
-        <p class="content">
+        <p class="content content-list">
           There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words. There are many variations of passages Lorem Ipsum available, but the majority have suffered alteration.
         </p>
 
@@ -305,18 +309,14 @@
           <ul class="tabs-action ">
   <li class="tabs-action-item">
     <button class="btn btn-currency" data-graph-path="currency-exchange" type="button">
-      <svg class="btn-icon">
-        <use xlink:href="img/sprite.svg#profile-settings"></use>
-      </svg>
+      <img class="btn-icon" src="img/exchange.svg" alt="exchange">
       Binance
     </button>
   </li>
 
   <li class="tabs-action-item">
     <button class="btn btn-data" type="button">
-      <svg class="btn-icon">
-        <use xlink:href="img/sprite.svg#calendar"></use>
-      </svg>
+      <img class="btn-icon" src="img/calendar.svg" alt="calendar">
       Month
     </button>
   </li>
@@ -1347,7 +1347,7 @@
       <li class="api-field">
         <label class="api-label">
           Title
-          <input class="api-input api-input-exchange input" name="api-title" type="text" readonly value="Binance">
+          <input class="api-input api-input-exchange input" name="api-title" type="text" value="Binance">
         </label>
       </li>
 
@@ -1445,8 +1445,8 @@
         <img class="offer-row-tooltip" src="img/dex/tooltip.svg" alt="Subscription cost tooltip" width="11" height="11">
 
         <div class="switcher">
-          <input class="switcher-radio sr-only" type="checkbox" id="swhitch-trades" name="switcher">
-          <label class="switcher-label" for="swhitch-trades">
+          <input class="switcher-radio sr-only" type="checkbox" id="switch-cost" name="switcher">
+          <label class="switcher-label" for="switch-cost">
             Free
           </label>
         </div>
@@ -1456,7 +1456,7 @@
         Subscription cost
       </label>
 
-      <input class="offer-input input" type="text" name="subscription" placeholder="Enter amount of BTC" id="offer-cost">
+      <input class="offer-input input" type="number" name="subscription" placeholder="Enter amount of BTC" id="offer-cost">
 
       <label class="offer-textarea">
         Description
@@ -1664,6 +1664,68 @@
       </a>
     </div>
   </div>
+</div>
+
+  <div class="graph-modal__container graph-modal__container--cropp" role="dialog" aria-modal="true" data-graph-target="cropp">
+
+  <form class="graph-modal__content delete" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Crop image
+      </h3>
+
+      <button class="btn-reset graph-modal-close btn-cropp" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="graph-modal-cropp">
+
+      <img id='previewProfilePicture'>
+
+    </div>
+
+    <div class="graph-modal-btns">
+      <button class="graph-modal-close graph-modal-btn btn btn-default btn-cropp" type="button">
+        Cancel
+      </button>
+
+      <button class="graph-modal-btn graph-modal-close btn btn-background btn-cropp" id='done' type="button">
+        Crop
+      </button>
+    </div>
+  </form>
+</div>
+
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="cropp-avatar">
+
+  <form class="graph-modal__content delete" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Crop avatar
+      </h3>
+
+      <button class="btn-reset graph-modal-close btn-cropp" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="graph-modal-cropp">
+
+      <img id='previewProfileAvatar'>
+
+    </div>
+
+    <div class="graph-modal-btns">
+      <button class="graph-modal-close graph-modal-btn btn btn-default btn-cropp" type="button">
+        Cancel
+      </button>
+
+      <button class="graph-modal-btn graph-modal-close btn btn-background btn-cropp" id='done-avatar' type="button">
+        Crop
+      </button>
+    </div>
+  </form>
 </div>
 
 </div>

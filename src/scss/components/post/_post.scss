@@ -15,9 +15,22 @@
     height: 4px;
     max-width: 18px;
 
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      mask-image: url("../img/sprite.svg#post-more");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      width: 15px;
+      height: 4px;
+      background-color: var(--color-gray-300);
+    }
+
     &-open {
-      .post-more {
-        fill: var(--color-dark-900);
+      &::before {
+        background-color: var(--color-dark-900);
       }
     }
   }

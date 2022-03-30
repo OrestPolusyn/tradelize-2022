@@ -17,6 +17,29 @@
     border-radius: var(--radius-main);
     padding: 0;
     max-width: 395px;
+
+    &--cropp {
+      max-width: 920px;
+
+      .graph-modal-top {
+        border-bottom-color: transparent;
+      }
+
+      .graph-modal-btns {
+        justify-content: flex-end;
+      }
+
+      .graph-modal-btn {
+        margin: 0;
+        max-width: 103px;
+        font-size: var(--size-sl);
+      }
+
+      .graph-modal-btn.btn {
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+    }
   }
 
   &-close:not(.btn) {
@@ -39,6 +62,29 @@
 
     border-bottom: 1px solid var(--color-gray-300);
     padding: 22px 30px;
+  }
+
+  &-cropp {
+    padding: 0 30px;
+
+    .cr-slider {
+      width: 100%;
+      max-width: 360px;
+
+      &::before {
+        content: "-";
+        margin-right: 20px;
+        font-size: 20px;
+        color: var(--color-gray-400);
+      }
+
+      &::after {
+        content: "+";
+        margin-left: 20px;
+        font-size: 20px;
+        color: var(--color-gray-400);
+      }
+    }
   }
 
   &-inner {

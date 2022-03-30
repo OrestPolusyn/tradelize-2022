@@ -8,7 +8,7 @@
 
     margin-bottom: clamp(0.5em, rem(25), 30px);
     border-bottom: 1px solid var(--color-gray-300);
-    padding-bottom: clamp(0.5em, rem(35), 40px);
+    padding-bottom: clamp(0.5em, rem(30), 40px);
 
     .link-item-link {
       display: none;
@@ -96,6 +96,18 @@
       }
     }
 
+    &-cost {
+      font-weight: 400;
+      font-size: var(--size-m);
+      line-height: 1.7;
+      color: var(--color-gray-800);
+
+      span {
+        font-weight: 500;
+        color: var(--color-dark-900);
+      }
+    }
+
     .btn {
       width: 103px;
 
@@ -121,10 +133,10 @@
 
     &-inner {
       width: 100%;
-      max-width: 550px;
+      max-width: 553px;
 
       &:first-child {
-        margin-right: clamp(1.2em, rem(78), 90px);
+        margin-right: clamp(1.2em, rem(80), 90px);
 
         @include for-width(-mobile-l) {
           margin-right: 0;

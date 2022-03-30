@@ -37,10 +37,6 @@ var modal = new _graphModal["default"](); // Реализация табов
 // Подключение плагина кастом-скролла
 // import 'simplebar';
 // Подключение плагина для позиционирования тултипов
-// import { createPopper, right} from '@popperjs/core';
-// createPopper(el, tooltip, {
-//   placement: 'right'
-// });
 // Подключение свайпера
 // import Swiper, { Navigation, Pagination } from 'swiper';
 // Swiper.use([Navigation, Pagination]);

@@ -84,7 +84,7 @@
 
 .main {
   position: relative;
-  padding: clamp(20px, rem(40), 40px) 0;
+  padding: clamp(20px, rem(37), 40px) 0;
 
   .container {
     @include for-width(-mobile-sl) {
@@ -101,11 +101,11 @@
 .inner {
   position: relative;
   padding: clamp(0.5em, rem(40), 40px);
-  padding-bottom: clamp(0.5em, rem(28), 40px);
+  padding-bottom: clamp(0.5em, rem(32), 40px);
   background-color: var(--color-white);
 
   &:not(:last-child) {
-    margin-bottom: clamp(30px, rem(40), 50px);
+    margin-bottom: clamp(25px, rem(30), 50px);
   }
 
   @include for-width(-mobile-l) {
@@ -217,4 +217,15 @@ table {
     display: block;
     margin-right: 20px;
   }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

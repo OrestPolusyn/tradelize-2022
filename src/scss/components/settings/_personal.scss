@@ -15,6 +15,11 @@
 
   &-avatar {
     margin-right: clamp(20px, rem(30), 40px);
+
+    .avatar-img {
+      height: 100%;
+      @include adaptive_size("width", 70, 50);
+    }
   }
 
   &-title {

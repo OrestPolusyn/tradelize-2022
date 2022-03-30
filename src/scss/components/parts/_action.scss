@@ -14,6 +14,10 @@
       }
     }
 
+    .btn {
+      @include adaptive_size("height", 33, 30);
+    }
+
     &.avatar {
       @include for-width(-mobile-l) {
         display: none;
@@ -22,8 +26,8 @@
   }
 
   &-notifications {
-    @include adaptive_size("width", 35, 25);
-    @include adaptive_size("height", 35, 25);
+    @include adaptive_size("width", 33, 30);
+    @include adaptive_size("height", 33, 30);
     @include flex-all-center;
 
     position: relative;

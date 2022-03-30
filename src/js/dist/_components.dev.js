@@ -39,3 +39,7 @@ require("./components/_headerDropdown");
 require("./components/_notificationBtn");
 
 require("./components/_notificationItem");
+
+require("./components/_offerFree");
+
+require("./components/_avatarSettingsCropp");
