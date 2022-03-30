@@ -819,7 +819,7 @@ function ImgUpload() {
   var imgArray = [];
   $(".publish-inputfile").each(function () {
     $(this).on("change", function (e) {
-      imgWrap = $(this).closest(".publish-action").find(".publish-img-wrap");
+      imgWrap = $(this).closest(".publish-box").find(".publish-img-wrap");
       var maxLength = $(this).attr("data-max-length");
       var files = e.target.files;
       var filesArr = Array.prototype.slice.call(files);

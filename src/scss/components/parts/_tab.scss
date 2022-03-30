@@ -14,8 +14,11 @@
     font-size: var(--size-m);
     line-height: 1.8;
     text-align: center;
+    color: var(--color-gray-400);
 
     &-active {
+      font-weight: 500;
+      color: var(--color-dark);
       background-color: var(--color-white);
     }
 

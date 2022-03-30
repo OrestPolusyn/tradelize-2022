@@ -20,6 +20,7 @@
     "apexcharts": "^3.33.2",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.26.14",
+    "croppie": "^2.6.5",
     "del": "^6.0.0",
     "editorconfig-checker": "^4.0.1",
     "gulp": "^4.0.2",
