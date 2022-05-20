@@ -1,0 +1,68 @@
+<h1 class="title-sing">
+  Create account in <span>Tradelize</span>
+</h1>
+
+<form class="form" action="#">
+
+  <div class="form-box">
+    <label class="form-label">
+      Nickname
+      <input class="form-input input" type="text" name="nickname" placeholder="Enter your nickname">
+    </label>
+  </div>
+
+  <div class="form-box">
+    <label class="form-label">
+      Email
+      <input class="form-input input" type="email" name="confirm password" placeholder="Enter your email">
+    </label>
+  </div>
+
+  <div class="form-box">
+    <label class="form-label">
+      Password
+      <input class="form-input input" type="password" name="password" placeholder="Enter your password here">
+    </label>
+    <button class="form-pass" type="button" aria-label="Show/hide password">
+    </button>
+  </div>
+
+  <div class="form-box">
+    <label class="form-label">
+      Confirm password
+      <input class="form-input input" type="password" name="confirm password" placeholder="Confirm your password here">
+    </label>
+    <button class="form-pass" type="button" aria-label="Show/hide password">
+    </button>
+  </div>
+
+  <div class="form-box">
+    <label class="custom-checkbox">
+      <input type="checkbox" class="custom-checkbox__field" name="sing-check">
+      <span class="custom-checkbox__content">
+        Accept the <a class="sing-link" href="#">terms of use</a>
+      </span>
+    </label>
+  </div>
+  <button class="btn btn-background" type="submit">Sign up</button>
+</form>
+
+<a class="sing-text sing-forgot" href="#">
+  Forgor password?
+</a>
+
+<p class="sing-text sing-register">
+  Have an account?
+  <a class="sing-link" href="#">
+    Sign in
+  </a>
+</p>
+
+@include('_social-list.html')
+
+<p class="sing-text sing-mail">
+  If you have some problems, please contact us:
+  <a class="sing-link" href="#">
+    support@tradelize.com
+  </a>
+</p>

@@ -1,0 +1,135 @@
+.flow-api {
+  @include flex-all-sb;
+
+  padding-right: 37px;
+
+  &-info {
+    @include flex-v-center;
+
+    margin-bottom: 45px;
+  }
+
+  &-play {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    fill: transparent;
+  }
+
+  &-form {
+    margin-right: auto;
+    width: 100%;
+    max-width: 590px;
+
+    &-inner {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 30px;
+      gap: 30px 48px;
+
+      +.form-box {
+        margin-bottom: 40px;
+      }
+
+      @include for-width(-desktop-s) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-input-lock {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 13px;
+        bottom: 13px;
+        mask-image: url("../img/sprite.svg#lock");
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: 10px 13px;
+        width: 10px;
+        height: 13px;
+        background-color: var(--color-gray-400);
+      }
+    }
+
+    .form-input {
+      background-color: var(--color-white);
+    }
+
+    .btn {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+    }
+
+    @include for-width(-tablet) {
+      margin: 0 auto;
+    }
+  }
+
+  &-content.content {
+    padding-top: 35px;
+    width: 100%;
+    max-width: 310px;
+    font-size: 12px;
+    line-height: 2;
+    color: var(--color-white);
+
+    p {
+      &:first-of-type {
+        margin-bottom: 25px;
+      }
+
+      &:last-of-type {
+        font-size: 10px;
+      }
+    }
+
+    .flow-register-list {
+      margin-bottom: 25px;
+    }
+
+    @include for-width(-tablet) {
+      display: none;
+    }
+  }
+
+  .flow-content-picture {
+    margin-right: 40px;
+    margin-left: 20px;
+    padding: 60px 0 125px;
+    text-align: center;
+    transform: translateY(30px);
+
+    .content {
+      display: block;
+      margin-bottom: 60px;
+    }
+
+    @include for-width(-desktop-med) {
+      padding: 80px 10px;
+      max-width: 330px;
+      transform: translateY(15px);
+    }
+
+    @include for-width(-tablet) {
+      display: none;
+    }
+  }
+
+  .title {
+    margin-bottom: 30px;
+    padding: 0 !important;
+    font-size: 34px;
+  }
+
+  @include for-width(-desktop-med) {
+    padding: 0;
+  }
+
+  @include for-width(-mobile-l) {
+    padding: 0 24px;
+  }
+}

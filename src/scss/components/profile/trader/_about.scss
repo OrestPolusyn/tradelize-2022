@@ -23,6 +23,10 @@
       flex-wrap: wrap;
     }
 
+    @include for-width(-mobile-l) {
+      justify-content: flex-end;
+    }
+
     @include for-width(-mobile-md) {
       align-items: flex-start;
     }
@@ -79,24 +83,18 @@
     &-item {
       &:not(:last-child) {
         margin-right: 15px;
-
-        @include for-width(-mobile-md) {
-          margin-right: 0;
-          margin-bottom: 10px;
-        }
-
-        @include for-width(-mobile-sl) {
-          margin-right: 15px;
-          margin-bottom: 0;
-        }
       }
 
-      @include for-width(-mobile-sl) {
+      @include for-width(-mobile-md) {
         width: 100%;
       }
     }
 
     &-cost {
+      align-self: flex-start;
+      margin-right: 15px;
+      margin-left: 15px;
+      padding-top: 5px;
       font-weight: 400;
       font-size: var(--size-m);
       line-height: 1.7;
@@ -109,6 +107,8 @@
     }
 
     .btn {
+      padding-right: 0;
+      padding-left: 0;
       width: 103px;
 
       @include for-width(-mobile-l) {
@@ -117,13 +117,7 @@
     }
 
     @include for-width(-mobile-md) {
-      display: block;
-    }
-
-    @include for-width(-mobile-sl) {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 30px;
+      margin-top: 10px;
       width: 100%;
     }
   }

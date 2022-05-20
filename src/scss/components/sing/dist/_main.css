@@ -1,0 +1,7 @@
+.sing-background {
+  background-color: var(--color-main);
+}
+.sing-img {
+  width: 100%;
+  max-width: 556px;
+}

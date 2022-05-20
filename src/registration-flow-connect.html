@@ -1,0 +1,143 @@
+@include('html/_head.html',{
+pageTitle:'Registration flow'
+})
+
+<body class="page-body">
+  <div class="site-container site-container-flow">
+    <main class="main flow">
+
+      <div class="container container-flow container-flow-slider">
+
+        <a class="logo logo-flow" href="#">
+          <img class="logo-img" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
+        </a>
+
+        <div class="flow-content flow-sliders">
+          <div class="flow-content-box flow-content-slider">
+            <h1 class="title title-flow title-slider">
+              Please choose one of our
+              preffered copytrading partners
+            </h1>
+
+            <p class="content">
+              Choose the exchange where you keep your funds. We are constantly working to add more exchanges. You can add multiple exchanges from your portfolio page.
+            </p>
+
+          </div>
+
+          <div class="flow-slider">
+
+            <ul class="flow-slider-list swiper-wrapper">
+              <li class="flow-slider-item flow-slider-item-active swiper-slide">
+                <div class="flow-slider-img">
+                  <img class="flow-slider-icon" src="img/exchanges/bitmex.svg" alt="BitMEX" width="50" height="50">
+                </div>
+                <h2 class="title">BitMEX</h2>
+              </li>
+
+              <li class="flow-slider-item swiper-slide">
+                <div class="flow-slider-img">
+                  <img class="flow-slider-icon" src="img/exchanges/binance.svg" alt="Binance" width="50" height="50">
+                </div>
+                <h2 class="title">Binance</h2>
+              </li>
+
+              <li class="flow-slider-item swiper-slide">
+                <div class="flow-slider-img">
+                  <img class="flow-slider-icon" src="img/exchanges/bybit.svg" alt="Bybit" width="50" height="50">
+                </div>
+                <h2 class="title">Bybit</h2>
+              </li>
+            </ul>
+
+            <p class="content flow-slider-tooltip">
+              <span class="api-tooltip" data-tooltip-text="I couldn't find my exchange">
+                <img class="api-tooltip-img" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+              </span>
+              I couldn’t find my exchange
+            </p>
+          </div>
+
+          <div class="flow-slider-contents">
+            <ul class="flow-slider-content swiper-wrapper">
+              <li class="flow-slider-content swiper-slide">
+                <h2 class="title">
+                  BitMEX
+                </h2>
+                <p class="content">
+                  BitMEX is a P2P crypto-products trading platform. BitMEX and the mobile apps issued under BMEX
+                  are wholly owned and operated by HDR Global Trading Limited, a Republic of Seychelles incorporated entity or its relevant authorised affiliates.
+                </p>
+
+                <button class="flow-slider-btn btn btn-white" type="button">
+                  Next
+                </button>
+
+                <button class="flow-slider-btn btn btn-white" type="button" data-graph-path="flow-register">
+                  Registration
+                </button>
+
+              </li>
+
+              <li class="flow-slider-content swiper-slide">
+                <h2 class="title">
+                  Binance
+                </h2>
+                <p class="content">
+                  BitMEX is a P2P crypto-products trading platform. BitMEX and the mobile apps issued under BMEX
+                  are wholly owned and operated by HDR Global Trading Limited, a Republic of Seychelles incorporated entity or its relevant authorised affiliates.
+                </p>
+
+                <button class="flow-slider-btn btn btn-white" type="button">
+                  Next
+                </button>
+
+                <button class="flow-slider-btn btn btn-white" type="button" data-graph-path="flow-register">
+                  Registration
+                </button>
+              </li>
+
+              <li class="flow-slider-content swiper-slide">
+                <h2 class="title">
+                  Bybit
+                </h2>
+                <p class="content">
+                  BitMEX is a P2P crypto-products trading platform. BitMEX and the mobile apps issued under BMEX
+                  are wholly owned and operated by HDR Global Trading Limited, a Republic of Seychelles incorporated entity or its relevant authorised affiliates.
+                </p>
+
+                <button class="flow-slider-btn btn btn-white" type="button">
+                  Next
+                </button>
+
+                <button class="flow-slider-btn btn btn-white" type="button" data-graph-path="flow-register">
+                  Registration
+                </button>
+
+              </li>
+            </ul>
+          </div>
+
+          <ul class="flow-slider-navs">
+            <li class="flow-slider-nav">
+              <button class="flow-slider-btn flow-slider-prev" type="button">
+                <svg class="flow-slider-btn-icon">
+                  <use xlink:href="img/sprite.svg#slider-arrow"></use>
+                </svg>
+              </button>
+            </li>
+
+            <li class="flow-slider-nav">
+              <button class="flow-slider-btn flow-slider-next" type="button">
+                <svg class="flow-slider-btn-icon">
+                  <use xlink:href="img/sprite.svg#slider-arrow"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

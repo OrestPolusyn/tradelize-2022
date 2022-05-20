@@ -36,6 +36,19 @@
   color: var(--color-red);
   background-color: var(--color-gray-100);
 }
+.btn-white {
+  border-color: var(--color-white);
+  color: var(--color-main);
+  background-color: var(--color-white);
+}
+.btn-reverse {
+  border-color: var(--color-white);
+  color: var(--color-white);
+  background-color: var(--color-main);
+}
+.btn-open.post-btn::before {
+  background-color: var(--color-dark-900);
+}
 .btn:disabled {
   border-color: var(--color-gray-300);
   background-color: var(--color-gray-300);

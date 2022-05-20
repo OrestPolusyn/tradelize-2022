@@ -1,20 +1,28 @@
 import vars from '../_vars'
 
-if (vars?.publishDropdownBtn) {
-  vars?.publishDropdownBtn.addEventListener('click', () => {
-    vars?.publishDropdown.classList.toggle('publish-dropdown-open')
+const offersBtn = [...vars.publishDropdownBtn]
+
+if (offersBtn.length > 0) {
+
+  offersBtn.forEach(element => {
+    element.addEventListener('click', (e) => {
+
+      e.currentTarget.parentNode.classList.toggle('publish-dropdown-open')
+    })
   })
 
   $('.publish-dropdown-radio')
     .find('input')
-    .change(function () {
+    .change(function (e) {
       const dropdown = $(this).closest('.publish-dropdown')
       const radioname = $(this).attr('name')
-      const checked = 'input[name=' + radioname + ']:checked'
 
-      vars.publishDropdown.classList.remove('publish-dropdown-open')
+      vars.publishDropdown.forEach(element => {
+        element.classList.remove('publish-dropdown-open')
+      })
 
-      const checkedtext = $(checked).closest('.publish-dropdown-radio').text()
-      dropdown.find('button').text(checkedtext)
+      const checkedtext = $(this).closest('.publish-dropdown-radio').text().trim()
+      dropdown.find('.offer-dropdown-input')[0].value = checkedtext
+
     })
 }

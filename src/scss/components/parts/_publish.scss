@@ -6,11 +6,6 @@
       opacity: 1;
       visibility: visible;
       transition: all 0.1s ease-in-out;
-
-      @include for-width(-mobile-l) {
-        display: block;
-        padding-top: 0;
-      }
     }
   }
 
@@ -137,7 +132,11 @@
     max-height: 0;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.1s ease-in-out;
+
+    @include for-width(-mobile-l) {
+      display: block;
+      padding-top: 0;
+    }
   }
 
   &-btns {
@@ -152,6 +151,7 @@
 
     .btn-background {
       &:disabled {
+        border-color: var(--color-main);
         background-color: var(--color-main);
         opacity: 0.4;
       }

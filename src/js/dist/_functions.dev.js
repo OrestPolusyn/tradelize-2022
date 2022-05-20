@@ -4,10 +4,10 @@ var _burger = require("./functions/burger");
 
 var _graphModal = _interopRequireDefault(require("graph-modal"));
 
+require("simplebar");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-// Данный файл - лишь собрание подключений готовых компонентов.
-// Рекомендуется создавать отдельный файл в папке components и подключать все там
 // Определение операционной системы на мобильных
 // import { mobileCheck } from "./functions/mobile-check";
 // console.log(mobileCheck())
@@ -35,14 +35,6 @@ var modal = new _graphModal["default"](); // Реализация табов
 // Получение высоты шапки сайта (не забудьте вызвать функцию)
 // import { getHeaderHeight } from './functions/header-height';
 // Подключение плагина кастом-скролла
-// import 'simplebar';
-// Подключение плагина для позиционирования тултипов
-// Подключение свайпера
-// import Swiper, { Navigation, Pagination } from 'swiper';
-// Swiper.use([Navigation, Pagination]);
-// const swiper = new Swiper(el, {
-//   slidesPerView: 'auto',
-// });
 // Подключение параллакса блоков при скролле
 // import Rellax from 'rellax';
 // const rellax = new Rellax('.rellax');

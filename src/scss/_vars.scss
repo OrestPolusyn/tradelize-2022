@@ -2,19 +2,27 @@
   --font-family: "Roboto";
   --content-width: 1280px;
   --content-feed-width: 960px;
+  --content-flow-width: 1480px;
+  --content-flow-slider: 1570px;
   --container-offset: 20px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
   --container-feed-width: calc(var(--content-feed-width) + (var(--container-offset) * 2));
+  --container-flow-width: calc(var(--content-flow-width) + (var(--container-offset) * 2));
+  --container-flow-slider: calc(var(--content-flow-slider) + (var(--container-offset) * 2));
 
   // colors
+  --color-dark-theme: #2c2c34;
   --color-white: #fff;
   --color-black: #000;
+  --color-slider: #0546ee;
   --color-dark: #333248;
+  --color-sing: #42424e;
   --color-dark-900: #272734;
   --color-main: #406aff;
   --color-hover: #6083ff;
   --color-secondary: #3a59c7;
   --color-avatar: #adb6d7;
+  --color-purchase: #5c5c6a;
   --color-gray-50: #f8f8f8;
   --color-gray-100: #f3f5fa;
   --color-gray-200: #e6e7f2;
@@ -64,7 +72,8 @@
   --color-not-text: #39597d;
   --color-trash: #9a4c4c;
   --color-text-success: #318a46;
-  --color-text-alert: #a70f0f;
+  --color-error: #f1caca;
+  --color-text-error: #a70f0f;
 
   // radius
   --radius-main: 3px;

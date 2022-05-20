@@ -3,10 +3,13 @@
 
   position: relative;
   overflow: hidden;
+  margin-top: clamp(20px, rem(30), 40px);
   border-radius: var(--radius-main);
 
   &-input {
-    padding: 12px 20px;
+    overflow-y: auto;
+    padding: 12px 50px 12px 20px;
+    max-height: 100px;
   }
 
   &-btn {
@@ -17,6 +20,12 @@
     top: 50%;
     padding: 0;
     transform: translateY(-50%);
+
+    &.send {
+      .comment-icon {
+        fill: var(--color-main);
+      }
+    }
   }
 
   &-icon {

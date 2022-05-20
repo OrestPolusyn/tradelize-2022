@@ -1,51 +1,27 @@
 "use strict";
 
-var moreNotifBtn = Array.from(document.querySelectorAll('.notifications-content-more-btn'));
-var notItems = Array.from(document.querySelectorAll('.notifications-content-item'));
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
-if (moreNotifBtn.length > 0) {
-  moreNotifBtn.forEach(function (element) {
-    element.addEventListener('click', function (e) {
-      var currentBtn = e.currentTarget;
-      document.querySelectorAll('.notifications-more-dropdown').forEach(function (item) {
-        item.classList.remove('notifications-more-dropdown-show');
-      });
-      currentBtn.nextElementSibling.classList.add('notifications-more-dropdown-show');
-    });
-  });
-}
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+var notItems = _toConsumableArray(document.querySelectorAll('.table-more'));
 
 if (notItems.length > 0) {
   notItems.forEach(function (element) {
     var popcorn = element.querySelector('.popcorn');
-    var tooltip = element.querySelector('.popdown');
-
-    if (popcorn && tooltip) {
-      Popper.createPopper(popcorn, tooltip, {
-        placement: 'auto-start',
-        modifiers: {
-          flip: {
-            boundariesElement: 'scrollParent',
-            flipVariations: true
-          },
-          name: 'offset',
-          options: {
-            offset: [-20, 10]
-          },
-          preventOverflow: {
-            boundariesElement: 'scrollParent',
-            escapeWithReference: true
-          }
+    var tooltip = element.querySelector('.poptip');
+    if (popcorn && tooltip) createPopper(popcorn, tooltip, {
+      placement: 'left-start',
+      modifiers: [{
+        name: 'offset',
+        options: {
+          offset: [10, 0]
         }
-      });
-
-      var scrollToCenter = function scrollToCenter() {
-        var scrollParent = document.querySelector('.notifications-content');
-        scrollParent.scrollTop = popcorn.offsetTop - scrollParent.clientHeight / 2;
-        scrollParent.scrollLeft = popcorn.offsetLeft + popcorn.clientWidth / 2 - scrollParent.clientWidth / 2;
-      };
-
-      scrollToCenter();
-    }
+      }]
+    });
   });
 }

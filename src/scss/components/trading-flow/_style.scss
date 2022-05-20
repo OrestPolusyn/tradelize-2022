@@ -251,7 +251,8 @@
   }
 
   &-label {
-    display: block;
+    @include flex-v-center;
+
     margin-bottom: 12px;
     font-size: var(--size-m);
   }
@@ -260,7 +261,14 @@
     padding: 12px 20px;
 
     &:first-of-type {
-      margin-bottom: rem(30);
+      margin-bottom: 10px;
+    }
+
+    &-message {
+      &:first-of-type {
+        display: block;
+        margin-bottom: rem(40);
+      }
     }
   }
 
@@ -532,6 +540,36 @@
 
     &-btc {
       width: 15%;
+    }
+  }
+
+  &-balance {
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: var(--size-lg);
+    line-height: 1.65;
+
+    span {
+      font-weight: 500;
+      color: var(--color-main);
+    }
+  }
+
+  &-settings {
+    margin-bottom: rem(120);
+  }
+
+  &-setting {
+    @include flex-v-center;
+  }
+
+  &-calc {
+    margin-right: 15px;
+    width: 100%;
+    max-width: 402px;
+
+    +span {
+      transform: translateY(-19px);
     }
   }
 }

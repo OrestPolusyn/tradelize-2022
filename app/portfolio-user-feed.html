@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#000000">
   <title>Tradelize | Portfolio — User Feed</title>
@@ -22,6 +22,17 @@
   <link rel="stylesheet" href="css/main.css">
   <script defer src="js/vendor.js"></script>
   <script defer src="js/main.js"></script>
+
+  <noscript>
+    <style>
+      /**
+      * Reinstate scrolling for non-JS clients
+      */
+      .simplebar-content-wrapper {
+        overflow: auto;
+      }
+    </style>
+  </noscript>
 </head>
 
 <body class="page-body">
@@ -34,7 +45,7 @@
   </button>
 
   <a class="logo" href="#">
-    <img class="logo-img" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
+    <img class="logo-img logo-img-light" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
   </a>
 
   <nav class="nav" title="Main menu web portal" data-menu>
@@ -86,36 +97,61 @@
           </li>
         </ul>
 
-        <button class="nav-sing-link nav-sing-logout" type="button">
+        <a class="nav-sing-link nav-sing-logout" href="#">
           Log out
-        </button>
+        </a>
       </li>
 
       <li class="nav-item nav-item-search">
-        <label for="search" class="sr-only">
-          Search on portal by traders…
-        </label>
+        <form class="nav-search" action="#">
+          <label for="search" class="sr-only">
+            Search on portal by traders…
+          </label>
 
-        <input class="input" type="search" id="search" name="search-field" placeholder="Search by traders...">
+          <input class="nav-search-input input" type="search" id="search" name="search-field" placeholder="Search by traders...">
+          <button class="nav-search-clear" aria-label="Close window" type="reset">
+          </button>
+        </form>
       </li>
     </ul>
   </div>
 </nav>
 
   <ul class="action">
+
+    <li class="action-item">
+      <button class="btn btn-background" data-graph-path="wallet" type="button">
+        wallet
+      </button>
+    </li>
+
+    <li class="action-item action-search-mobile">
+      <button class="btn btn-reset btn-search" type="button" aria-label="Mobile search open">
+      </button>
+    </li>
+
+    <!-- <li class="action-item">
+      <button class="btn btn-background" data-graph-path="wallet-info" type="button">
+        0x1k...067c
+      </button>
+    </li> -->
+
     <li class="action-item action-item-notifications">
-      <a class="action-link action-notifications" href="#" aria-label="Notifications">
+      <a class="action-link action-notifications" href="notifications.html" aria-label="Notifications">
         <img class="action-notifications-icon" loading="lazy" src="img/bell.svg" width="13" height="15" alt="Profile avatar" />
       </a>
     </li>
 
-    <li class="action-item avatar">
-      <button class="action-dropdown avatar avatar-small" data-color="4">
-        <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
-        <span class="avatar-text">
-          TM
-        </span>
-      </button>
+    <li class="action-item ">
+      <div class="action-avatar">
+        <button class="action-dropdown avatar avatar-small" data-color="4">
+          <!-- <img class="avatar-img avatar-header" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
+          <span class="avatar-header">
+            TM
+          </span>
+        </button>
+
+      </div>
 
       <ul class="dropdown">
         <li class="dropdown-item dropdown-item-name">
@@ -147,13 +183,35 @@
         </li>
 
         <li class="dropdown-item dropdown-item-logout">
-          <button class="dropdown-btn" type="button">
+          <a class="dropdown-btn" href="#">
             Log Out
-          </button>
+          </a>
         </li>
       </ul>
     </li>
+
+    <!-- <li class="action-item">
+      <a class="btn btn-reset" href="#">
+        Sing In
+      </a>
+    </li>
+
+    <li class="action-item">
+      <a class="btn btn-background" href="#">
+        Sing up
+      </a>
+    </li> -->
   </ul>
+
+  <form class="nav-search-mobile" action="#">
+    <label for="search" class="sr-only">
+      Search on portal by traders…
+    </label>
+
+    <input class="nav-search-input input" type="search" id="search" name="search-field" placeholder="Search by traders...">
+    <button class="nav-search-clear" aria-label="Close window" type="reset">
+    </button>
+  </form>
 </header>
 
     <main class="main">
@@ -175,7 +233,7 @@
 
 <div class="about-avatar avatar avatar-big" data-color="4">
   <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
-  <span class="avatar-text">
+  <span class="avatar-header">
     TM
   </span>
 </div>
@@ -234,7 +292,7 @@
           <div class="switcher">
   <input class="switcher-radio sr-only" type="checkbox" name="switcher" id="switch-trades">
   <label class="switcher-label" for="switch-trades">
-    Show trades
+    All trades
   </label>
 </div>
 
@@ -252,7 +310,7 @@
 
 <div class="trade-avatar avatar avatar-mid" data-color="4">
   <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
-  <span class="avatar-text">
+  <span class="avatar-header">
     TM
   </span>
 </div>
@@ -261,10 +319,6 @@
         <h3 class="name-title title-third">
           Nathan Mckinney
         </h3>
-
-        <time class="name-date" datetime="2021-09-30">
-          30.09.2021
-        </time>
       </div>
     </div>
 
@@ -279,7 +333,7 @@
 
       <li class="trade-item trade-company">
         <svg class="trade-icon">
-          <use xlink:href="img/sprite.svg#binance"></use>
+          <use xlink:href="img/sprite.svg#binance-gray"></use>
         </svg>
 
         <span class="trade-item-exchange">
@@ -348,7 +402,7 @@
 
 <div class=" avatar avatar-mid" data-color="4">
   <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
-  <span class="avatar-text">
+  <span class="avatar-header">
     TM
   </span>
 </div>
@@ -364,13 +418,13 @@
       </div>
     </div>
 
-    <button class="post-btn btn" type="button">
+    <button class="post-btn btn-dropdown btn" type="button">
       <span class="sr-only">
         Post more
       </span>
     </button>
 
-    <ul class="post-dropdown">
+    <ul class="post-dropdown dropdown-list">
       <li class="post-dropdown-item">
         <button class="post-dropdown-btn" data-graph-path="complain">
           Complain
@@ -420,17 +474,540 @@
       </li>
 
       <li class="post-actions-item">
-        <button class="post-actions-btn" type="button">
+        <button class="post-actions-btn post-comments" type="button">
           <svg class="post-actions-icon post-actions-comment">
             <use xlink:href="img/sprite.svg#comment"></use>
           </svg>
 
-          <span>
+          <span class="post-comments-hide">
+            hide all
+          </span>
+
+          <span class="post-comments-numbers">
             6
           </span>
 
           <span>
             comments
+          </span>
+        </button>
+      </li>
+    </ul>
+
+    <ul class="post-reply-list">
+      <li class="post-reply-item">
+  <article class="post-reply" data-reply="@Nathan Mckinney">
+    <div class="post-header">
+      <div class="link-item">
+
+        <a class="link-item-link" href="#">
+  <span class="sr-only">
+    Link
+  </span>
+</a>
+
+<div class=" avatar avatar-mid" data-color="4">
+  <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
+  <span class="avatar-header">
+    TM
+  </span>
+</div>
+
+        <div class="name">
+          <h3 class="name-title title-third">
+            Nathan Mckinney
+          </h3>
+
+          <time class="name-date" datetime="2021-09-30">
+            30.09.2021
+          </time>
+        </div>
+      </div>
+
+      <button class="post-btn btn-dropdown btn" type="button">
+        <span class="sr-only">
+          Post more
+        </span>
+      </button>
+
+      <ul class="post-dropdown dropdown-list">
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn" data-graph-path="complain">
+            Complain
+          </button>
+        </li>
+
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn" data-graph-path="">
+            Share
+          </button>
+        </li>
+
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn post-dropdown-delete" data-graph-path="delete-post">
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="post-text">
+      <p>
+        Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970 and then the next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000. Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+      </p>
+
+      <p>
+        Next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000.
+        <br>
+        Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+      </p>
+
+      <ul class="post-actions">
+        <li class="post-actions-item">
+          <button class="post-actions-btn @liked" type="button">
+            <svg class="post-actions-icon post-actions-like">
+              <use xlink:href="img/sprite.svg#like"></use>
+            </svg>
+
+            <span>
+              57
+            </span>
+
+            <span>
+              like
+            </span>
+          </button>
+        </li>
+
+        <li class="post-actions-item">
+          <button class="post-actions-btn btn-reply" type="button">
+            <svg class="post-actions-icon post-actions-comment">
+              <use xlink:href="img/sprite.svg#reply"></use>
+            </svg>
+
+            <span>
+              reply
+            </span>
+          </button>
+        </li>
+
+        <li class="post-actions-item">
+          <button class="post-actions-btn post-reply-visible" type="button">
+            <svg class="post-actions-icon post-actions-comment">
+              <use xlink:href="img/sprite.svg#reply-show"></use>
+            </svg>
+
+            <span class="post-reply-show">
+              Show
+            </span>
+
+            <span class="post-reply-hide">
+              Hide all
+            </span>
+
+            <span class="post-reply-numbers">
+              10
+            </span>
+
+            <span>
+              replies
+            </span>
+          </button>
+        </li>
+      </ul>
+  </article>
+</li>
+
+      <ul class="post-reply-items">
+        <li class="post-reply-item">
+  <article class="post-reply" data-reply="@Nathan Mckinney">
+    <div class="post-header">
+      <div class="link-item">
+
+        <a class="link-item-link" href="#">
+  <span class="sr-only">
+    Link
+  </span>
+</a>
+
+<div class=" avatar avatar-mid" data-color="4">
+  <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
+  <span class="avatar-header">
+    TM
+  </span>
+</div>
+
+        <div class="name">
+          <h3 class="name-title title-third">
+            Nathan Mckinney
+          </h3>
+
+          <time class="name-date" datetime="2021-09-30">
+            30.09.2021
+          </time>
+        </div>
+      </div>
+
+      <button class="post-btn btn-dropdown btn" type="button">
+        <span class="sr-only">
+          Post more
+        </span>
+      </button>
+
+      <ul class="post-dropdown dropdown-list">
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn" data-graph-path="complain">
+            Complain
+          </button>
+        </li>
+
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn" data-graph-path="">
+            Share
+          </button>
+        </li>
+
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn post-dropdown-delete" data-graph-path="delete-post">
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="post-text">
+      <p>
+        Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970 and then the next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000. Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+      </p>
+
+      <p>
+        Next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000.
+        <br>
+        Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+      </p>
+
+      <ul class="post-actions">
+        <li class="post-actions-item">
+          <button class="post-actions-btn @liked" type="button">
+            <svg class="post-actions-icon post-actions-like">
+              <use xlink:href="img/sprite.svg#like"></use>
+            </svg>
+
+            <span>
+              57
+            </span>
+
+            <span>
+              like
+            </span>
+          </button>
+        </li>
+
+        <li class="post-actions-item">
+          <button class="post-actions-btn btn-reply" type="button">
+            <svg class="post-actions-icon post-actions-comment">
+              <use xlink:href="img/sprite.svg#reply"></use>
+            </svg>
+
+            <span>
+              reply
+            </span>
+          </button>
+        </li>
+
+        <li class="post-actions-item">
+          <button class="post-actions-btn post-reply-visible" type="button">
+            <svg class="post-actions-icon post-actions-comment">
+              <use xlink:href="img/sprite.svg#reply-show"></use>
+            </svg>
+
+            <span class="post-reply-show">
+              Show
+            </span>
+
+            <span class="post-reply-hide">
+              Hide all
+            </span>
+
+            <span class="post-reply-numbers">
+              10
+            </span>
+
+            <span>
+              replies
+            </span>
+          </button>
+        </li>
+      </ul>
+  </article>
+</li>
+
+      </ul>
+
+      <li class="post-reply-item">
+  <article class="post-reply" data-reply="@Nathan Mckinney">
+    <div class="post-header">
+      <div class="link-item">
+
+        <a class="link-item-link" href="#">
+  <span class="sr-only">
+    Link
+  </span>
+</a>
+
+<div class=" avatar avatar-mid" data-color="4">
+  <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
+  <span class="avatar-header">
+    TM
+  </span>
+</div>
+
+        <div class="name">
+          <h3 class="name-title title-third">
+            Nathan Mckinney
+          </h3>
+
+          <time class="name-date" datetime="2021-09-30">
+            30.09.2021
+          </time>
+        </div>
+      </div>
+
+      <button class="post-btn btn-dropdown btn" type="button">
+        <span class="sr-only">
+          Post more
+        </span>
+      </button>
+
+      <ul class="post-dropdown dropdown-list">
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn" data-graph-path="complain">
+            Complain
+          </button>
+        </li>
+
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn" data-graph-path="">
+            Share
+          </button>
+        </li>
+
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn post-dropdown-delete" data-graph-path="delete-post">
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="post-text">
+      <p>
+        Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970 and then the next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000. Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+      </p>
+
+      <p>
+        Next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000.
+        <br>
+        Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+      </p>
+
+      <ul class="post-actions">
+        <li class="post-actions-item">
+          <button class="post-actions-btn @liked" type="button">
+            <svg class="post-actions-icon post-actions-like">
+              <use xlink:href="img/sprite.svg#like"></use>
+            </svg>
+
+            <span>
+              57
+            </span>
+
+            <span>
+              like
+            </span>
+          </button>
+        </li>
+
+        <li class="post-actions-item">
+          <button class="post-actions-btn btn-reply" type="button">
+            <svg class="post-actions-icon post-actions-comment">
+              <use xlink:href="img/sprite.svg#reply"></use>
+            </svg>
+
+            <span>
+              reply
+            </span>
+          </button>
+        </li>
+
+        <li class="post-actions-item">
+          <button class="post-actions-btn post-reply-visible" type="button">
+            <svg class="post-actions-icon post-actions-comment">
+              <use xlink:href="img/sprite.svg#reply-show"></use>
+            </svg>
+
+            <span class="post-reply-show">
+              Show
+            </span>
+
+            <span class="post-reply-hide">
+              Hide all
+            </span>
+
+            <span class="post-reply-numbers">
+              10
+            </span>
+
+            <span>
+              replies
+            </span>
+          </button>
+        </li>
+      </ul>
+  </article>
+</li>
+
+      <li class="post-reply-item">
+  <article class="post-reply" data-reply="@Nathan Mckinney">
+    <div class="post-header">
+      <div class="link-item">
+
+        <a class="link-item-link" href="#">
+  <span class="sr-only">
+    Link
+  </span>
+</a>
+
+<div class=" avatar avatar-mid" data-color="4">
+  <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
+  <span class="avatar-header">
+    TM
+  </span>
+</div>
+
+        <div class="name">
+          <h3 class="name-title title-third">
+            Nathan Mckinney
+          </h3>
+
+          <time class="name-date" datetime="2021-09-30">
+            30.09.2021
+          </time>
+        </div>
+      </div>
+
+      <button class="post-btn btn-dropdown btn" type="button">
+        <span class="sr-only">
+          Post more
+        </span>
+      </button>
+
+      <ul class="post-dropdown dropdown-list">
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn" data-graph-path="complain">
+            Complain
+          </button>
+        </li>
+
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn" data-graph-path="">
+            Share
+          </button>
+        </li>
+
+        <li class="post-dropdown-item">
+          <button class="post-dropdown-btn post-dropdown-delete" data-graph-path="delete-post">
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="post-text">
+      <p>
+        Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970 and then the next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000. Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+      </p>
+
+      <p>
+        Next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000.
+        <br>
+        Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+      </p>
+
+      <ul class="post-actions">
+        <li class="post-actions-item">
+          <button class="post-actions-btn @liked" type="button">
+            <svg class="post-actions-icon post-actions-like">
+              <use xlink:href="img/sprite.svg#like"></use>
+            </svg>
+
+            <span>
+              57
+            </span>
+
+            <span>
+              like
+            </span>
+          </button>
+        </li>
+
+        <li class="post-actions-item">
+          <button class="post-actions-btn btn-reply" type="button">
+            <svg class="post-actions-icon post-actions-comment">
+              <use xlink:href="img/sprite.svg#reply"></use>
+            </svg>
+
+            <span>
+              reply
+            </span>
+          </button>
+        </li>
+
+        <li class="post-actions-item">
+          <button class="post-actions-btn post-reply-visible" type="button">
+            <svg class="post-actions-icon post-actions-comment">
+              <use xlink:href="img/sprite.svg#reply-show"></use>
+            </svg>
+
+            <span class="post-reply-show">
+              Show
+            </span>
+
+            <span class="post-reply-hide">
+              Hide all
+            </span>
+
+            <span class="post-reply-numbers">
+              10
+            </span>
+
+            <span>
+              replies
+            </span>
+          </button>
+        </li>
+      </ul>
+  </article>
+</li>
+
+      <li class="post-reply-btns">
+        <button class="post-comment-more post-comment-hide" type="button">
+          <svg class="post-actions-icon post-actions-comment">
+            <use xlink:href="img/sprite.svg#reply-show"></use>
+          </svg>
+
+          <span>
+            Hide all comments
+          </span>
+        </button>
+
+        <button class="post-comment-show" type="button">
+          <svg class="post-actions-icon post-actions-comment">
+            <use xlink:href="img/sprite.svg#reply-show"></use>
+          </svg>
+
+          <span>
+            Show more comments
           </span>
         </button>
       </li>
@@ -469,7 +1046,7 @@
 
 <div class="trade-avatar avatar avatar-mid" data-color="4">
   <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
-  <span class="avatar-text">
+  <span class="avatar-header">
     TM
   </span>
 </div>
@@ -478,10 +1055,6 @@
         <h3 class="name-title title-third">
           Nathan Mckinney
         </h3>
-
-        <time class="name-date" datetime="2021-09-30">
-          30.09.2021
-        </time>
       </div>
     </div>
 
@@ -496,7 +1069,7 @@
 
       <li class="trade-item trade-company">
         <svg class="trade-icon">
-          <use xlink:href="img/sprite.svg#binance"></use>
+          <use xlink:href="img/sprite.svg#binance-gray"></use>
         </svg>
 
         <span class="trade-item-exchange">
@@ -564,7 +1137,7 @@
 
 <div class="trade-avatar avatar avatar-mid" data-color="4">
   <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
-  <span class="avatar-text">
+  <span class="avatar-header">
     TM
   </span>
 </div>
@@ -573,10 +1146,6 @@
         <h3 class="name-title title-third">
           Nathan Mckinney
         </h3>
-
-        <time class="name-date" datetime="2021-09-30">
-          30.09.2021
-        </time>
       </div>
     </div>
 
@@ -591,7 +1160,7 @@
 
       <li class="trade-item trade-company">
         <svg class="trade-icon">
-          <use xlink:href="img/sprite.svg#binance"></use>
+          <use xlink:href="img/sprite.svg#binance-gray"></use>
         </svg>
 
         <span class="trade-item-exchange">
@@ -652,11 +1221,103 @@
     </main>
 
     <footer class="footer">
-  <div class="container"></div>
+  <div class="container">
+  </div>
 </footer>
 </div>
 
 <div class="graph-modal">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal">
+
+  <form class="graph-modal__content modal" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec modal-name">
+        Modal name
+      </h3>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="graph-modal-inner">
+
+      <div class="graph-modal-content">
+        <h3 class="title-sec modal-title">
+          Modal title text
+        </h3>
+
+        <p class="content modal-text">
+          Modal text
+        </p>
+      </div>
+
+    </div>
+
+    <div class="graph-modal-btns">
+      <button class="graph-modal-btn btn btn-default" id="modal-btn-first" type="button">
+        Cancel
+      </button>
+
+      <button class="graph-modal-btn btn btn-background" id="modal-btn-sec" type="button">
+        Ok
+      </button>
+    </div>
+  </form>
+</div>
+
+  <div class="graph-modal__container flow-register" role="dialog" aria-modal="true" data-graph-target="flow-register">
+
+  <div class="graph-modal__content ">
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Come Back To Us
+      </h3>
+    </div>
+
+    <div class="flow-register-inner">
+
+      <div class="flow-register-picture">
+        <img class="flow-register-img" src="img/flow/register.svg" alt="BEFORE YOU GO!" width="225" height="225">
+      </div>
+
+      <h2 class="title-sec">
+        Please Come Back To Us!
+      </h2>
+
+      <div class="flow-register-content content">
+        <p>
+          You’re almost done! Once you’ve logged in to your exchange,
+          you will need to:
+        </p>
+
+        <ul class="flow-register-list">
+          <li>
+            Add funds to your exchange wallet;
+          </li>
+
+          <li>
+            Generate an API key in the settings tab of your Exchange Portfolio;
+          </li>
+
+          <li>
+            Copy the API key;
+          </li>
+        </ul>
+
+        <p>
+          Come back to Tradelize to finish and get started!
+        </p>
+      </div>
+
+      <div class="graph-modal-btns">
+        <a class="graph-modal-btn btn btn-background" href="#">
+          I understand
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
   <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="currency-exchange">
 
@@ -1325,7 +1986,7 @@
 
   <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="add-exchange">
 
-  <div class="graph-modal__content api">
+  <form class="graph-modal__content api" action="#">
 
     <div class="graph-modal-top">
       <h3 class="api-ttile title title-sec">
@@ -1338,40 +1999,48 @@
 
     <ul class="api-list api-list-fields">
 
-      <li class="api-field">
-        <label class="api-label">
+      <li class="api-field form-box">
+        <label class="api-label" for="api-input-exchange">
           Title
-          <input class="api-input api-input-exchange input" name="api-title" type="text" value="Binance">
         </label>
+        <input class="api-input form-input api-input-exchange input" name="api-title" type="text" id="api-input-exchange">
       </li>
 
-      <li class="api-field">
-        <label class="api-label">
+      <li class="api-field form-box">
+        <label class="api-label" for="api-public">
           <span class="api-label-tooltip">
-            Public key
-            <img class="api-tooltip" src="img/dex/tooltip.svg" alt="Public tooltip" width="14" height="14">
+            <span>
+              Public key
+            </span>
+            <span class="api-tooltip" data-tooltip-text="Lorem textsss">
+              <img class="api-tooltip-img" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+            </span>
           </span>
-
-          <input class="api-input input" type="text" name="api-public" value="0xEB2c9970cD25f3eefBA81E89079">
         </label>
+        <input class="api-input input form-input" type="text" name="api-public" id="api-public" value="0xEB2c9970cD25f3eefBA81E89079">
       </li>
 
-      <li class="api-field">
-        <label class="api-label">
+      <li class="api-field form-box">
+        <label class="api-label" for="api-secret">
           <span class="api-label-tooltip">
             Secret key
-            <img class="api-tooltip" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+
+            <span class="api-tooltip" data-tooltip-text="Lorem textsss">
+              <img class="api-tooltip-img" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+            </span>
           </span>
 
-          <input class="api-input input" type="text" name="api-secret" value="0xEB2c9970cD25f9befd6f8BfC763eefBA81E89079">
         </label>
+        <input class="api-input input form-input" type="text" name="api-secret" id="api-secret" value="0xEB2c9970cD25f9befd6f8BfC763eefBA81E89079">
       </li>
 
-      <li class="api-field">
-        <label class="api-label">
+      <li class="api-field form-box error">
+        <label class="api-label" for="api-description">
           Description <span class="api-optional">(Optional)</span>
-          <input class="api-input input" type="text" name="api-description" placeholder="Enter description">
         </label>
+        <input class="api-input input form-input" type="text" name="api-description" id="api-description" placeholder="Enter description">
+
+        <label class="error-text" for="api-description">Error</label>
       </li>
     </ul>
 
@@ -1380,7 +2049,7 @@
         Add
       </button>
     </div>
-  </div>
+  </form>
 </div>
 
   <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="offer">
@@ -1403,9 +2072,97 @@
       </span>
 
       <div class="publish-dropdown offer-dropdown">
+        <div class="publish-dropdown-btn offer-dropdown-btn">
+          <input class="offer-dropdown-input input" data-toggle="dropdown" value="KuCoin" readonly>
+        </div>
+        <ul class="publish-dropdown-list">
+          <li class="publish-dropdown-item">
+            <label class="publish-dropdown-radio">
+              KuCoin
+              <input type="radio" name="publish-radio">
+            </label>
+          </li>
 
-        <button class="publish-dropdown-btn offer-dropdown-btn input" data-toggle="dropdown" type="button">KuCoin</button>
+          <li class="publish-dropdown-item">
+            <label class="publish-dropdown-radio">
+              Binance
+              <input type="radio" name="publish-radio">
+            </label>
+          </li>
 
+          <li class="publish-dropdown-item">
+            <label class="publish-dropdown-radio">
+              Crypto.com
+              <input type="radio" name="publish-radio">
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="offer-row">
+
+        <span class="api-label-tooltip offer-row-text">
+          <span>
+            Subscription cost (BTC)
+          </span>
+          <span class="api-tooltip" data-tooltip-text="If you would like to change your username or email address, please contact support at support@tradelize.com.">
+            <img class="api-tooltip-img" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+          </span>
+        </span>
+
+        <div class="switcher">
+          <input class="switcher-radio sr-only" type="checkbox" id="switch-cost" name="switcher">
+          <label class="switcher-label" for="switch-cost">
+            Free
+          </label>
+        </div>
+      </div>
+
+      <label class="sr-only" for="offer-cost">
+        Subscription cost
+      </label>
+
+      <input class="offer-input input" type="number" name="subscription" placeholder="Enter amount of BTC" id="offer-cost">
+
+      <label class="offer-textarea">
+        Description
+
+        <textarea class="offer-text input" name="offer-textarea" placeholder="Enter description"></textarea>
+
+      </label>
+    </div>
+
+    <div class="graph-modal-btns">
+      <button class="graph-modal-btn btn btn-background" type="submit" disabled>
+        Create
+      </button>
+    </div>
+  </form>
+</div>
+
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="offer-edit">
+
+  <form class="graph-modal__content offer">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        KuCoin
+      </h3>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="offer-inner">
+
+      <span class="offer-row offer-choose">
+        Choose exchange account
+      </span>
+
+      <div class="publish-dropdown offer-dropdown">
+        <div class="publish-dropdown-btn offer-dropdown-btn">
+          <input class="offer-dropdown-input input" data-toggle="dropdown" value="KuCoin" readonly>
+        </div>
         <ul class="publish-dropdown-list">
           <li class="publish-dropdown-item">
             <label class="publish-dropdown-radio">
@@ -1455,7 +2212,7 @@
       <label class="offer-textarea">
         Description
 
-        <textarea class="offer-text input" name="offer-textarea" placeholder="Enter description"></textarea>
+        <textarea class="offer-text input" name="offer-textarea">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassing hidden in the middle of text.</textarea>
 
       </label>
     </div>
@@ -1463,6 +2220,45 @@
     <div class="graph-modal-btns">
       <button class="graph-modal-btn btn btn-background" type="submit" disabled>
         Create
+      </button>
+    </div>
+  </form>
+</div>
+
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="offer-delete">
+
+  <form class="graph-modal__content delete" action="#">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Delete offer
+      </h3>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="graph-modal-inner">
+
+      <div class="graph-modal-finish">
+        <h3 class="title-sec">
+          Are you sure want delete your offer?
+        </h3>
+
+        <p class="content">
+          Several users have subscribed to your offer, if you delete the offer they will no longer be able to follow your transactions
+        </p>
+      </div>
+
+    </div>
+
+    <div class="graph-modal-btns">
+      <button class="graph-modal-close graph-modal-btn btn btn-default" type="button">
+        Cancel
+      </button>
+
+      <button class="graph-modal-btn btn btn-delete" type="submit">
+        Delete
       </button>
     </div>
   </form>
@@ -1495,9 +2291,9 @@
       </p>
     </div>
 
-    <button class="graph-modal-btn graph-modal-close btn btn-background" type="button">
+    <a class="graph-modal-btn btn btn-background" href="#">
       I understand
-    </button>
+    </a>
   </div>
 </div>
 
@@ -1520,8 +2316,8 @@
           Old password
         </label>
 
-        <div class="security-change">
-          <input class="security-content input" id="password-old" name="password-old" type="password" placeholder="Enter old password">
+        <div class="security-change form-box">
+          <input class="security-content input form-input" id="password-old" name="password-old" type="password" placeholder="Enter old password">
 
           <button class="security-password-btn btn" type="button">
             <span class="sr-only">
@@ -1675,7 +2471,7 @@
 
     <div class="graph-modal-cropp">
 
-      <img id='previewProfilePicture'>
+      <img id='previewProfilePicture' src="" alt="Preview picture">
 
     </div>
 
@@ -1706,7 +2502,7 @@
 
     <div class="graph-modal-cropp">
 
-      <img id='previewProfileAvatar'>
+      <img id='previewProfileAvatar' src="" alt="Profile avatar">
 
     </div>
 
@@ -1717,6 +2513,122 @@
 
       <button class="graph-modal-btn graph-modal-close btn btn-background btn-cropp" id='done-avatar' type="button">
         Crop
+      </button>
+    </div>
+  </form>
+</div>
+
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="purchases-copy">
+
+  <form class="graph-modal__content offer">
+
+    <div class="graph-modal-top">
+      <h3 class="title-sec">
+        Change Auto Coping settings
+      </h3>
+
+      <button class="btn-reset graph-modal-close" aria-label="Close window" type="button">
+      </button>
+    </div>
+
+    <div class="offer-wrapper">
+      <h3 class="offer-wrapper-title title-sec">
+        <span>Your current balance:</span>
+        <span class="offer-wrapper-amount">
+          <span>1000 USDT</span>
+        </span>
+      </h3>
+    </div>
+
+    <ul class="offer-changes">
+      <li class="offer-change">
+        <span class="offer-change-title">
+          <span>Currently Take profit:</span>
+          <span>30% =</span>
+          <span>+ 300 USDT</span>
+        </span>
+
+        <div class="offer-change-field">
+          <label class="purchases-amount-text" for="take-profit">
+            <span>
+              New Take Profit
+            </span>
+
+            <input class="purchases-amount-input input" id="take-profit" type="text" name="take-profit" placeholder="Enter new Take Profit">
+          </label>
+
+          <span class="offer-change-price">
+            <span>=</span>
+            <span>0 USDT</span>
+          </span>
+        </div>
+
+        <span class="step-input-message">
+          <span>Copy Trading остановиться при значении баланса</span>
+          <span>1300 USDT</span>
+        </span>
+      </li>
+
+      <li class="offer-change">
+        <span class="offer-change-title">
+          <span>Currently Stop Loss: </span>
+          <span>25% =</span>
+          <span>— 250 USDT</span>
+        </span>
+
+        <div class="offer-change-field">
+          <label class="purchases-amount-text" for="take-profit">
+            <span>
+              New Stop Loss
+            </span>
+
+            <input class="purchases-amount-input input" id="take-profit" type="text" name="take-profit" placeholder="Enter new Stop Loss">
+          </label>
+
+          <span class="offer-change-price">
+            <span>=</span>
+            <span>0 USDT</span>
+          </span>
+        </div>
+
+        <span class="step-input-message">
+          <span>Copy Trading остановиться при значении баланса</span>
+          <span>750 USDT</span>
+        </span>
+      </li>
+
+      <li class="offer-change">
+        <span class="offer-change-title">
+          <span>Currently Auto Move: </span>
+          <span>15% =</span>
+          <span>+ 150 USDT</span>
+        </span>
+
+        <div class="offer-change-field">
+          <label class="purchases-amount-text" for="take-profit">
+            <span>
+              New Auto Move
+            </span>
+
+            <input class="purchases-amount-input input" id="take-profit" type="text" name="take-profit" placeholder="Enter new Auto Move">
+          </label>
+
+          <span class="offer-change-price">
+            = <span> 0 </span> USDT
+          </span>
+        </div>
+
+        <span class="step-input-message">
+          <span>Trading остановиться при значении баланса</span>
+          <span>750 USDT</span>
+        </span>
+      </li>
+
+    </ul>
+
+    <div class="graph-modal-btns">
+      <button class="graph-modal-btn btn btn-background" type="submit">
+        Save
       </button>
     </div>
   </form>

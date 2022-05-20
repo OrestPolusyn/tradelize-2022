@@ -1,5 +1,4 @@
 .page {
-  width: 100vw;
   height: 100%;
   font-family: var(--font-family, sans-serif);
   font-weight: 400;
@@ -21,6 +20,17 @@
     font-size: 16px;
   }
 
+  &-sing {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: var(--color-white);
+  }
+
+  &-construction {
+    height: 100%;
+    background-color: var(--color-white);
+  }
+
   @include for-width(+desktop-xl) {
     font-size: 16px;
   }
@@ -32,6 +42,10 @@
   @include for-width(-mobile-l) {
     font-size: 13px;
   }
+}
+
+.site-container-flow {
+  overflow-x: hidden;
 }
 
 .hidden {
@@ -62,6 +76,97 @@
   &-feed {
     max-width: var(--container-feed-width);
   }
+
+  &-flow {
+    position: relative;
+    max-width: var(--container-flow-width);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      border-radius: var(--radius-main) 0 0 var(--radius-main);
+      width: 100vw;
+      height: 475px;
+      background-color: var(--color-main);
+      transform: translateY(15px);
+      margin-block: auto;
+
+      @include for-width(-tablet) {
+        left: 0;
+        height: 300px;
+      }
+
+      @include for-width(-mobile-l) {
+        border-radius: 0;
+        height: 100vh;
+        transform: translateY(0);
+      }
+    }
+
+    @include for-width(-mobile-l) {
+      padding: 0;
+    }
+  }
+
+  &-flow-slider {
+    position: relative;
+    max-width: var(--container-flow-slider);
+
+    &::before {
+      @include for-width(-tablet) {
+        border-radius: 0;
+        height: 100vh;
+        transform: translate(0);
+      }
+    }
+
+    .logo-flow {
+      transform: translate(0);
+    }
+  }
+
+  &-flow-api {
+    margin-right: 0;
+    margin-left: auto;
+    max-width: 1655px;
+
+    &::before {
+      left: auto;
+      right: 0;
+      width: 40vw;
+
+      @include for-width(+desktop-xl) {
+        left: auto;
+        right: -79vw;
+        width: 100vw;
+      }
+
+      @include for-width(-tablet) {
+        display: none;
+      }
+    }
+
+    @include for-width(+desktop-xl) {
+      margin: 0 auto;
+    }
+  }
+
+  &-flow-end {
+    max-width: 1570px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &-construction {
+    max-width: 590px;
+    text-align: center;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -86,6 +191,27 @@
   position: relative;
   padding: clamp(20px, rem(37), 40px) 0;
 
+  &-sing {
+    display: grid;
+    grid-template-columns: minmax(200px, 918px) minmax(auto, 1000px);
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--color-white);
+
+    @include for-width(-mobile-l) {
+      grid-template-columns: 1fr;
+      padding: 0 24px;
+    }
+  }
+
+  &-construction {
+    @include flex;
+
+    flex-direction: column;
+    padding: 0;
+    height: calc(100vh - rem(100));
+  }
+
   .container {
     @include for-width(-mobile-sl) {
       padding-right: 0;
@@ -93,13 +219,16 @@
     }
   }
 
-  .title:not(.about-name-title) {
-    padding: 0 24px;
+  .title:not(.about-name-title):not(.title-flow):not(.swiper-wrapper .title) {
+    @include for-width(-mobile-sl) {
+      padding: 0 24px;
+    }
   }
 }
 
 .inner {
   position: relative;
+  border-radius: var(--radius-main);
   padding: clamp(0.5em, rem(40), 40px);
   padding-bottom: clamp(0.5em, rem(32), 40px);
   background-color: var(--color-white);
@@ -125,40 +254,77 @@
   color: var(--color-red);
 }
 
+.balance {
+  color: var(--color-main);
+}
+
 .portfolio-feed {
   >* {
     margin-bottom: clamp(0.5em, rem(30), 40px);
   }
 }
 
-.link-item {
-  @include flex;
+.link {
+  &-item {
+    @include flex;
 
-  position: relative;
-  margin-right: rem(86);
+    position: relative;
+    margin-right: rem(86);
 
-  &-link {
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      z-index: 1;
-      width: 100%;
+    &-link {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+      }
+    }
+
+    @include for-width(-mobile-l) {
+      margin-right: rem(50);
     }
   }
 
-  @include for-width(-mobile-l) {
-    margin-right: rem(50);
+  &-back {
+    margin: auto 0 0;
+    padding-left: 15px;
+    width: 100%;
+    color: var(--color-gray-800);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 35%;
+      mask-image: url("../img/sprite.svg#back");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      width: 10px;
+      height: 6px;
+      background-color: var(--color-gray-800);
+      transform: rotate(90deg);
+    }
+
+    +.title-sing {
+      margin-top: 20px;
+    }
   }
 }
 
 .list {
   &-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-template-columns: repeat(4, minmax(293px, 1fr));
     grid-template-rows: auto;
-    gap: rem(30) rem(36);
+    gap: 30px rem(35);
+
+    @include for-width(-desktop-med) {
+      grid-template-columns: repeat(auto-fill, minmax(223px, 1fr));
+      gap: 25px;
+    }
 
     @include for-width(-mobile-l) {
       grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -208,6 +374,30 @@ table {
   }
 }
 
+.dropdown {
+  &-list {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    border-radius: var(--radius-main);
+    padding: 7px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    font-size: var(--size-m);
+    line-height: 1.3;
+    color: var(--color-gray-300);
+    background-color: var(--color-white);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.1s ease-in,
+      visibility 0.2s ease-in;
+  }
+
+  &-open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .burger {
   @include burger;
 
@@ -216,6 +406,10 @@ table {
   @include for-width(-mobile-l) {
     display: block;
     margin-right: 20px;
+  }
+
+  @include for-width(-mobile-sl) {
+    margin-right: 5px;
   }
 }
 

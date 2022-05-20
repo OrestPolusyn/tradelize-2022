@@ -11,7 +11,7 @@
   }
 
   &-inner {
-    padding: rem(30);
+    padding: 30px;
   }
 
   &-row {
@@ -65,8 +65,10 @@
       border-color: transparent;
       padding: 9px rem(20);
       text-align: left;
+      background-color: var(--color-gray-100);
 
       &::before {
+
         right: rem(15);
         mask-image: url("../img/arrows/drop-offer.svg");
         width: 6px;
@@ -111,5 +113,90 @@
       margin: 0 auto;
       max-width: 305px;
     }
+  }
+
+  &-changes {
+    margin-bottom: rem(40);
+  }
+
+  &-change {
+    border-bottom: 1px solid var(--color-gray-200);
+    padding: 25px 30px;
+
+    &-title {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--color-gray-400);
+
+      span {
+        font-weight: 500;
+        color: var(--color-black);
+      }
+    }
+
+    &-field {
+      @include flex;
+
+      align-items: flex-end;
+
+      .purchases-amount-text {
+        margin-right: 16px;
+        width: 100%;
+        max-width: 220px;
+      }
+
+      span {
+        @include flex-all-sb;
+      }
+    }
+
+    &-price {
+      font-size: var(--size-m);
+      line-height: 148.69%;
+      letter-spacing: 0.015em;
+      transform: translateY(-8px);
+
+      span {
+        margin: 0 5px;
+      }
+    }
+
+    .step-input-message {
+      font-size: 11px;
+      letter-spacing: 0.015em;
+
+      span {
+        &:not(:first-of-type) {
+          color: var(--color-main);
+        }
+      }
+    }
+
+    .purchases-amount-text {
+      margin-bottom: 0;
+    }
+
+    .purchases-amount-input {
+      margin-top: 12px;
+    }
+  }
+
+  &-wrapper {
+    padding: 30px 30px 0;
+
+    &-amount {
+      font-weight: 700;
+      color: var(--color-main);
+
+      span {
+        font-weight: inherit;
+      }
+    }
+  }
+
+  &.inner {
+    padding-top: clamp(0.5em, rem(30), 30px);
   }
 }

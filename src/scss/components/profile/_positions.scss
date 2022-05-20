@@ -1,0 +1,291 @@
+.positions {
+  &-item {
+    padding: rem(32) rem(40);
+
+    &-wrapp {
+      @include flex-v-center;
+
+      @include for-width(-mobile-md) {
+        flex-wrap: wrap;
+      }
+    }
+
+    &-inner {
+      overflow-x: auto;
+      height: 0;
+    }
+
+    &-table {
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+
+      .tabs-link {
+        padding: 5px 10px;
+        text-transform: capitalize;
+        background-color: transparent;
+
+        &-active {
+          font-weight: 500;
+          color: var(--color-dark);
+        }
+      }
+    }
+
+    &-radio {
+      display: none;
+      justify-content: space-around;
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 240px;
+      background-color: var(--color-gray-100);
+    }
+
+    @include for-width(-mobile-l) {
+      padding: 25px;
+    }
+  }
+
+  &-icon {
+    margin-right: 15px;
+    width: 100%;
+    height: auto;
+    max-width: 23px;
+    max-height: 23px;
+    fill: currentColor;
+
+    @include for-width(-mobile-l) {
+      margin-right: 10px;
+      max-width: 15px;
+    }
+  }
+
+  &-title {
+    margin-right: rem(50);
+    min-width: 80px;
+    font-weight: 500;
+    font-size: var(--size-lg);
+    line-height: 1.8;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    @include for-width(-mobile-l) {
+      margin-right: 20px;
+      font-size: var(--size-l);
+    }
+  }
+
+  &-list {
+    @include flex-all-sb;
+
+    width: 100%;
+    max-width: 390px;
+
+    &-item {
+      width: 100%;
+      max-width: 180px;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      @include for-width(-mobile-md) {
+        font-size: var(--size);
+      }
+    }
+
+    &-title {
+      margin-right: 7px;
+    }
+
+    &-number {
+      font-weight: 700;
+    }
+
+    @include for-width(-mobile-l) {
+      display: block;
+    }
+
+    @include for-width(-mobile-md) {
+      display: flex;
+      order: 4;
+      padding-top: 15px;
+      width: 100%;
+    }
+
+    @include for-width(-mobile-s) {
+      display: block;
+    }
+  }
+
+  &-key {
+    margin-right: rem(40);
+    margin-left: auto;
+    font-size: var(--size-m);
+    line-height: 1.5;
+    white-space: nowrap;
+
+    &-text {
+      margin-right: 6px;
+      color: var(--color-gray-400);
+    }
+
+    @include for-width(-mobile-s) {
+      margin-right: 20px;
+    }
+  }
+
+  &-btn {
+    @include flex-all-center;
+
+    position: relative;
+    height: 13px;
+    min-width: 13px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      margin: 0 auto;
+      width: 3px;
+      height: 100%;
+      background-color: var(--color-dark);
+      transition: transform 0.2s linear;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: var(--color-dark);
+      transition: transform 0.25s linear;
+    }
+  }
+
+  &-open {
+    .positions {
+      &-item {
+        &-wrapp {
+          margin-bottom: rem(30);
+          border-bottom: 1px solid var(--color-gray-200);
+          padding-bottom: rem(30);
+        }
+
+        &-inner {
+          height: auto;
+        }
+
+        &-table {
+          height: auto;
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &-radio {
+          display: flex;
+        }
+      }
+
+      &-btn {
+        &::before {
+          transform: rotate(270deg);
+        }
+
+        &::after {
+          transform: rotate(360deg);
+        }
+      }
+
+      &-empty {
+        height: 280px;
+      }
+    }
+  }
+
+  &-table {
+    font-size: var(--size-m);
+    letter-spacing: 0.015em;
+
+    &-currency {
+      width: 10%;
+    }
+
+    &-available {
+      width: 10%;
+    }
+
+    &-total {
+      width: 11%;
+    }
+
+    &-price {
+      width: 10%;
+    }
+
+    &-position {
+      width: 10%;
+    }
+
+    &-cost {
+      width: 9%;
+    }
+
+    &-unrealized {
+      width: 0%;
+    }
+
+    thead {
+      th {
+        padding-bottom: 10px;
+
+        &::first-letter {
+          text-transform: capitalize;
+        }
+
+        &:first-of-type {
+          padding-left: 30px;
+        }
+
+        &:last-of-type {
+          padding-right: 30px;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background-color: var(--color-gray-100);
+        }
+      }
+
+      td {
+        padding: 15px 0;
+
+        &:first-of-type {
+          padding-left: 30px;
+        }
+
+        &:last-of-type {
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+
+  &-empty {
+    @include flex-all-center;
+
+    flex-direction: column;
+
+    .positions-title {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+}

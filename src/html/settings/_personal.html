@@ -6,18 +6,18 @@
 
   <div class="personal-inner">
     <div class="personal-avatar">
-      <div class="avatar avatar-text" data-color="4">
-        <img class="avatar-img" id="personal-avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" />
-        <!-- <span class="avatar-text">
-        TM
-      </span> -->
+      <div class="avatar" data-color="4">
+        <!-- <img class="avatar-img" id="personal-avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
+        <span class="avatar-settings">
+          TM
+        </span>
       </div>
 
       <label class="personal-input" for="personal-avatar">
         Change
       </label>
 
-      <input class="sr-only" type="file" id="personal-avatar" accept="image/*" name="personal-avatar" data-graph-path="cropp-avatar">
+      <input class="sr-only" type="file" id="personal-avatar" accept="image/*" name="personal-avatar">
     </div>
 
     <div class="personal-private">
@@ -25,11 +25,14 @@
         TrueTrustTeam
       </h3>
 
-      <p class="personal-email">
-        alexanderlazurenko@gmail.com
-
-        <img class="personal-tooltip" src="img/dex/tooltip.svg" alt="Personal tooltip" width="14" height="14">
-      </p>
+      <span class="api-label-tooltip personal-email">
+        <span>
+          alexanderlazurenko@gmail.com
+        </span>
+        <span class="api-tooltip" data-tooltip-text="If you would like to change your username or email address, please contact support at support@tradelize.com.">
+          <img class="api-tooltip-img" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+        </span>
+      </span>
     </div>
   </div>
 
@@ -67,7 +70,7 @@
     </li>
   </ul>
 
-  <button class="personal-submit btn btn-background" type="submit" disabled>
+  <button class="personal-submit btn btn-background" type="submit">
     Save
   </button>
 </div>

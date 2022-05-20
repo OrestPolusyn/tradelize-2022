@@ -1,6 +1,17 @@
 "use strict";
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+  return _typeof(obj);
+}
 
 /**
  * Minified by jsDelivr using Terser v3.14.1.
@@ -8,10 +19,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
  *
  * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
  */
-!function (t, e) {
+! function (t, e) {
   if ("function" == typeof define && define.amd) define(["moment", "jquery"], function (t, a) {
     return a.fn || (a.fn = {}), "function" != typeof t && t.hasOwnProperty("default") && (t = t["default"]), e(t, a);
-  });else if ("object" == (typeof module === "undefined" ? "undefined" : _typeof(module)) && module.exports) {
+  });
+  else if ("object" == (typeof module === "undefined" ? "undefined" : _typeof(module)) && module.exports) {
     var a = "undefined" != typeof window ? window.jQuery : void 0;
     a || (a = require("jquery")).fn || (a.fn = {});
     var i = "undefined" != typeof window && void 0 !== window.moment ? window.moment : require("moment");
@@ -20,30 +32,31 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 }(void 0, function (t, e) {
   var a = function a(_a, i, s) {
     if (this.parentEl = "body", this.element = e(_a), this.startDate = t().startOf("day"), this.endDate = t().endOf("day"), this.minDate = !1, this.maxDate = !1, this.maxSpan = !1, this.autoApply = !1, this.singleDatePicker = !1, this.showDropdowns = !1, this.minYear = t().subtract(100, "year").format("YYYY"), this.maxYear = t().add(100, "year").format("YYYY"), this.showWeekNumbers = !1, this.showISOWeekNumbers = !1, this.showCustomRangeLabel = !0, this.timePicker = !1, this.timePicker24Hour = !1, this.timePickerIncrement = 1, this.timePickerSeconds = !1, this.linkedCalendars = !0, this.autoUpdateInput = !0, this.alwaysShowCalendars = !1, this.ranges = {}, this.opens = "right", this.element.hasClass("pull-right") && (this.opens = "left"), this.drops = "down", this.element.hasClass("dropup") && (this.drops = "up"), this.buttonClasses = "btn btn-sm", this.applyButtonClasses = "btn-primary", this.cancelButtonClasses = "btn-default", this.locale = {
-      direction: "ltr",
-      format: t.localeData().longDateFormat("L"),
-      separator: " - ",
-      applyLabel: "Apply",
-      cancelLabel: "Cancel",
-      weekLabel: "W",
-      customRangeLabel: "Custom Range",
-      daysOfWeek: t.weekdaysMin(),
-      monthNames: t.monthsShort(),
-      firstDay: t.localeData().firstDayOfWeek()
-    }, this.callback = function () {}, this.isShowing = !1, this.leftCalendar = {}, this.rightCalendar = {}, "object" == _typeof(i) && null !== i || (i = {}), "string" == typeof (i = e.extend(this.element.data(), i)).template || i.template instanceof e || (i.template = '<div class="daterangepicker"><div class="ranges"></div><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time"></div></div><div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn" type="button"></button><button class="applyBtn" disabled="disabled" type="button"></button> </div></div>'), this.parentEl = i.parentEl && e(i.parentEl).length ? e(i.parentEl) : e(this.parentEl), this.container = e(i.template).appendTo(this.parentEl), "object" == _typeof(i.locale) && ("string" == typeof i.locale.direction && (this.locale.direction = i.locale.direction), "string" == typeof i.locale.format && (this.locale.format = i.locale.format), "string" == typeof i.locale.separator && (this.locale.separator = i.locale.separator), "object" == _typeof(i.locale.daysOfWeek) && (this.locale.daysOfWeek = i.locale.daysOfWeek.slice()), "object" == _typeof(i.locale.monthNames) && (this.locale.monthNames = i.locale.monthNames.slice()), "number" == typeof i.locale.firstDay && (this.locale.firstDay = i.locale.firstDay), "string" == typeof i.locale.applyLabel && (this.locale.applyLabel = i.locale.applyLabel), "string" == typeof i.locale.cancelLabel && (this.locale.cancelLabel = i.locale.cancelLabel), "string" == typeof i.locale.weekLabel && (this.locale.weekLabel = i.locale.weekLabel), "string" == typeof i.locale.customRangeLabel)) {
+        direction: "ltr",
+        format: t.localeData().longDateFormat("L"),
+        separator: " - ",
+        applyLabel: "Apply",
+        cancelLabel: "Cancel",
+        weekLabel: "W",
+        customRangeLabel: "Custom Range",
+        daysOfWeek: t.weekdaysMin(),
+        monthNames: t.monthsShort(),
+        firstDay: t.localeData().firstDayOfWeek()
+      }, this.callback = function () {}, this.isShowing = !1, this.leftCalendar = {}, this.rightCalendar = {}, "object" == _typeof(i) && null !== i || (i = {}), "string" == typeof (i = e.extend(this.element.data(), i)).template || i.template instanceof e || (i.template = '<div class="daterangepicker"><div class="ranges"></div><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time"></div></div><div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn" type="button"></button><button class="applyBtn" disabled="disabled" type="button"></button> </div></div>'), this.parentEl = i.parentEl && e(i.parentEl).length ? e(i.parentEl) : e(this.parentEl), this.container = e(i.template).appendTo(this.parentEl), "object" == _typeof(i.locale) && ("string" == typeof i.locale.direction && (this.locale.direction = i.locale.direction), "string" == typeof i.locale.format && (this.locale.format = i.locale.format), "string" == typeof i.locale.separator && (this.locale.separator = i.locale.separator), "object" == _typeof(i.locale.daysOfWeek) && (this.locale.daysOfWeek = i.locale.daysOfWeek.slice()), "object" == _typeof(i.locale.monthNames) && (this.locale.monthNames = i.locale.monthNames.slice()), "number" == typeof i.locale.firstDay && (this.locale.firstDay = i.locale.firstDay), "string" == typeof i.locale.applyLabel && (this.locale.applyLabel = i.locale.applyLabel), "string" == typeof i.locale.cancelLabel && (this.locale.cancelLabel = i.locale.cancelLabel), "string" == typeof i.locale.weekLabel && (this.locale.weekLabel = i.locale.weekLabel), "string" == typeof i.locale.customRangeLabel)) {
       (p = document.createElement("textarea")).innerHTML = i.locale.customRangeLabel;
       var n = p.value;
       this.locale.customRangeLabel = n;
     }
 
-    if (this.container.addClass(this.locale.direction), "string" == typeof i.startDate && (this.startDate = t(i.startDate, this.locale.format)), "string" == typeof i.endDate && (this.endDate = t(i.endDate, this.locale.format)), "string" == typeof i.minDate && (this.minDate = t(i.minDate, this.locale.format)), "string" == typeof i.maxDate && (this.maxDate = t(i.maxDate, this.locale.format)), "object" == _typeof(i.startDate) && (this.startDate = t(i.startDate)), "object" == _typeof(i.endDate) && (this.endDate = t(i.endDate)), "object" == _typeof(i.minDate) && (this.minDate = t(i.minDate)), "object" == _typeof(i.maxDate) && (this.maxDate = t(i.maxDate)), this.minDate && this.startDate.isBefore(this.minDate) && (this.startDate = this.minDate.clone()), this.maxDate && this.endDate.isAfter(this.maxDate) && (this.endDate = this.maxDate.clone()), "string" == typeof i.applyButtonClasses && (this.applyButtonClasses = i.applyButtonClasses), "string" == typeof i.applyClass && (this.applyButtonClasses = i.applyClass), "string" == typeof i.cancelButtonClasses && (this.cancelButtonClasses = i.cancelButtonClasses), "string" == typeof i.cancelClass && (this.cancelButtonClasses = i.cancelClass), "object" == _typeof(i.maxSpan) && (this.maxSpan = i.maxSpan), "object" == _typeof(i.dateLimit) && (this.maxSpan = i.dateLimit), "string" == typeof i.opens && (this.opens = i.opens), "string" == typeof i.drops && (this.drops = i.drops), "boolean" == typeof i.showWeekNumbers && (this.showWeekNumbers = i.showWeekNumbers), "boolean" == typeof i.showISOWeekNumbers && (this.showISOWeekNumbers = i.showISOWeekNumbers), "string" == typeof i.buttonClasses && (this.buttonClasses = i.buttonClasses), "object" == _typeof(i.buttonClasses) && (this.buttonClasses = i.buttonClasses.join(" ")), "boolean" == typeof i.showDropdowns && (this.showDropdowns = i.showDropdowns), "number" == typeof i.minYear && (this.minYear = i.minYear), "number" == typeof i.maxYear && (this.maxYear = i.maxYear), "boolean" == typeof i.showCustomRangeLabel && (this.showCustomRangeLabel = i.showCustomRangeLabel), "boolean" == typeof i.singleDatePicker && (this.singleDatePicker = i.singleDatePicker, this.singleDatePicker && (this.endDate = this.startDate.clone())), "boolean" == typeof i.timePicker && (this.timePicker = i.timePicker), "boolean" == typeof i.timePickerSeconds && (this.timePickerSeconds = i.timePickerSeconds), "number" == typeof i.timePickerIncrement && (this.timePickerIncrement = i.timePickerIncrement), "boolean" == typeof i.timePicker24Hour && (this.timePicker24Hour = i.timePicker24Hour), "boolean" == typeof i.autoApply && (this.autoApply = i.autoApply), "boolean" == typeof i.autoUpdateInput && (this.autoUpdateInput = i.autoUpdateInput), "boolean" == typeof i.linkedCalendars && (this.linkedCalendars = i.linkedCalendars), "function" == typeof i.isInvalidDate && (this.isInvalidDate = i.isInvalidDate), "function" == typeof i.isCustomDate && (this.isCustomDate = i.isCustomDate), "boolean" == typeof i.alwaysShowCalendars && (this.alwaysShowCalendars = i.alwaysShowCalendars), 0 != this.locale.firstDay) for (var r = this.locale.firstDay; r > 0;) {
-      this.locale.daysOfWeek.push(this.locale.daysOfWeek.shift()), r--;
-    }
+    if (this.container.addClass(this.locale.direction), "string" == typeof i.startDate && (this.startDate = t(i.startDate, this.locale.format)), "string" == typeof i.endDate && (this.endDate = t(i.endDate, this.locale.format)), "string" == typeof i.minDate && (this.minDate = t(i.minDate, this.locale.format)), "string" == typeof i.maxDate && (this.maxDate = t(i.maxDate, this.locale.format)), "object" == _typeof(i.startDate) && (this.startDate = t(i.startDate)), "object" == _typeof(i.endDate) && (this.endDate = t(i.endDate)), "object" == _typeof(i.minDate) && (this.minDate = t(i.minDate)), "object" == _typeof(i.maxDate) && (this.maxDate = t(i.maxDate)), this.minDate && this.startDate.isBefore(this.minDate) && (this.startDate = this.minDate.clone()), this.maxDate && this.endDate.isAfter(this.maxDate) && (this.endDate = this.maxDate.clone()), "string" == typeof i.applyButtonClasses && (this.applyButtonClasses = i.applyButtonClasses), "string" == typeof i.applyClass && (this.applyButtonClasses = i.applyClass), "string" == typeof i.cancelButtonClasses && (this.cancelButtonClasses = i.cancelButtonClasses), "string" == typeof i.cancelClass && (this.cancelButtonClasses = i.cancelClass), "object" == _typeof(i.maxSpan) && (this.maxSpan = i.maxSpan), "object" == _typeof(i.dateLimit) && (this.maxSpan = i.dateLimit), "string" == typeof i.opens && (this.opens = i.opens), "string" == typeof i.drops && (this.drops = i.drops), "boolean" == typeof i.showWeekNumbers && (this.showWeekNumbers = i.showWeekNumbers), "boolean" == typeof i.showISOWeekNumbers && (this.showISOWeekNumbers = i.showISOWeekNumbers), "string" == typeof i.buttonClasses && (this.buttonClasses = i.buttonClasses), "object" == _typeof(i.buttonClasses) && (this.buttonClasses = i.buttonClasses.join(" ")), "boolean" == typeof i.showDropdowns && (this.showDropdowns = i.showDropdowns), "number" == typeof i.minYear && (this.minYear = i.minYear), "number" == typeof i.maxYear && (this.maxYear = i.maxYear), "boolean" == typeof i.showCustomRangeLabel && (this.showCustomRangeLabel = i.showCustomRangeLabel), "boolean" == typeof i.singleDatePicker && (this.singleDatePicker = i.singleDatePicker, this.singleDatePicker && (this.endDate = this.startDate.clone())), "boolean" == typeof i.timePicker && (this.timePicker = i.timePicker), "boolean" == typeof i.timePickerSeconds && (this.timePickerSeconds = i.timePickerSeconds), "number" == typeof i.timePickerIncrement && (this.timePickerIncrement = i.timePickerIncrement), "boolean" == typeof i.timePicker24Hour && (this.timePicker24Hour = i.timePicker24Hour), "boolean" == typeof i.autoApply && (this.autoApply = i.autoApply), "boolean" == typeof i.autoUpdateInput && (this.autoUpdateInput = i.autoUpdateInput), "boolean" == typeof i.linkedCalendars && (this.linkedCalendars = i.linkedCalendars), "function" == typeof i.isInvalidDate && (this.isInvalidDate = i.isInvalidDate), "function" == typeof i.isCustomDate && (this.isCustomDate = i.isCustomDate), "boolean" == typeof i.alwaysShowCalendars && (this.alwaysShowCalendars = i.alwaysShowCalendars), 0 != this.locale.firstDay)
+      for (var r = this.locale.firstDay; r > 0;) {
+        this.locale.daysOfWeek.push(this.locale.daysOfWeek.shift()), r--;
+      }
     var o, h, l;
 
     if (void 0 === i.startDate && void 0 === i.endDate && e(this.element).is(":text")) {
       var c = e(this.element).val(),
-          d = c.split(this.locale.separator);
+        d = c.split(this.locale.separator);
       o = h = null, 2 == d.length ? (o = t(d[0], this.locale.format), h = t(d[1], this.locale.format)) : this.singleDatePicker && "" !== c && (o = t(c, this.locale.format), h = t(c, this.locale.format)), null !== o && null !== h && (this.setStartDate(o), this.setEndDate(h));
     }
 
@@ -117,18 +130,18 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     },
     renderCalendar: function renderCalendar(a) {
       var i,
-          s = (i = "left" == a ? this.leftCalendar : this.rightCalendar).month.month(),
-          n = i.month.year(),
-          r = i.month.hour(),
-          o = i.month.minute(),
-          h = i.month.second(),
-          l = t([n, s]).daysInMonth(),
-          c = t([n, s, 1]),
-          d = t([n, s, l]),
-          m = t(c).subtract(1, "month").month(),
-          p = t(c).subtract(1, "month").year(),
-          f = t([p, m]).daysInMonth(),
-          u = c.day();
+        s = (i = "left" == a ? this.leftCalendar : this.rightCalendar).month.month(),
+        n = i.month.year(),
+        r = i.month.hour(),
+        o = i.month.minute(),
+        h = i.month.second(),
+        l = t([n, s]).daysInMonth(),
+        c = t([n, s, 1]),
+        d = t([n, s, l]),
+        m = t(c).subtract(1, "month").month(),
+        p = t(c).subtract(1, "month").year(),
+        f = t([p, m]).daysInMonth(),
+        u = c.day();
       (i = []).firstDay = c, i.lastDay = d;
 
       for (var D = 0; D < 6; D++) {
@@ -144,14 +157,14 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       "left" == a ? this.leftCalendar.calendar = i : this.rightCalendar.calendar = i;
       var v = "left" == a ? this.minDate : this.startDate,
-          C = this.maxDate,
-          Y = ("left" == a ? this.startDate : this.endDate, this.locale.direction, '<table class="table-condensed">');
+        C = this.maxDate,
+        Y = ("left" == a ? this.startDate : this.endDate, this.locale.direction, '<table class="table-condensed">');
       Y += "<thead>", Y += "<tr>", (this.showWeekNumbers || this.showISOWeekNumbers) && (Y += "<th></th>"), v && !v.isBefore(i.firstDay) || this.linkedCalendars && "left" != a ? Y += "<th></th>" : Y += '<th class="prev available"><span></span></th>';
       var w = this.locale.monthNames[i[1][1].month()] + i[1][1].format(" YYYY");
 
       if (this.showDropdowns) {
         for (var P = i[1][1].month(), x = i[1][1].year(), M = C && C.year() || this.maxYear, I = v && v.year() || this.minYear, S = x == I, B = x == M, A = '<select class="monthselect">', L = 0; L < 12; L++) {
-          (!S || v && L >= v.month()) && (!B || C && L <= C.month()) ? A += "<option value='" + L + "'" + (L === P ? " selected='selected'" : "") + ">" + this.locale.monthNames[L] + "</option>" : A += "<option value='" + L + "'" + (L === P ? " selected='selected'" : "") + " disabled='disabled'>" + this.locale.monthNames[L] + "</option>";
+          (!S || v && L >= v.month()) && (!B || C && L <= C.month()) ? A += "<option value='" + L + "'" + (L === P ? " selected='selected'" : "") + ">" + this.locale.monthNames[L] + "</option>": A += "<option value='" + L + "'" + (L === P ? " selected='selected'" : "") + " disabled='disabled'>" + this.locale.monthNames[L] + "</option>";
         }
 
         A += "</select>";
@@ -164,8 +177,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }
 
       if (Y += '<th colspan="5" class="month">' + w + "</th>", C && !C.isAfter(i.lastDay) || this.linkedCalendars && "right" != a && !this.singleDatePicker ? Y += "<th></th>" : Y += '<th class="next available"><span></span></th>', Y += "</tr>", Y += "<tr>", (this.showWeekNumbers || this.showISOWeekNumbers) && (Y += '<th class="week">' + this.locale.weekLabel + "</th>"), e.each(this.locale.daysOfWeek, function (t, e) {
-        Y += "<th>" + e + "</th>";
-      }), Y += "</tr>", Y += "</thead>", Y += "<tbody>", null == this.endDate && this.maxSpan) {
+          Y += "<th>" + e + "</th>";
+        }), Y += "</tr>", Y += "</thead>", Y += "<tbody>", null == this.endDate && this.maxSpan) {
         var O = this.startDate.clone().add(this.maxSpan).endOf("day");
         C && !O.isBefore(C) || (C = O);
       }
@@ -179,7 +192,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           var H = this.isCustomDate(i[b][k]);
           !1 !== H && ("string" == typeof H ? W.push(H) : Array.prototype.push.apply(W, H));
           var j = "",
-              R = !1;
+            R = !1;
 
           for (D = 0; D < W.length; D++) {
             j += W[D] + " ", "disabled" == W[D] && (R = !0);
@@ -196,10 +209,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     renderTimePicker: function renderTimePicker(t) {
       if ("right" != t || this.endDate) {
         var e,
-            a,
-            i,
-            s = this.maxDate;
-        if (!this.maxSpan || this.maxDate && !this.startDate.clone().add(this.maxSpan).isBefore(this.maxDate) || (s = this.startDate.clone().add(this.maxSpan)), "left" == t) a = this.startDate.clone(), i = this.minDate;else if ("right" == t) {
+          a,
+          i,
+          s = this.maxDate;
+        if (!this.maxSpan || this.maxDate && !this.startDate.clone().add(this.maxSpan).isBefore(this.maxDate) || (s = this.startDate.clone().add(this.maxSpan)), "left" == t) a = this.startDate.clone(), i = this.minDate;
+        else if ("right" == t) {
           a = this.endDate.clone(), i = this.startDate;
           var n = this.container.find(".drp-calendar.right .calendar-time");
 
@@ -216,7 +230,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           var c = l;
           this.timePicker24Hour || (c = a.hour() >= 12 ? 12 == l ? 12 : l + 12 : 12 == l ? 0 : l);
           var d = a.clone().hour(c),
-              m = !1;
+            m = !1;
           i && d.minute(59).isBefore(i) && (m = !0), s && d.minute(0).isAfter(s) && (m = !0), c != a.hour() || m ? e += m ? '<option value="' + l + '" disabled="disabled" class="disabled">' + l + "</option>" : '<option value="' + l + '">' + l + "</option>" : e += '<option value="' + l + '" selected="selected">' + l + "</option>";
         }
 
@@ -242,7 +256,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         if (!this.timePicker24Hour) {
           e += '<select class="ampmselect">';
           var f = "",
-              u = "";
+            u = "";
           i && a.clone().hour(12).minute(0).second(0).isBefore(i) && (f = ' disabled="disabled" class="disabled"'), s && a.clone().hour(0).minute(0).second(0).isAfter(s) && (u = ' disabled="disabled" class="disabled"'), a.hour() >= 12 ? e += '<option value="AM"' + f + '>AM</option><option value="PM" selected="selected"' + u + ">PM</option>" : e += '<option value="AM" selected="selected"' + f + '>AM</option><option value="PM"' + u + ">PM</option>", e += "</select>";
         }
 
@@ -254,12 +268,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     },
     move: function move() {
       var t,
-          a = {
-        top: 0,
-        left: 0
-      },
-          i = this.drops,
-          s = e(window).width();
+        a = {
+          top: 0,
+          left: 0
+        },
+        i = this.drops,
+        s = e(window).width();
 
       switch (this.parentEl.is("body") || (a = {
         top: this.parentEl.offset().top - this.parentEl.scrollTop(),
@@ -347,7 +361,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     },
     clickRange: function clickRange(t) {
       var e = t.target.getAttribute("data-range-key");
-      if (this.chosenLabel = e, e == this.locale.customRangeLabel) this.showCalendars();else {
+      if (this.chosenLabel = e, e == this.locale.customRangeLabel) this.showCalendars();
+      else {
         var a = this.ranges[e];
         this.startDate = a[0], this.endDate = a[1], this.timePicker || (this.startDate.startOf("day"), this.endDate.endOf("day")), this.alwaysShowCalendars || this.hideCalendars(), this.clickApply();
       }
@@ -361,18 +376,18 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     hoverDate: function hoverDate(t) {
       if (e(t.target).hasClass("available")) {
         var a = e(t.target).attr("data-title"),
-            i = a.substr(1, 1),
-            s = a.substr(3, 1),
-            n = e(t.target).parents(".drp-calendar").hasClass("left") ? this.leftCalendar.calendar[i][s] : this.rightCalendar.calendar[i][s],
-            r = this.leftCalendar,
-            o = this.rightCalendar,
-            h = this.startDate;
+          i = a.substr(1, 1),
+          s = a.substr(3, 1),
+          n = e(t.target).parents(".drp-calendar").hasClass("left") ? this.leftCalendar.calendar[i][s] : this.rightCalendar.calendar[i][s],
+          r = this.leftCalendar,
+          o = this.rightCalendar,
+          h = this.startDate;
         this.endDate || this.container.find(".drp-calendar tbody td").each(function (t, a) {
           if (!e(a).hasClass("week")) {
             var i = e(a).attr("data-title"),
-                s = i.substr(1, 1),
-                l = i.substr(3, 1),
-                c = e(a).parents(".drp-calendar").hasClass("left") ? r.calendar[s][l] : o.calendar[s][l];
+              s = i.substr(1, 1),
+              l = i.substr(3, 1),
+              c = e(a).parents(".drp-calendar").hasClass("left") ? r.calendar[s][l] : o.calendar[s][l];
             c.isAfter(h) && c.isBefore(n) || c.isSame(n, "day") ? e(a).addClass("in-range") : e(a).removeClass("in-range");
           }
         });
@@ -381,9 +396,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     clickDate: function clickDate(t) {
       if (e(t.target).hasClass("available")) {
         var a = e(t.target).attr("data-title"),
-            i = a.substr(1, 1),
-            s = a.substr(3, 1),
-            n = e(t.target).parents(".drp-calendar").hasClass("left") ? this.leftCalendar.calendar[i][s] : this.rightCalendar.calendar[i][s];
+          i = a.substr(1, 1),
+          s = a.substr(3, 1),
+          n = e(t.target).parents(".drp-calendar").hasClass("left") ? this.leftCalendar.calendar[i][s] : this.rightCalendar.calendar[i][s];
 
         if (this.endDate || n.isBefore(this.startDate, "day")) {
           if (this.timePicker) {
@@ -396,7 +411,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           }
 
           this.endDate = null, this.setStartDate(n.clone());
-        } else if (!this.endDate && n.isBefore(this.startDate)) this.setEndDate(this.startDate.clone());else {
+        } else if (!this.endDate && n.isBefore(this.startDate)) this.setEndDate(this.startDate.clone());
+        else {
           if (this.timePicker) {
             var l;
             r = parseInt(this.container.find(".right .hourselect").val(), 10);
@@ -415,7 +431,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     },
     calculateChosenLabel: function calculateChosenLabel() {
       var t = !0,
-          e = 0;
+        e = 0;
 
       for (var a in this.ranges) {
         if (this.timePicker) {
@@ -443,17 +459,17 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     },
     monthOrYearChanged: function monthOrYearChanged(t) {
       var a = e(t.target).closest(".drp-calendar").hasClass("left"),
-          i = a ? "left" : "right",
-          s = this.container.find(".drp-calendar." + i),
-          n = parseInt(s.find(".monthselect").val(), 10),
-          r = s.find(".yearselect").val();
+        i = a ? "left" : "right",
+        s = this.container.find(".drp-calendar." + i),
+        n = parseInt(s.find(".monthselect").val(), 10),
+        r = s.find(".yearselect").val();
       a || (r < this.startDate.year() || r == this.startDate.year() && n < this.startDate.month()) && (n = this.startDate.month(), r = this.startDate.year()), this.minDate && (r < this.minDate.year() || r == this.minDate.year() && n < this.minDate.month()) && (n = this.minDate.month(), r = this.minDate.year()), this.maxDate && (r > this.maxDate.year() || r == this.maxDate.year() && n > this.maxDate.month()) && (n = this.maxDate.month(), r = this.maxDate.year()), a ? (this.leftCalendar.month.month(n).year(r), this.linkedCalendars && (this.rightCalendar.month = this.leftCalendar.month.clone().add(1, "month"))) : (this.rightCalendar.month.month(n).year(r), this.linkedCalendars && (this.leftCalendar.month = this.rightCalendar.month.clone().subtract(1, "month"))), this.updateCalendars();
     },
     timeChanged: function timeChanged(t) {
       var a = e(t.target).closest(".drp-calendar"),
-          i = a.hasClass("left"),
-          s = parseInt(a.find(".hourselect").val(), 10),
-          n = parseInt(a.find(".minuteselect").val(), 10);
+        i = a.hasClass("left"),
+        s = parseInt(a.find(".hourselect").val(), 10),
+        n = parseInt(a.find(".minuteselect").val(), 10);
       isNaN(n) && (n = parseInt(a.find(".minuteselect option:last").val(), 10));
       var r = this.timePickerSeconds ? parseInt(a.find(".secondselect").val(), 10) : 0;
 
@@ -475,8 +491,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     elementChanged: function elementChanged() {
       if (this.element.is("input") && this.element.val().length) {
         var e = this.element.val().split(this.locale.separator),
-            a = null,
-            i = null;
+          a = null,
+          i = null;
         2 === e.length && (a = t(e[0], this.locale.format), i = t(e[1], this.locale.format)), (this.singleDatePicker || null === a || null === i) && (i = a = t(this.element.val(), this.locale.format)), a.isValid() && i.isValid() && (this.setStartDate(a), this.setEndDate(i), this.updateView());
       }
     },

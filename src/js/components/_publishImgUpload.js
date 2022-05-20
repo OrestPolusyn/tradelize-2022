@@ -7,6 +7,9 @@ $(".publish-inputfile").each(function () {
     imgWrap = $(this).closest(".publish-action").find(".publish-img-wrap");
     const maxLength = $(this).attr("data-max-length");
 
+    document.querySelector('.graph-modal').classList.add("is-open")
+    document.querySelector('[data-graph-target="cropp"]').classList.add('graph-modal-open', 'fade', 'animate-open')
+
     const files = e.target.files;
     const filesArr = Array.prototype.slice.call(files);
     let iterator = 0
@@ -31,11 +34,17 @@ $(".publish-inputfile").each(function () {
           imgArray.push(f)
 
           const reader = new FileReader()
+
+          reader.addEventListener("load", function (e) {
+            window.src = reader.result;
+            $('#selectedFile').val('');
+          }, false);
+
           reader.onload = function (e) {
 
             document.getElementById('previewProfilePicture').src = e.target.result
 
-            var c = new Croppie(document.getElementById('previewProfilePicture'), {
+            const c = new Croppie(document.getElementById('previewProfilePicture'), {
               viewport: {
                 width: '80%',
                 height: 300,
@@ -47,43 +56,50 @@ $(".publish-inputfile").each(function () {
               },
               enableExif: true,
               enableOrientation: true,
-              enableResize: true
             })
 
-            document.getElementById('done').addEventListener('click', () => {
-              c.result('base64').then(base64 => {
-                const html =
-                  "<div class='publish-img-box'><div class='img-bg' style='background-image: url(" +
-                  base64 +
-                  ")' data-number='" +
-                  $(".publish-img-close").length +
-                  "' data-file='" +
-                  f.name +
-                  "'><button class='publish-img-close' type='button'></button></div></div>"
-                imgWrap.append(html)
-                iterator++
+            if (document.getElementById('previewProfilePicture')) {
+              document.getElementById('done').addEventListener('click', () => {
+                c.result('base64').then(base64 => {
+                  const html =
+                    "<div class='publish-img-box'><div class='img-bg' style='background-image: url(" +
+                    base64 +
+                    ")' data-number='" +
+                    $(".publish-img-close").length +
+                    "' data-file='" +
+                    f.name +
+                    "'><button class='publish-img-close' type='button'></button></div></div>"
+                  imgWrap.append(html)
+                  iterator++
+                })
+                c.destroy();
+
+                document.getElementById('previewProfilePicture').src = ''
+                document.querySelector('.graph-modal').classList.remove("is-open")
+                document.querySelector('[data-graph-target="cropp"]').classList.remove('graph-modal-open', 'fade', 'animate-open')
+
               })
 
-              c.destroy()
-
-              document.getElementById('previewProfilePicture').src = ''
-            })
+            }
 
             document.querySelectorAll('.graph-modal-close').forEach(element => {
               element.addEventListener('click', () => {
+                c.destroy();
+                document.querySelector('.graph-modal').classList.remove("is-open")
+                document.querySelector('[data-graph-target="cropp"]').classList.remove('graph-modal-open', 'fade', 'animate-open')
                 document.getElementById('previewProfilePicture').src = ''
               })
             });
 
-          };
+          }
+
+
           reader.readAsDataURL(f)
         }
       }
     })
   })
 })
-
-
 
 $("body").on("click", ".publish-img-close", function (e) {
   let file = $(this).parent().data("file")

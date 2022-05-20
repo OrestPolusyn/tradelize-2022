@@ -1,0 +1,198 @@
+.chart-title {
+  margin-bottom: rem(25);
+}
+.chart-tabs {
+  margin-bottom: rem(55);
+}
+.chart-tabs .tabs-action-radio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(105px, 1fr));
+  text-transform: capitalize;
+  background-color: var(--color-gray-100);
+}
+.chart-tabs .tabs-action-radio::before {
+  display: none;
+}
+.chart-tabs .radio {
+  position: relative;
+}
+.chart-tabs .radio::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  height: 14px;
+  background-color: var(--color-gray-300);
+  transform: translate(-50%, -50%);
+}
+.chart-tabs .radio:not(:last-child)::before {
+  width: 1px;
+}
+.chart-donut {
+  position: relative;
+}
+.chart-donut-table {
+  margin-left: auto;
+  width: 100%;
+  max-width: 820px;
+}
+.chart .donut-table {
+  text-align: left;
+}
+.chart .donut-table-number {
+  padding-right: 10px;
+  width: 7%;
+}
+.chart .donut-table-exchange {
+  width: 11%;
+}
+.chart .donut-table-market {
+  width: 10%;
+}
+.chart .donut-table-size {
+  width: 10%;
+}
+.chart .donut-table-portfolio {
+  width: 14%;
+}
+.chart .donut-table-percent {
+  position: relative;
+}
+.chart .donut-table-progress {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  border-radius: var(--radius-main);
+  width: 100%;
+  height: 7px;
+  max-width: 77px;
+  background-color: var(--color-gray-300);
+  transform: translate(-35%, -50%);
+}
+.chart .donut-table-progress-percent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: var(--radius-main);
+  width: 100%;
+  height: 7px;
+  max-width: 77px;
+  background-color: var(--color-main);
+}
+.chart .donut-table-entry {
+  width: 10%;
+}
+.chart .donut-table-unrealized {
+  width: 8%;
+}
+.chart .donut-table-color {
+  position: relative;
+}
+.chart .donut-table-color::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: var(--radius-main);
+  width: 23px;
+  height: 23px;
+  background-color: #3262c0;
+  transform: translate(-50%, -50%);
+}
+.chart .donut-table .color-first::before {
+  background-color: #3262c0;
+}
+.chart .donut-table .color-sec::before {
+  background-color: #2250ab;
+}
+.chart .donut-table .color-third::before {
+  background-color: #103887;
+}
+.chart .donut-table .color-fourth::before {
+  background-color: #092a6b;
+}
+.chart .donut-table .color-fifth::before {
+  background-color: #072560;
+}
+.chart .donut-table thead th {
+  padding-bottom: 20px;
+}
+.chart .donut-table tbody tr:hover {
+  background-color: var(--color-gray-100);
+}
+.chart .donut-table tbody td {
+  padding: 12px 0;
+}
+.chart .donut-table tbody td:first-of-type {
+  padding-left: 30px;
+}
+.chart .donut-table tbody td:last-of-type {
+  padding-right: 30px;
+}
+
+.chart-donut-box {
+  width: 245px;
+  height: 245px;
+}
+
+.doughnutTip {
+  position: absolute;
+  min-width: 30px;
+  max-width: 300px;
+  padding: 5px 15px;
+  border-radius: 1px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ddd;
+  font-size: 17px;
+  text-shadow: 0 1px 0 #000;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+.doughnutTip::after {
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  content: "";
+  height: 0;
+  margin: 0 0 0 -6px;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.7);
+  line-height: 0;
+}
+
+.doughnutSummary {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #d5d5d5;
+  text-align: center;
+  text-shadow: 0 -1px 0 #111;
+  cursor: default;
+}
+
+.doughnutSummaryTitle {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -27%;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+}
+
+.doughnutSummaryNumber {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -15%;
+  font-size: 55px;
+}
+
+.chart path:hover {
+  opacity: 0.65;
+}

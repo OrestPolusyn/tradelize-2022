@@ -1,6 +1,6 @@
 <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="add-exchange">
 
-  <div class="graph-modal__content api">
+  <form class="graph-modal__content api" action="#">
 
     <div class="graph-modal-top">
       <h3 class="api-ttile title title-sec">
@@ -13,40 +13,48 @@
 
     <ul class="api-list api-list-fields">
 
-      <li class="api-field">
-        <label class="api-label">
+      <li class="api-field form-box">
+        <label class="api-label" for="api-input-exchange">
           Title
-          <input class="api-input api-input-exchange input" name="api-title" type="text" value="Binance">
         </label>
+        <input class="api-input form-input api-input-exchange input" name="api-title" type="text" id="api-input-exchange">
       </li>
 
-      <li class="api-field">
-        <label class="api-label">
+      <li class="api-field form-box">
+        <label class="api-label" for="api-public">
           <span class="api-label-tooltip">
-            Public key
-            <img class="api-tooltip" src="img/dex/tooltip.svg" alt="Public tooltip" width="14" height="14">
+            <span>
+              Public key
+            </span>
+            <span class="api-tooltip" data-tooltip-text="Lorem textsss">
+              <img class="api-tooltip-img" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+            </span>
           </span>
-
-          <input class="api-input input" type="text" name="api-public" value="0xEB2c9970cD25f3eefBA81E89079">
         </label>
+        <input class="api-input input form-input" type="text" name="api-public" id="api-public" value="0xEB2c9970cD25f3eefBA81E89079">
       </li>
 
-      <li class="api-field">
-        <label class="api-label">
+      <li class="api-field form-box">
+        <label class="api-label" for="api-secret">
           <span class="api-label-tooltip">
             Secret key
-            <img class="api-tooltip" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+
+            <span class="api-tooltip" data-tooltip-text="Lorem textsss">
+              <img class="api-tooltip-img" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+            </span>
           </span>
 
-          <input class="api-input input" type="text" name="api-secret" value="0xEB2c9970cD25f9befd6f8BfC763eefBA81E89079">
         </label>
+        <input class="api-input input form-input" type="text" name="api-secret" id="api-secret" value="0xEB2c9970cD25f9befd6f8BfC763eefBA81E89079">
       </li>
 
-      <li class="api-field">
-        <label class="api-label">
+      <li class="api-field form-box error">
+        <label class="api-label" for="api-description">
           Description <span class="api-optional">(Optional)</span>
-          <input class="api-input input" type="text" name="api-description" placeholder="Enter description">
         </label>
+        <input class="api-input input form-input" type="text" name="api-description" id="api-description" placeholder="Enter description">
+
+        <label class="error-text" for="api-description">Error</label>
       </li>
     </ul>
 
@@ -55,5 +63,5 @@
         Add
       </button>
     </div>
-  </div>
+  </form>
 </div>

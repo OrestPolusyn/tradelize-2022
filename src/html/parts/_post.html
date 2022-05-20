@@ -19,13 +19,13 @@
       </div>
     </div>
 
-    <button class="post-btn btn" type="button">
+    <button class="post-btn btn-dropdown btn" type="button">
       <span class="sr-only">
         Post more
       </span>
     </button>
 
-    <ul class="post-dropdown">
+    <ul class="post-dropdown dropdown-list">
       <li class="post-dropdown-item">
         <button class="post-dropdown-btn" data-graph-path="complain">
           Complain
@@ -75,17 +75,55 @@
       </li>
 
       <li class="post-actions-item">
-        <button class="post-actions-btn" type="button">
+        <button class="post-actions-btn post-comments" type="button">
           <svg class="post-actions-icon post-actions-comment">
             <use xlink:href="img/sprite.svg#comment"></use>
           </svg>
 
-          <span>
+          <span class="post-comments-hide">
+            hide all
+          </span>
+
+          <span class="post-comments-numbers">
             6
           </span>
 
           <span>
             comments
+          </span>
+        </button>
+      </li>
+    </ul>
+
+    <ul class="post-reply-list">
+      @include('_post-reply.html')
+
+      <ul class="post-reply-items">
+        @include('_post-reply.html')
+      </ul>
+
+      @include('_post-reply.html')
+
+      @include('_post-reply.html')
+
+      <li class="post-reply-btns">
+        <button class="post-comment-more post-comment-hide" type="button">
+          <svg class="post-actions-icon post-actions-comment">
+            <use xlink:href="img/sprite.svg#reply-show"></use>
+          </svg>
+
+          <span>
+            Hide all comments
+          </span>
+        </button>
+
+        <button class="post-comment-show" type="button">
+          <svg class="post-actions-icon post-actions-comment">
+            <use xlink:href="img/sprite.svg#reply-show"></use>
+          </svg>
+
+          <span>
+            Show more comments
           </span>
         </button>
       </li>

@@ -1,0 +1,28 @@
+@include('html/_head.html',{
+pageTitle:'Check email'
+})
+
+<body class="page-body page-sing">
+  <div class="site-container">
+
+    <a class="logo logo-sing logo-desktop" href="#">
+      <img class="logo-img " src="img/logo-white.svg" alt="Logo Tradelize" width="180" height="23">
+    </a>
+
+    <main class="main main-sing">
+
+      <div class="sing-background">
+        <img class="sing-img" src="img/sing.svg" alt="Sing image" width="556" height="290">
+      </div>
+
+      <div class="sing-content">
+        <a class="logo logo-sing logo-mobile" href="#">
+          <img class="logo-img" src="img/logo.svg" alt="Logo Tradelize" width="180" height="23">
+        </a>
+        @include('html/sing/_check.html')
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

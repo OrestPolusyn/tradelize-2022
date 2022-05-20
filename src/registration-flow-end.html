@@ -1,0 +1,138 @@
+@include('html/_head.html',{
+pageTitle:'Registration flow'
+})
+
+<body class="page-body">
+  <div class="site-container site-container-flow">
+    <main class="main flow flow-slides">
+      <h1 class="sr-only">
+        Flow registration slider
+      </h1>
+
+      <div class="container container-flow-end">
+
+        <div class="flow-end">
+          <ul class="flow-end-slider swiper-wrapper">
+            <li class="flow-end-slide swiper-slide">
+              <div class="flow-end-content">
+                <h2 class="flow-end-title">
+                  <span>01.</span> Traders Cards
+                </h2>
+
+                <p class="content">
+                  Working in our system is easy and we are going to show you that. The first step to take is to choose a trader whose operations we will copy.
+                </p>
+
+                <button class="flow-end-next btn btn-background" type="button">
+                  Next
+                </button>
+              </div>
+
+              <ul class="flow-end-pictures">
+                <li class="flow-end-picture">
+
+                  <img class="flow-end-img" src="img/flow/slider/first-item.svg" alt="First trader card" width="310" height="490">
+                </li>
+
+                <li class="flow-end-picture">
+                  <img class="flow-end-img" src="img/flow/slider/second-item.svg" alt="First trader card" width="310" height="490">
+                </li>
+              </ul>
+            </li>
+
+            <li class="flow-end-slide swiper-slide">
+              <button class="flow-end-back" type="button">
+                Back
+              </button>
+
+              <div class="flow-end-content">
+                <h2 class="flow-end-title">
+                  <span>02.</span> Statistic page
+                </h2>
+
+                <p class="content">
+                  Going to the statistics page - you can see all the exact data about the trader for any period you choose.
+                  You can go to this page by clicking on the trader's card.
+                </p>
+
+                <button class="flow-end-next btn btn-background" type="button">
+                  Next
+                </button>
+              </div>
+
+              <ul class="flow-end-pictures">
+                <li class="flow-end-picture">
+                  <img class="flow-end-img" src="img/flow/slider/static.svg" alt="Portfolio trader" width="710" height="490">
+                </li>
+              </ul>
+            </li>
+
+            <li class="flow-end-slide swiper-slide">
+              <button class="flow-end-back" type="button">
+                Back
+              </button>
+
+              <div class="flow-end-content">
+                <h2 class="flow-end-title">
+                  <span>03.</span> Subscribe to Copy Trading
+                </h2>
+
+                <p class="content">
+                  Working in our system is easy and we are going to show you that. The first step to take is to choose a trader whose operations we will copy.
+                </p>
+
+                <button class="flow-end-next btn btn-background" type="button">
+                  Next
+                </button>
+              </div>
+
+              <ul class="flow-end-pictures">
+                <li class="flow-end-picture">
+                  <img class="flow-end-img" src="img/flow/slider/subscribe.svg" alt="Portfolio trader" width="710" height="490">
+                </li>
+              </ul>
+            </li>
+
+            <li class="flow-end-slide swiper-slide">
+              <button class="flow-end-back" type="button">
+                Back
+              </button>
+
+              <div class="flow-end-content">
+                <h2 class="flow-end-title">
+                  <span>04.</span> One more step! Just add API
+                </h2>
+
+                <p class="content">
+                  If you have an account on any exchange, you can take the API and add it to the portal. If you do not have an account, select the exchange, create an account there and rather return to us with the API keys.
+                </p>
+
+                <a class="btn btn-background" href="#">
+                  Connect exchange
+                </a>
+              </div>
+
+              <ul class="flow-end-pictures">
+                <li class="flow-end-picture">
+                  <img class="flow-end-img" src="img/flow/slider/api.svg" alt="Portfolio trader" width="710" height="490">
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="flow-end-dots swiper-pagination">
+          </div>
+        </div>
+
+
+      </div>
+
+      <a class="flow-end-skip" href="#">
+        Skip and go to add API
+        <svg class="flow-end-skip-icon">
+          <use xlink:href="img/sprite.svg#skip"></use>
+        </svg>
+      </a>
+  </div>
+  </main>
+
+  @include('html/_footer.html')

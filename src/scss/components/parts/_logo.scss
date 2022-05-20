@@ -1,18 +1,107 @@
 .logo {
   @include flex-v-center;
 
-  margin-right: rem(110);
+  display: block;
+  margin-right: rem(50);
   height: 20px;
   min-width: 142px;
 
   &-img {
     @include for-width(-mobile-l) {
       height: 14px;
+      object-fit: contain;
+    }
+  }
+
+  &-sing {
+    position: absolute;
+    left: rem(120);
+    top: rem(50);
+    z-index: 1;
+    width: fit-content;
+    max-width: 176px;
+
+    @include for-width(-desktop-med) {
+      left: rem(60);
+    }
+
+    @include for-width(-mobile-l) {
+      position: relative;
+      left: 0;
+      top: 30px;
+      margin-bottom: 30px;
+      padding-left: 24px;
+    }
+  }
+
+  &-desktop {
+    display: block;
+
+    @include for-width(-mobile-l) {
+      display: none;
+    }
+  }
+
+  &-mobile {
+    top: 0;
+    display: none;
+    padding-left: 0;
+    height: auto;
+
+    @include for-width(-mobile-l) {
+      display: block;
+    }
+  }
+
+  &-flow {
+    height: 30px;
+    max-width: 244px;
+    transform: translateY(35px);
+
+    .logo-img {
+      height: 30px;
+
+      @include for-width(-mobile-l) {
+        max-width: 115px;
+      }
+    }
+
+    @include for-width(-mobile-l) {
+      @include flex;
+
+      left: 0;
+      right: 0;
+      top: 0;
+      margin-bottom: 50px;
+      padding-left: 24px;
+      height: 60px;
+      max-width: 100%;
+      background-color: var(--color-white);
+      transform: translateY(0);
+    }
+  }
+
+  &-construction {
+    margin-bottom: 35px;
+    padding-top: rem(75);
+    padding-left: rem(85);
+    max-width: 165px;
+    box-sizing: content-box;
+
+    .logo-img {
+      @include for-width(-mobile-l) {
+        height: 20px;
+      }
+    }
+
+    @include for-width(-tablet) {
+      padding-top: rem(35);
+      padding-left: 20px;
     }
   }
 
   @include for-width(-desktop-med) {
-    margin-right: rem(20);
+    margin-right: rem(10);
     min-width: 120px;
   }
 

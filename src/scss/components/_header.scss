@@ -8,11 +8,26 @@
   padding: rem(30) rem(40);
   background-color: var(--color-white);
 
+  @include for-width(-desktop-med) {
+    padding: rem(30) 24px;
+  }
+
   @include for-width(-mobile-l) {
     padding: rem(20);
   }
 
   @include for-width(-mobile-md) {
     padding: 16px 24px;
+  }
+
+  @include for-width(-mobile-sl) {
+    padding: 15px 10px;
+  }
+}
+
+.search {
+  &-mobile {
+    position: absolute;
+    z-index: 0;
   }
 }

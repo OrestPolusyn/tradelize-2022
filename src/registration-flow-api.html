@@ -1,0 +1,114 @@
+@include('html/_head.html',{
+pageTitle:'Registration flow'
+})
+
+<body class="page-body">
+  <div class="site-container site-container-flow">
+    <main class="main flow flow-register">
+
+      <div class="container container-flow container-flow-api">
+
+        <div class="flow-api">
+          <div class="flow-api-form">
+
+            <h1 class="title">
+              Binance
+            </h1>
+
+            <div class="flow-api-info">
+              <svg class="flow-api-play">
+                <use xlink:href="img/sprite.svg#play"></use>
+              </svg>
+              How to create an API key?
+            </div>
+
+            <form class="flow-api-form" action="#">
+              <div class="flow-api-form-inner">
+                <div class="form-box">
+                  <label class="form-label form-input-lock">
+                    Public Key
+                    <input class="form-input input " type="text" name="login" placeholder="Enter Public Key">
+                  </label>
+                </div>
+
+                <div class="form-box">
+                  <label class="form-label form-input-lock">
+                    Private Key
+                    <input class="form-input input" type="text" name="login" placeholder="Enter Private Key">
+                  </label>
+                </div>
+
+                <div class="form-box">
+                  <label class="form-label">
+                    Custom name for this API
+                    <input class="form-input input" type="text" name="login" placeholder="Enter API name">
+                  </label>
+                </div>
+
+                <div class="form-box">
+                  <label class="form-label">
+                    Additional Parameter (Optional)
+                    <input class="form-input input" type="text" name="login" placeholder="Add Parameter">
+                  </label>
+                </div>
+              </div>
+              <div class="form-box">
+                <label class="form-label">
+                  Comment (Optional)
+                  <input class="form-input input" type="text" name="login" placeholder="Enter comment">
+                </label>
+              </div>
+
+              <button class="btn btn-background" type="submit">
+                Confirm
+              </button>
+            </form>
+          </div>
+
+
+          <div class="flow-content-picture">
+            <h2 class="title-sec">
+              Provide us with your API key
+            </h2>
+
+            <span class="content">
+              Securite guaranted
+            </span>
+
+            <div class="flow-content-image">
+              <img class="flow-content-img" src="img/flow/flow-api.svg" alt="Flow first step" width="400" height="390">
+            </div>
+          </div>
+
+          <div class="flow-api-content content">
+            <p>
+              Don’t worry! Your investment is secure. <br>
+              Tradelize will never request the right to withdraw from
+              your exchange wallet, only trading rights will be requested.
+            </p>
+
+            <ul class="flow-register-list">
+              <li>
+                Your investment stays with you, and you can stop trading at any time.
+              </li>
+
+              <li>
+                Tradelize uses the most up-to-date encryption tools to keep your investments safe SSL, SHA 256, Microsoft GlobalSign, EV, and HSM.
+              </li>
+
+              <li>
+                Tradelize will NEVER ask for your exchange login details.
+              </li>
+            </ul>
+
+            <p>
+              * Never share your API keys with anyone you don’t know or trust.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

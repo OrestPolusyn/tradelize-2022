@@ -1,0 +1,37 @@
+@import "first-step";
+@import "slider";
+@import "api";
+@import "end";
+
+.flow-register {
+  &-inner {
+    padding: 30px 30px 0;
+  }
+
+  &-picture {
+    margin: 0 auto 15px;
+    width: 100%;
+    max-width: 225px;
+  }
+
+  &-content {
+    margin-bottom: 30px;
+  }
+
+  &-list {
+    padding-left: 20px;
+
+    li {
+      list-style: disc;
+    }
+  }
+
+  .title-sec {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  &.graph-modal__container {
+    max-width: 470px;
+  }
+}

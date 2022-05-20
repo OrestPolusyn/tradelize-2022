@@ -6,39 +6,31 @@
   <ul class="tabs-action graph-tabs">
     <li class="tabs-action-radio">
 
-      <label class="radio radio-balance">
+      <label class="radio radio-balance" data-type="area">
         <input class="sr-only radio-btn" name="graph-radio" type="radio" checked>
 
         <span class="radio-text">
-          Perfomance
+          Performance Line
         </span>
       </label>
-
-      <label class="radio radio-balance">
-        <input class="sr-only radio-btn" name="graph-radio" type="radio">
-
-        <span class="radio-text">
-          Balance
-        </span>
-      </label>
-
     </li>
 
     <li class="tabs-action-radio">
 
-      <label class="radio radio-type" data-type="area">
-        <input class="sr-only radio-btn" name="type-radio" type="radio" checked>
+      <label class="radio radio-balance" data-type="bar">
+        <input class="sr-only radio-btn" name="graph-radio" type="radio">
 
         <span class="radio-text">
-          Line
+          Performance Bar
         </span>
       </label>
+    </li>
+    <li class="tabs-action-radio">
 
-      <label class="radio radio-type" data-type="bar">
-        <input class="sr-only radio-btn" name="type-radio" type="radio">
-
+      <label class="radio radio-balance" data-type="area">
+        <input class="sr-only radio-btn" name="graph-radio" type="radio">
         <span class="radio-text">
-          Bar
+          Balance Line
         </span>
       </label>
 
@@ -58,4 +50,3 @@
     @include("trader/_no-data.html")
   </div>
 </div>
-

@@ -1,0 +1,44 @@
+@include('html/_head.html',{
+pageTitle:'Registration flow'
+})
+
+<body class="page-body">
+  <div class="site-container site-container-flow">
+    <main class="main flow">
+
+      <div class="container container-flow">
+
+        <a class="logo logo-flow" href="#">
+          <img class="logo-img" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
+        </a>
+
+        <div class="flow-content">
+          <div class="flow-content-box">
+            <h1 class="title title-flow">Do you currently own cryptocurrency?</h1>
+
+            <p class="content">
+              We’d love to learn a little bit more about you to ensure you have the best experience using the Tradelize platform
+            </p>
+
+            <div class="flow-content-btns">
+              <button class="btn btn-white" type="button">
+                Yes
+              </button>
+
+              <button class="btn btn-reverse" type="button">
+                No
+              </button>
+            </div>
+
+          </div>
+          <div class="flow-content-picture">
+            <div class="flow-content-image">
+              <img class="flow-content-img" src="img/flow/flow-first.svg" alt="Flow first step" width="400" height="390">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

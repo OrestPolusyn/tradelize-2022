@@ -1,6 +1,6 @@
 .card {
   position: relative;
-  padding: clamp(20px, rem(25), 30px);
+  padding: rem(30) rem(34);
   width: 100%;
   text-align: center;
   background-color: var(--color-white);
@@ -36,13 +36,13 @@
   &-icon {
     margin-right: 5px;
     width: 11px;
-    height: 11px;
+    height: auto;
   }
 
   &-exchange {
     @include flex-all-center;
 
-    align-items: baseline;
+    align-items: center;
     margin: 0 auto rem(30);
     font-weight: 400;
     font-size: var(--size-s);
@@ -54,11 +54,37 @@
   &-result {
     @include flex;
 
-    justify-content: flex-start;
-    margin-right: 8px;
+    position: relative;
+    justify-content: center;
+    padding-right: 12px;
     font-weight: 700;
     font-size: var(--size-lg);
     line-height: 1.2;
+
+    &::before {
+      @include bg-cover;
+
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 8px;
+      height: 10px;
+      transform: translateY(50%);
+    }
+
+    &-up {
+      &::before {
+        right: 4px;
+        background-image: url("../img/arrows/up.svg");
+      }
+    }
+
+    &-down {
+      &::before {
+        background-image: url("../img/arrows/down.svg");
+      }
+    }
 
     &.percent {
       &::after {
@@ -80,30 +106,6 @@
     &-item {
       position: relative;
       text-align: left;
-
-      &::before {
-        @include bg-cover;
-
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 8px;
-        height: 10px;
-        transform: translateY(50%);
-      }
-    }
-
-    &-up {
-      &::before {
-        background-image: url("../img/arrows/up.svg");
-      }
-    }
-
-    &-down {
-      &::before {
-        background-image: url("../img/arrows/down.svg");
-      }
     }
   }
 
@@ -131,5 +133,13 @@
   &-btn {
     display: block;
     width: 100%;
+  }
+
+  &-chart {
+    height: 95px;
+  }
+
+  @include for-width(-mobile-l) {
+    padding: 25px 20px;
   }
 }

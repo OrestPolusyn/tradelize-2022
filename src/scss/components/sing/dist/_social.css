@@ -1,0 +1,12 @@
+.social {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 0 23px;
+}
+.social-link {
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-main);
+  padding: 10px 0;
+  background-color: var(--color-white);
+}

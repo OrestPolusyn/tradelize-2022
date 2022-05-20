@@ -10,57 +10,42 @@
     margin-bottom: rem(60);
 
     .radio {
-      padding: 10px 0;
+      padding: 10px;
     }
 
     .tabs-action-radio {
-      display: grid;
       text-transform: capitalize;
       background-color: var(--color-gray-100);
 
-      &:not(:last-child) {
-        margin-right: clamp(0.5em, rem(30), 40px);
+      &::before {
+        left: auto;
+        right: 0;
+      }
 
-        @include for-width(-mobile-sl) {
-          margin-right: 13px;
+      &:first-of-type {
+        border-radius: var(--radius-main) 0 0 var(--radius-main);
+      }
+
+      &:nth-of-type(2) {
+        border-radius: 0;
+      }
+
+      &:last-of-type {
+        border-radius: 0 var(--radius-main) var(--radius-main) 0;
+
+        &::before {
+          display: none;
         }
       }
 
-      &:first-child {
-        grid-template-columns: repeat(2, 105px);
-
-        @include for-width(-mobile-sl) {
-          grid-template-columns: repeat(2, rem(100));
-        }
-      }
-
-      &:last-child {
-        grid-template-columns: repeat(2, 65px);
-
-        @include for-width(-mobile-sl) {
-          grid-template-columns: repeat(2, rem(65));
-        }
-      }
-
-      @include for-width(-mobile-s) {
+      @include for-width(-mobile-sl) {
+        grid-template-columns: repeat(3, rem(65));
         margin-bottom: 10px;
       }
-    }
-
-    @include for-width(-mobile-s) {
-      flex-wrap: wrap;
     }
   }
 
   &-visual {
     position: relative;
-  }
-
-  .tabs-action-radio {
-    &::before {
-      @include for-width(-mobile-s) {
-        left: 53%;
-      }
-    }
   }
 }

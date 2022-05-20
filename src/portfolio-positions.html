@@ -1,0 +1,63 @@
+@include('html/_head.html',{
+pageTitle:'Portfolio - All positions'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header.html",{
+    activePortfolio:'nav-link-active',
+    activeCopy:'',
+    activeFeed:'',
+    activeTerminal:'',
+    activeTrading:'',
+    })
+    <main class="main">
+
+      <h1 class="sr-only">
+        All positions
+      </h1>
+
+      <div class="container">
+
+        <div class="tabs-nav">
+          <ul class="tabs tabs-positions">
+            @loop("html/parts/_tab.html",[{
+            active:'tabs-link-active',
+            tabText:'Spot Positions',
+            link:'#'
+            },
+            {
+            active:'',
+            tabText:'Futures Positions',
+            link:'#'
+            }
+            ])
+          </ul>
+
+          @include('html/profile/_all-nav.html')
+
+        </div>
+
+        <ul class="positions">
+
+          @loop("html/profile/positions/_item.html",[{
+          title:'binance'
+          },
+          {
+          title:'binance'
+          },
+          {
+          title:'huobi'
+          }
+          ])
+
+          @include("html/profile/positions/_item-empty.html")
+
+        </ul>
+
+      </div>
+    </main>
+
+    @include('html/_footer.html')

@@ -11,9 +11,13 @@
   }
 
   &-btn {
-    &:checked+.radio-text {
+    &:checked+.radio {
       font-weight: 500;
       color: var(--color-dark-900);
     }
+  }
+
+  @include for-width(-mobile-sl) {
+    padding: 10px;
   }
 }

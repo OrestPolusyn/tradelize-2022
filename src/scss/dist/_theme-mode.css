@@ -1,0 +1,144 @@
+@media (prefers-color-scheme: dark) {
+  .page {
+    background-color: var(--color-dark-theme);
+  }
+
+  .header {
+    background-color: var(--color-sing);
+  }
+
+  .nav-link {
+    color: var(--color-gray-800);
+  }
+  .nav-link-active {
+    color: var(--color-white);
+  }
+
+  .graph-tabs .tabs-action-radio,
+.chart-tabs .tabs-action-radio,
+.invest-tabs .radio-btn:checked + .radio,
+.dex-beta {
+    color: var(--color-gray-800);
+    background-color: var(--color-purchase);
+  }
+
+  .input {
+    border-color: var(--color-gray-500);
+    background-color: var(--color-purchase);
+  }
+  .input::placeholder {
+    color: var(--color-gray-800);
+  }
+
+  .action-notifications {
+    background-color: var(--color-purchase);
+  }
+  .action-notifications-icon {
+    color: var(--color-white);
+  }
+
+  .btn-reset,
+.positions-item-radio,
+.trade-btn,
+.publish-btns .btn-default,
+.publish-dropdown-list,
+.dropdown,
+.offer-dropdown-btn {
+    border-color: var(--color-purchase);
+    color: var(--color-white);
+    background-color: var(--color-purchase);
+  }
+
+  .inner,
+.card,
+.search-empty,
+.tabs-feed.tabs,
+.tabs-link-active,
+.dropdown-list,
+.graph-modal__container,
+.no-data,
+.tabs-action-item:not(.tabs-action-switcher) {
+    color: var(--color-white);
+    background-color: var(--color-sing);
+  }
+
+  .post-actions,
+.post-replies-more .post-reply-visible,
+.api-title-exchange {
+    color: var(--color-gray-800);
+  }
+
+  .tabs-action-radio .radio-btn:checked + .radio-text,
+.positions-item-table .tabs-link-active,
+.tabs-action-switcher,
+.invest-tabs .radio-text,
+.switcher-label,
+.publish-box-input.btn::before,
+.publish-box-text,
+.post-replies .post-comments,
+.post-actions-btn.liked span,
+.about-btns-cost span,
+.about-follow-link,
+.datepicker-here,
+.datepicker-here::placeholder,
+.chart-donut-number,
+.dropdown-item,
+.dropdown-btn,
+.personal-characters span,
+.input[type=search],
+.nav-link:hover {
+    color: var(--color-white);
+  }
+
+  .trade-header,
+.purchases-title,
+.personal-title,
+.management-top,
+.security-title {
+    border-bottom-color: var(--color-purchase);
+  }
+
+  .positions-btn::before,
+.positions-btn::after,
+.publish-dropdown-btn::before,
+.purchases-dex-link::before {
+    background-color: var(--color-white);
+  }
+
+  .btn-disconnect {
+    border-color: var(--color-purchase);
+    background-color: var(--color-purchase);
+  }
+
+  .purchases-item {
+    background-color: var(--color-dark-theme);
+  }
+
+  .purchases-manage,
+.purchases-dex-link {
+    background-color: var(--color-purchase);
+  }
+
+  .name-date {
+    color: var(--color-gray-500);
+  }
+
+  .logo-img-light {
+    display: none;
+  }
+
+  h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: var(--color-white);
+  }
+}
+@media (prefers-color-scheme: light) {
+  .logo-img-dark {
+    display: none;
+  }
+}

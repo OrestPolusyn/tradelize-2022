@@ -24,15 +24,27 @@
   </div>
 </div>
 
-<a class="purchases-dex-link" href="#">
+<button class="purchases-dex-link btn-dropdown" type="button">
   <span class="sr-only">
     Dex link
   </span>
+</button>
 
-  <svg class="purchases-icon">
-    <use xlink:href="img/sprite.svg#bscscan"></use>
-  </svg>
-</a>
+
+<ul class="purchases-copy-list dropdown-list">
+  <li class="purchases-copy-item">
+    <button class="purchases-copy-btn" type="button" data-address="contractaddress">
+      Contract's address
+    </button>
+  </li>
+
+  <li class="purchases-copy-item">
+    <button class="purchases-copy-btn" type="button" data-address="tradersaddress">
+      Traders address
+    </button>
+  </li>
+</ul>
+
 
 <ul class="purchases-dex-list">
   <li class="purchases-manage purchases-dex-item">
@@ -44,7 +56,7 @@
       4.08801 BNB
     </span>
 
-    <button class="btn btn-background" type="button">
+    <button class="btn btn-background" type="button" data-graph-path="add-fee">
       Add
     </button>
   </li>
@@ -72,7 +84,7 @@
       15% ($200)
     </span>
 
-    <button class="btn btn-background" type="button">
+    <button class="btn btn-background" type="button" data-graph-path="add-fee">
       Add
     </button>
   </li>

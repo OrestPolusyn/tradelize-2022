@@ -28,5 +28,9 @@
     &-error {
       color: var(--color-red);
     }
+
+    &-warning {
+      color: var(--color-orange-800);
+    }
   }
 }

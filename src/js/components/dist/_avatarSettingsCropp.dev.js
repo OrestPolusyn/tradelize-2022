@@ -8,11 +8,12 @@ if (document.querySelector('#personal-avatar')) {
       return;
     }
 
+    document.querySelector('.graph-modal').classList.add("is-open");
+    document.querySelector('[data-graph-target="cropp-avatar"]').classList.add('graph-modal-open', 'fade', 'animate-open');
     var reader = new FileReader();
 
     reader.onload = function (e) {
-      document.getElementById('previewProfileAvatar').src = e.target.result; //alert(e.target.result);
-
+      document.getElementById('previewProfileAvatar').src = e.target.result;
       var c = new Croppie(document.getElementById('previewProfileAvatar'), {
         viewport: {
           width: 150,
@@ -20,17 +21,28 @@ if (document.querySelector('#personal-avatar')) {
           type: 'square'
         },
         boundary: {
-          width: 250,
+          width: '100%',
           height: 250
         },
         enableOrientation: true,
         enableExif: true
       });
-      document.querySelectorAll('.btn-cropp').forEach(function (element) {
-        element.addEventListener('click', function () {
-          c.result('base64').then(function (base64) {
-            document.getElementById('personal-avatar-img').src = base64;
+
+      if (document.getElementById('personal-avatar-img')) {
+        document.querySelectorAll('#done-avatar').forEach(function (element) {
+          element.addEventListener('click', function () {
+            c.result('base64').then(function (base64) {
+              document.getElementById('personal-avatar-img').src = base64;
+            });
+            c.destroy();
           });
+        });
+      }
+
+      document.querySelectorAll('.graph-modal-close').forEach(function (element) {
+        element.addEventListener('click', function () {
+          document.querySelector('.graph-modal').classList.remove("is-open");
+          document.querySelector('[data-graph-target="cropp-avatar"]').classList.remove('graph-modal-open', 'fade', 'animate-open');
           c.destroy();
         });
       });

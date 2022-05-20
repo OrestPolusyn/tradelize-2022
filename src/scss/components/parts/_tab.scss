@@ -1,7 +1,15 @@
 .tabs {
   display: grid;
   grid-template-columns: repeat(3, minmax(117px, 1fr));
+  overflow-x: auto;
+  border-radius: var(--radius-main);
   gap: 0 22px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &-item {
     overflow: hidden;
@@ -36,144 +44,98 @@
 
     margin-bottom: 1.25em;
 
-    &-double {
+    &-copy.tabs-nav {
       .tabs {
-        &-item {
-          &:not(:last-child) {
-            @include for-width(-mobile-l) {
-              margin-right: 20px;
-            }
-          }
+        overflow: hidden;
 
-          @include for-width(-mobile-l) {
-            width: 100%;
-          }
-        }
+        &-copy {
+          border-bottom-color: transparent;
+          padding-bottom: 0;
 
-        @include for-width(-tablet) {
-          grid-template-columns: repeat(3, 1fr);
-        }
-
-        @include for-width(-mobile-l) {
-          @include flex-all-sb;
-
-          margin-bottom: 20px;
-        }
-
-        @include for-width(-mobile-sl) {
-          display: grid;
-          grid-template-columns: 1fr;
-          margin-right: 20px;
-          margin-bottom: 0;
-          width: 100%;
-          gap: 20px 0;
-        }
-      }
-
-      .tabs-action {
-        &-item {
-          display: flex;
-          justify-content: center;
-
-          &:not(:last-child) {
+          &:last-child {
             @include for-width(-mobile-sl) {
-              margin: 0;
+              grid-template-columns: repeat(3, 1fr);
             }
           }
-
-          @include for-width(-mobile-l) {
-            width: 100%;
-          }
         }
 
-        .btn {
-          @include for-width(-mobile-l) {
-            padding: 9px 0;
-          }
-        }
-
-        .radio {
-          @include for-width(-mobile-l) {
-            width: 100%;
-          }
-        }
-
-        @include for-width(-mobile-l) {
-          @include flex-all-sb;
-        }
-
-        @include for-width(-mobile-sl) {
+        &:first-child {
           display: grid;
-          grid-template-columns: 1fr;
-          width: 100%;
-          gap: 20px 0;
+          grid-template-columns: repeat(2, minmax(117px, 1fr));
         }
-      }
-
-      .tabs-copy {
-        @include for-width(-mobile-sl) {
-          margin-right: 0;
-        }
-      }
-
-      @include for-width(-mobile-l) {
-        display: block;
-      }
-
-      @include for-width(-mobile-sl) {
-        @include flex-s-sb;
       }
     }
 
     &-switcher {
-      .tabs {
-        @include for-width(-mobile-md) {
-          margin-bottom: 20px;
-        }
-
-        @include for-width(-mobile-sl) {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 20px 0;
-        }
-      }
-
       @include for-width(-mobile-md) {
         display: block;
       }
     }
 
-    &-feed {
-      @include for-width(-mobile-s) {
-        display: block;
+    &-feed.tabs-nav {
+      @include flex-all-sb;
+    }
+
+    .tabs {
+      @include for-width(-mobile-l) {
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--color-gray-300);
+        padding-bottom: 20px;
       }
     }
 
+    @include for-width(-mobile-l) {
+      display: block;
+    }
+
     @include for-width(-mobile-sl) {
-      padding: 0 24px;
+      padding: 0 20px;
     }
   }
 
   &-action {
-    @include flex;
+    display: flex;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     &-item {
+      margin-right: 0;
       border-radius: var(--radius-main);
       font-weight: 500;
       background-color: var(--color-white);
 
       &:not(:last-child) {
-        margin-right: rem(20);
+        margin-right: 20px;
+
+        @include for-width(-mobile-sl) {
+          margin-right: 10px;
+        }
       }
 
       .btn {
         padding: 8px 0;
         line-height: 1;
+
+        @include for-width(-mobile-l) {
+          margin: 0 auto;
+        }
+      }
+
+      @include for-width(-mobile-l) {
+        width: 100%;
       }
     }
 
     &-radio {
+      @include flex-all-center;
+
       position: relative;
+      justify-content: space-around;
       overflow: hidden;
       border-radius: var(--radius-main);
       font-size: var(--size-m);
@@ -189,16 +151,86 @@
         background-color: var(--color-gray-300);
         transform: translate(-50%, -50%);
       }
+
+      .radio {
+        @include for-width(-mobile-l) {
+          width: 100%;
+        }
+      }
+
+      .radio-btn:checked {
+        +.radio-text {
+          font-weight: 500;
+          color: var(--color-dark);
+        }
+      }
+
+      @include for-width(-mobile-sl) {
+        min-width: 90px;
+      }
     }
 
     &-all {
       margin-left: auto;
     }
 
+    &-switcher {
+      @include flex-all-center;
+
+      width: 100%;
+      max-width: 150px;
+      font-size: var(--size-m);
+      line-height: 1;
+      color: var(--color-gray-400);
+      background-color: transparent;
+    }
+
+    &-positions {
+      display: grid;
+      grid-template-columns: 120px 140px 150px;
+      width: fit-content;
+      gap: 0 15px;
+
+      .tabs-action-item {
+        margin-right: 0;
+      }
+
+      .tabs-action-switcher {
+        @include for-width(-mobile-l) {
+          justify-self: end;
+        }
+
+        @include for-width(-mobile-sl) {
+          grid-column: 1/ span 2;
+        }
+      }
+
+      @include for-width(-mobile-l) {
+        grid-template-columns: 100px 120px 1fr;
+        width: 100%;
+      }
+
+      @include for-width(-mobile-sl) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 15px;
+      }
+    }
+
+    &-date {
+      max-width: 120px;
+
+      @include for-width(-mobile-sl) {
+        overflow: hidden;
+        max-width: 90px;
+      }
+    }
+
     .btn {
       @include flex-v-center;
 
       font-size: var(--size-m);
+      line-height: 1;
 
       &-currency {
         padding-right: 30px;
@@ -207,22 +239,23 @@
         .btn-icon {
           margin-right: clamp(0.2em, rem(12), 15px);
           width: 100%;
-          height: 9px;
-          max-width: 18px;
-          transform: translateY(1px);
+          max-width: 16px;
         }
       }
 
       &-data {
         padding-right: 40px;
-        padding-left: 12px;
+        padding-left: 7px;
 
         .btn-icon {
-          margin-right: clamp(0.2em, rem(14), 15px);
+          margin-right: clamp(0.2em, rem(13), 15px);
           width: 100%;
-          height: 15px;
-          max-width: 14px;
-          transform: translateY(-1px);
+          max-width: 15px;
+          transform: translate(2px, -1px);
+        }
+
+        @include for-width(-mobile-sl) {
+          padding-right: 20px;
         }
       }
     }
@@ -237,14 +270,20 @@
     }
 
     .btn-background {
-      line-height: 2.05;
+      @include flex-all-center;
+
+      height: 100%;
+      line-height: 2;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
 
     .tabs-link {
       margin: 0;
       font-weight: 500;
       line-height: 1.8;
-      background-color: var(--color-white);
     }
 
     .tabs-icon {
@@ -253,16 +292,19 @@
       height: auto;
       max-width: 18px;
       transform: translateY(1px);
+
+      @include for-width(-mobile-s) {
+        display: none;
+      }
     }
   }
 
-  &-double {
-    grid-template-columns: repeat(2, minmax(117px, 1fr));
-  }
-
-  &-feed {
+  &-feed.tabs {
     position: relative;
     grid-template-columns: repeat(2, minmax(96px, 1fr));
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
     background-color: var(--color-white);
 
     &::before {
@@ -273,21 +315,28 @@
       width: 1px;
       height: 14px;
       background-color: var(--color-gray-300);
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
+
+      @include for-width(-mobile-sl) {
+        left: 45%;
+      }
     }
 
-    .tabs-link-active {
-      font-weight: 500;
+    .tabs-link {
+      &-active {
+        font-weight: 500;
+      }
+
+      @include for-width(-mobile-sl) {
+        padding: 5px 7px;
+      }
     }
 
     @include for-width(-mobile-sl) {
       grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include for-width(-mobile-s) {
-      margin-bottom: 20px;
+      width: 100%;
+      max-width: 184px;
+      gap: 0;
     }
   }
 
@@ -297,6 +346,14 @@
 
     @include for-width(-tablet) {
       overflow-x: auto;
+    }
+  }
+
+  &-positions.tabs {
+    grid-template-columns: repeat(2, 124px);
+
+    .tabs-link {
+      padding: 4px 0;
     }
   }
 }

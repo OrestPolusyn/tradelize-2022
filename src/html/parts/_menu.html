@@ -47,17 +47,21 @@
           </li>
         </ul>
 
-        <button class="nav-sing-link nav-sing-logout" type="button">
+        <a class="nav-sing-link nav-sing-logout" href="#">
           Log out
-        </button>
+        </a>
       </li>
 
       <li class="nav-item nav-item-search">
-        <label for="search" class="sr-only">
-          Search on portal by traders...
-        </label>
+        <form class="nav-search" action="#">
+          <label for="search" class="sr-only">
+            Search on portal by traders...
+          </label>
 
-        <input class="input" type="search" id="search" name="search-field" placeholder="Search by traders...">
+          <input class="nav-search-input input" type="search" id="search" name="search-field" placeholder="Search by traders...">
+          <button class="nav-search-clear" aria-label="Close window" type="reset">
+          </button>
+        </form>
       </li>
     </ul>
   </div>

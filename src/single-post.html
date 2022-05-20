@@ -1,0 +1,186 @@
+@include('html/_head.html',{
+pageTitle:'Single post'
+})
+
+<body class="page-body">
+
+  <div class="site-container">
+
+    @include("html/_header.html",{
+    activePortfolio:'',
+    activeCopy:'',
+    activeFeed:'nav-link-active',
+    activeTerminal:'',
+    activeTrading:'',
+    })
+
+    <main class="main">
+      <div class="container container-feed">
+        <h1 class="sr-only">
+          Single post profile
+        </h1>
+
+
+        <article class="post inner">
+
+          <div class="post-header">
+            <div class="link-item">
+
+              @include('html/parts/_avatar.html',{
+              addClass:'',
+              size:'avatar-mid'
+              })
+
+              <div class="name">
+                <h2 class="name-title title-third">
+                  Nathan Mckinney
+                </h2>
+
+                <time class="name-date" datetime="2021-09-30">
+                  30.09.2021
+                </time>
+              </div>
+            </div>
+
+            <button class="post-btn btn-dropdown btn" type="button">
+              <span class="sr-only">
+                Post more
+              </span>
+            </button>
+
+            <ul class="post-dropdown dropdown-list">
+              <li class="post-dropdown-item">
+                <button class="post-dropdown-btn" data-graph-path="complain">
+                  Complain
+                </button>
+              </li>
+
+              <li class="post-dropdown-item">
+                <button class="post-dropdown-btn" data-graph-path="">
+                  Share
+                </button>
+              </li>
+
+              <li class="post-dropdown-item">
+                <button class="post-dropdown-btn post-dropdown-delete" data-graph-path="delete-post">
+                  Delete
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="post-text">
+            <p>
+              Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970 and then the next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000. Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+            </p>
+
+            <p>
+              Next waves will be an uptrend waves to 4000, 5000,6000 and 7000+ levels and then the next waves will be an uptrend waves to 4000.
+              <br>
+              Again the big support for #btc is at 3400 if we breakdown, we will go to 2900-2970.
+            </p>
+
+            <div class="post-slider swiper">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <div class="post-slider-picture">
+                    <img class="post-slider-image" loading="lazy" src="img/post-slider/post-img-white.jpg" width="820" height="280" alt="Slider image">
+                  </div>
+                </li>
+
+                <li class="swiper-slide">
+                  <div class="post-slider-picture">
+                    <img class="post-slider-image" loading="lazy" src="img/post-slider/post-img-white.jpg" width="820" height="280" alt="Slider image">
+                  </div>
+                </li>
+              </ul>
+
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+
+              <div class="swiper-pagination"></div>
+
+            </div>
+
+            <ul class="post-actions">
+              <li class="post-actions-item">
+                <button class="post-actions-btn " type="button">
+                  <svg class="post-actions-icon post-actions-like">
+                    <use xlink:href="img/sprite.svg#like"></use>
+                  </svg>
+
+                  <span>
+                    57
+                  </span>
+
+                  <span>
+                    like
+                  </span>
+                </button>
+              </li>
+
+              <li class="post-actions-item">
+                <button class="post-actions-btn post-comments" type="button">
+                  <svg class="post-actions-icon post-actions-comment">
+                    <use xlink:href="img/sprite.svg#comment"></use>
+                  </svg>
+
+                  <span class="post-comments-hide">
+                    hide all
+                  </span>
+
+                  <span class="post-comments-numbers">
+                    6
+                  </span>
+
+                  <span>
+                    comments
+                  </span>
+                </button>
+              </li>
+            </ul>
+
+            <ul class="post-reply-list">
+              @include('html/parts/_post-reply.html')
+
+              <ul class="post-reply-items">
+                @include('html/parts/_post-reply.html')
+              </ul>
+
+              @include('html/parts/_post-reply.html')
+
+              @include('html/parts/_post-reply.html')
+
+              <li class="post-reply-btns">
+                <button class="post-comment-more post-comment-hide" type="button">
+                  <svg class="post-actions-icon post-actions-comment">
+                    <use xlink:href="img/sprite.svg#reply-show"></use>
+                  </svg>
+
+                  <span>
+                    Hide all comments
+                  </span>
+                </button>
+
+                <button class="post-comment-show" type="button">
+                  <svg class="post-actions-icon post-actions-comment">
+                    <use xlink:href="img/sprite.svg#reply-show"></use>
+                  </svg>
+
+                  <span>
+                    Show more comments
+                  </span>
+                </button>
+              </li>
+            </ul>
+
+            @include('html/parts/_form-comment.html')
+          </div>
+
+        </article>
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

@@ -1,0 +1,133 @@
+.flow {
+  @include flex-h-center;
+
+  flex-direction: column;
+  height: 100vh;
+
+  &-content {
+    @include flex-all-sb;
+
+    color: var(--color-white);
+    transform: translateY(5px);
+
+    &-picture {
+      border-radius: var(--radius-main);
+      padding: 130px 45px;
+      width: 100%;
+      max-width: 480px;
+      background-color: var(--color-white);
+
+      @include for-width(-tablet) {
+        padding: 90px 20px;
+        max-width: 280px;
+      }
+
+      @include for-width(-mobile-l) {
+        max-width: 100%;
+      }
+    }
+
+    &-image {
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
+    &-box {
+      margin-right: 20px;
+      padding-left: rem(122);
+      transform: translateY(-16px);
+
+      .content {
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 310px;
+        color: var(--color-white);
+      }
+
+      @include for-width(-tablet) {
+        margin: 0;
+        padding: 0;
+      }
+
+      @include for-width(-mobile-l) {
+        margin-bottom: 70px;
+        padding: 0 24px;
+        transform: translateY(0);
+      }
+    }
+
+    &-btns {
+      .btn {
+        width: 100%;
+        max-width: 172px;
+
+        &:not(:last-of-type) {
+          margin-right: 20px;
+        }
+
+        @include for-width(-mobile-l) {
+          max-width: 115px;
+        }
+      }
+    }
+
+    &-slider {
+      transform: translate(0);
+
+      .title-flow {
+        @include for-width(-desktop-med) {
+          font-size: 24px;
+        }
+      }
+
+      .content {
+        @include for-width(-tablet) {
+          max-width: 100%;
+        }
+      }
+
+      @include for-width(-desktop-med) {
+        padding-left: 45px;
+      }
+
+      @include for-width(-tablet) {
+        padding-left: 0;
+      }
+    }
+
+    @include for-width(-tablet) {
+      height: calc(100vh - 100px);
+    }
+
+    @include for-width(-mobile-l) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &-sliders {
+    @include for-width(-tablet) {
+      display: block;
+    }
+
+    @include for-width(-mobile-l) {
+      padding: 0 24px;
+    }
+  }
+
+  &-slides {
+    @include for-width(-tablet) {
+      padding: 0;
+      height: auto;
+    }
+  }
+
+  &-register.flow {
+    height: 100vh;
+  }
+
+  @include for-width(-mobile-l) {
+    padding: 0;
+    height: auto;
+  }
+}

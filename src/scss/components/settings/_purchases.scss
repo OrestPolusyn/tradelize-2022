@@ -39,7 +39,7 @@
 
     position: relative;
     margin-bottom: rem(30);
-    width: fit-content;
+    width: auto;
   }
 
   &-price {
@@ -55,6 +55,10 @@
 
     &-fixed {
       font-size: var(--size-m);
+    }
+
+    +.purchases-manage {
+      margin-bottom: rem(30);
     }
   }
 
@@ -99,15 +103,6 @@
     width: 100%;
   }
 
-  &-icon {
-    border-radius: var(--radius-main);
-    padding: 4px;
-    width: 100%;
-    height: 19px;
-    max-width: 19px;
-    background-color: var(--color-gray-300);
-  }
-
   &-dex {
     &-item {
       &:not(:last-child) {
@@ -121,11 +116,74 @@
       }
     }
 
+    &-list {
+      margin-bottom: rem(30);
+    }
+
     &-link {
       position: absolute;
       right: rem(30);
       top: rem(30);
+      z-index: 1;
+      border-radius: var(--radius-main);
+      padding: 4px;
+      width: 100%;
+      height: 19px;
+      max-width: 19px;
       font-size: var(--size-s);
+      background-color: var(--color-gray-300);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        mask-image: url("../img/sprite.svg#bscscan");
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        margin: 0 auto;
+        width: 14px;
+        height: 14px;
+        background-color: var(--color-dark-900);
+        transform: translate(5%, -55%);
+      }
+    }
+  }
+
+  &-message {
+    margin-bottom: rem(30);
+    border-color: var(--color-purchase);
+    border-radius: var(--radius-main);
+    padding: 10px rem(20);
+    font-size: var(--size-s);
+    text-align: center;
+    color: var(--color-white);
+    background-color: var(--color-purchase);
+  }
+
+  &-copy {
+    &-list {
+      position: absolute;
+      right: rem(30);
+      top: rem(70);
+      z-index: 1;
+      width: 100%;
+      max-width: 130px;
+      font-size: var(--size-m);
+      color: var(--color-gray-800);
+      background-color: var(--color-white);
+    }
+
+    &-item {
+      margin-bottom: 5px;
+    }
+
+    &-btn {
+      padding: 10px 8px;
+      width: 100%;
+      text-align: left;
     }
   }
 
@@ -166,5 +224,17 @@
       padding: 10px rem(20);
       font-size: var(--size-m);
     }
+  }
+
+  &-btns {
+    display: grid;
+    column-gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: auto;
+  }
+
+  &.inner {
+    padding-top: clamp(0.5em, rem(30), 30px);
+    padding-bottom: clamp(0.5em, rem(30), 30px);
   }
 }

@@ -38,6 +38,11 @@
       }
     }
 
+    .api-tooltip::before {
+      max-width: 250px;
+      transform: translate(20px, -50%);
+    }
+
     @include for-width(-mobile-sl) {
       flex-wrap: wrap;
     }
@@ -45,7 +50,7 @@
 
   &-name {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     margin-bottom: 10px;
     font-size: var(--size-s);
     line-height: 1.5;
@@ -55,6 +60,7 @@
   }
 
   &-content.input {
+    margin: 0;
     padding: 12px rem(20);
     cursor: default;
 
@@ -76,7 +82,7 @@
   }
 
   &-passwords {
-    padding: rem(30);
+    padding: rem(30) 30px;
   }
 
   &-password {
@@ -103,5 +109,12 @@
   &-icon {
     width: 12px;
     height: 9px;
+    fill: currentColor;
+  }
+
+  &-box {
+    &.inner {
+      padding-top: clamp(0.5em, rem(30), 30px);
+    }
   }
 }

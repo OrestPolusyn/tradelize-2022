@@ -18,9 +18,9 @@
       </span>
 
       <div class="publish-dropdown offer-dropdown">
-
-        <button class="publish-dropdown-btn offer-dropdown-btn input" data-toggle="dropdown" type="button">KuCoin</button>
-
+        <div class="publish-dropdown-btn offer-dropdown-btn">
+          <input class="offer-dropdown-input input" data-toggle="dropdown" value="KuCoin" readonly>
+        </div>
         <ul class="publish-dropdown-list">
           <li class="publish-dropdown-item">
             <label class="publish-dropdown-radio">
@@ -47,11 +47,14 @@
 
       <div class="offer-row">
 
-        <span class="offer-row-text">
-          Subscription cost (BTC)
+        <span class="api-label-tooltip offer-row-text">
+          <span>
+            Subscription cost (BTC)
+          </span>
+          <span class="api-tooltip" data-tooltip-text="If you would like to change your username or email address, please contact support at support@tradelize.com.">
+            <img class="api-tooltip-img" src="img/dex/tooltip.svg" alt="Secret tooltip" width="14" height="14">
+          </span>
         </span>
-
-        <img class="offer-row-tooltip" src="img/dex/tooltip.svg" alt="Subscription cost tooltip" width="11" height="11">
 
         <div class="switcher">
           <input class="switcher-radio sr-only" type="checkbox" id="switch-cost" name="switcher">

@@ -1,0 +1,23 @@
+.alert {
+  display: block;
+  border-radius: var(--radius-main);
+  padding: 14px 20px;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+  font-weight: 400;
+  font-size: var(--size-s);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.alert-warning {
+  color: var(--color-orange-700);
+  background-color: var(--color-orange-500);
+}
+.alert-success {
+  color: var(--color-text-success);
+  background-color: var(--color-success);
+}
+.alert-error {
+  color: var(--color-text-error);
+  background-color: var(--color-error);
+}

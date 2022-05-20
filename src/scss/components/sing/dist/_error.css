@@ -1,0 +1,24 @@
+.error {
+  position: relative;
+}
+.error-text {
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--color-red);
+}
+.error .form-input {
+  border-color: var(--color-red);
+}
+.error .api-input {
+  border-color: var(--color-red);
+}
+
+.success .form-input {
+  border-color: var(--color-text-success);
+}
+.success .api-input {
+  border-color: var(--color-text-success);
+}

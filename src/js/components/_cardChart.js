@@ -1,10 +1,10 @@
-const chartsTrades = Array.from(document.querySelectorAll('.card-chart'))
+const chartsTrades = Array.from(document.querySelectorAll('.card-chart-demo'))
 
 if (chartsTrades.length > 0) {
   chartsTrades.forEach(element => {
     const options = {
       chart: {
-        height: 80,
+        height: 90,
         type: "line",
         foreColor: '#6d6d6d',
         toolbar: {

@@ -1,5 +1,5 @@
 .title {
-  @include adaptive_size("font-size", 25, 20);
+  @include adaptive_size("font-size", 23, 20);
 
   font-weight: 500;
   line-height: 1;
@@ -37,4 +37,41 @@
     margin-bottom: rem(30);
   }
 
+  &-sing {
+    @include adaptive_size("font-size", 29, 25);
+
+    margin-top: auto;
+    margin-bottom: 30px;
+    width: 100%;
+    letter-spacing: 0.03em;
+    color: var(--color-dark-900);
+
+    span {
+      font-weight: 700;
+      color: var(--color-main);
+    }
+  }
+
+  &-flow {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1;
+
+    &::first-letter {
+      font-size: 50px;
+    }
+
+    @include for-width(-mobile-sl) {
+      padding: 0;
+    }
+  }
+
+  &-slider {
+    max-width: 455px;
+
+    @include for-width(-tablet) {
+      max-width: 100%;
+    }
+  }
 }

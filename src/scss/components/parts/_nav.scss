@@ -1,10 +1,12 @@
 .nav {
+  left: 0;
+  right: 0;
   width: 100%;
-  transform: translateX(-60px);
 
   &-list {
     @include flex-all-sb;
 
+    margin: 0 auto;
     width: 100%;
 
     @include for-width(-tablet) {
@@ -19,7 +21,9 @@
   }
 
   &-item {
-    &:not(.nav-item-search) {
+    @include flex-v-center;
+
+    &:not(:nth-child(2n+5)) {
       margin-right: clamp(25px, rem(43), 45px);
 
       @include for-width(-mobile-l) {
@@ -29,15 +33,12 @@
     }
 
     &-search {
-      @include adaptive_size("height", 35, 25);
-
       margin-left: auto;
       width: 100%;
       max-width: 260px;
 
       input {
         position: relative;
-        top: -1px;
         height: 100%;
       }
 
@@ -71,6 +72,76 @@
       font-size: 20px;
       line-height: 1.7;
       text-transform: uppercase;
+    }
+  }
+
+  &-search {
+    @include adaptive_size("height", 33, 30);
+
+    position: relative;
+    width: 100%;
+
+    &-clear {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20px;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        mask-image: url("../img/close.svg");
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-gray-400);
+        transform: translate(10%, -50%);
+      }
+
+      &.clear {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-mobile {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 10px 25px;
+      width: 100%;
+      background-color: var(--color-white);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.1s ease,
+        visibility 0.1s ease,
+        transform 0.15s linear;
+
+      .nav-search-clear {
+        right: 25px;
+      }
+    }
+
+    &-show {
+      border-top: 1px solid var(--color-gray-100);
+      border-bottom: 1px solid var(--color-gray-100);
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(100%);
+      transition: opacity 0.5s ease,
+        visibility 0.5s ease,
+        transform 0.1s linear;
+    }
+
+    .input[type=search] {
+      padding-right: 30px;
     }
   }
 
@@ -120,9 +191,11 @@
     }
 
     &-logout {
+      display: block;
       border: 1px solid var(--color-red);
       padding: 13px 0;
       width: 100%;
+      text-align: center;
       color: var(--color-red);
     }
 

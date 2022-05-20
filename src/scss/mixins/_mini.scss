@@ -67,6 +67,12 @@
   align-items: center;
 }
 
+@mixin flex-column-v-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @mixin flex-s {
   display: flex;
   align-items: center;

@@ -42,6 +42,24 @@
     background-color: var(--color-gray-100);
   }
 
+  &-white {
+    border-color: var(--color-white);
+    color: var(--color-main);
+    background-color: var(--color-white);
+  }
+
+  &-reverse {
+    border-color: var(--color-white);
+    color: var(--color-white);
+    background-color: var(--color-main);
+  }
+
+  &-open.post-btn {
+    &::before {
+      background-color: var(--color-dark-900);
+    }
+  }
+
   &:disabled {
     border-color: var(--color-gray-300);
     background-color: var(--color-gray-300);

@@ -1,6 +1,3 @@
-// Данный файл - лишь собрание подключений готовых компонентов.
-// Рекомендуется создавать отдельный файл в папке components и подключать все там
-
 // Определение операционной системы на мобильных
 // import { mobileCheck } from "./functions/mobile-check";
 // console.log(mobileCheck())
@@ -43,18 +40,7 @@ const modal = new GraphModal();
 // import { getHeaderHeight } from './functions/header-height';
 
 // Подключение плагина кастом-скролла
-// import 'simplebar';
-
-// Подключение плагина для позиционирования тултипов
-
-
-
-// Подключение свайпера
-// import Swiper, { Navigation, Pagination } from 'swiper';
-// Swiper.use([Navigation, Pagination]);
-// const swiper = new Swiper(el, {
-//   slidesPerView: 'auto',
-// });
+import 'simplebar';
 
 // Подключение параллакса блоков при скролле
 // import Rellax from 'rellax';

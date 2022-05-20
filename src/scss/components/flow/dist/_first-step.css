@@ -1,0 +1,13 @@
+.flow {
+  height: 100vh;
+}
+.flow-content-picture {
+  border-radius: var(--radius-main);
+  padding: 130px 45px;
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--color-white);
+}
+.flow-content-image {
+  max-width: 400px;
+}

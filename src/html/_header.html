@@ -4,7 +4,7 @@
   </button>
 
   <a class="logo" href="#">
-    <img class="logo-img" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
+    <img class="logo-img logo-img-light" src="img/logo.svg" alt="Tradelize logo" width="142" height="20">
   </a>
 
   @include("parts/_menu.html",{
@@ -16,19 +16,40 @@
   })
 
   <ul class="action">
+
+    <li class="action-item">
+      <button class="btn btn-background" data-graph-path="wallet" type="button">
+        wallet
+      </button>
+    </li>
+
+    <li class="action-item action-search-mobile">
+      <button class="btn btn-reset btn-search" type="button" aria-label="Mobile search open">
+      </button>
+    </li>
+
+    <!-- <li class="action-item">
+      <button class="btn btn-background" data-graph-path="wallet-info" type="button">
+        0x1k...067c
+      </button>
+    </li> -->
+
     <li class="action-item action-item-notifications">
-      <a class="action-link action-notifications" href="#" aria-label="Notifications">
+      <a class="action-link action-notifications" href="notifications.html" aria-label="Notifications">
         <img class="action-notifications-icon" loading="lazy" src="img/bell.svg" width="13" height="15" alt="Profile avatar" />
       </a>
     </li>
 
-    <li class="action-item avatar">
-      <button class="action-dropdown avatar avatar-small" data-color="4">
-        <!-- <img class="avatar-img" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
-        <span class="avatar-text">
-          TM
-        </span>
-      </button>
+    <li class="action-item ">
+      <div class="action-avatar">
+        <button class="action-dropdown avatar avatar-small" data-color="4">
+          <!-- <img class="avatar-img avatar-header" loading="lazy" src="img/avatars/profile-avatar.jpg" width="70" height="70" alt="Profile avatar" /> -->
+          <span class="avatar-header">
+            TM
+          </span>
+        </button>
+
+      </div>
 
       <ul class="dropdown">
         <li class="dropdown-item dropdown-item-name">
@@ -60,11 +81,33 @@
         </li>
 
         <li class="dropdown-item dropdown-item-logout">
-          <button class="dropdown-btn" type="button">
+          <a class="dropdown-btn" href="#">
             Log Out
-          </button>
+          </a>
         </li>
       </ul>
     </li>
+
+    <!-- <li class="action-item">
+      <a class="btn btn-reset" href="#">
+        Sing In
+      </a>
+    </li>
+
+    <li class="action-item">
+      <a class="btn btn-background" href="#">
+        Sing up
+      </a>
+    </li> -->
   </ul>
+
+  <form class="nav-search-mobile" action="#">
+    <label for="search" class="sr-only">
+      Search on portal by traders...
+    </label>
+
+    <input class="nav-search-input input" type="search" id="search" name="search-field" placeholder="Search by traders...">
+    <button class="nav-search-clear" aria-label="Close window" type="reset">
+    </button>
+  </form>
 </header>

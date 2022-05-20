@@ -106,6 +106,7 @@
     margin-right: 6px;
     width: 15px;
     height: 15px;
+    fill: currentColor;
   }
 
   &-footer {
@@ -191,6 +192,10 @@
     @include for-width(-mobile-sl) {
       margin-right: 10px;
     }
+  }
+
+  .name {
+    @include flex-column-v-center;
   }
 
   @include for-width(-mobile-md) {

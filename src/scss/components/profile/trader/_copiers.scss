@@ -57,13 +57,19 @@
 
     th {
       margin-bottom: rem(30);
+      padding: 8px;
       padding-bottom: 14px;
       font-weight: 400;
       white-space: nowrap;
       text-align: left;
 
       &:first-of-type {
-        padding-left: 12px;
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+
+      &:last-of-type {
+        padding-right: 20px;
       }
     }
 
@@ -87,11 +93,11 @@
           white-space: nowrap;
 
           &:first-of-type {
-            padding-left: 10px;
+            padding-left: 20px;
           }
 
           &:last-of-type {
-            padding-right: 10px;
+            padding-right: 30px;
           }
         }
 
@@ -109,6 +115,8 @@
     margin: 0 auto;
 
     &-item {
+      @include flex-all-center;
+
       &:not(:last-child) {
         margin-right: 10px;
       }
@@ -143,6 +151,10 @@
       &:hover {
         background-color: var(--color-gray-50);
       }
+    }
+
+    &-dots {
+      line-height: 1;
     }
 
     &-active {

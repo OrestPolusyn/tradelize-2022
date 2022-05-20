@@ -12,7 +12,6 @@ if (checkItemApi.length > 0) {
 
         vars.apiBtnNext.disabled = false
         vars.apiExchangeTitle.innerText = exchangeText;
-        vars.apiInputTitle.value = exchangeText;
       }
     })
   })

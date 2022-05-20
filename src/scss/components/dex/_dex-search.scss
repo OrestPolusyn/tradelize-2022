@@ -9,7 +9,8 @@
     }
 
     &-input.input {
-      padding: 10px rem(60) 10px rem(20);
+      padding: 12px rem(60) 10px rem(20);
+      font-size: var(--size-m);
       color: var(--color-dark);
       cursor: text;
     }
@@ -89,12 +90,12 @@
 
     &-img {
       margin-bottom: rem(34);
-      max-height: 140px;
+      max-height: 120px;
     }
 
     &-picture {
       margin: 0 auto;
-      max-width: 150px;
+      max-width: 120px;
     }
 
     &:nth-child(2) {

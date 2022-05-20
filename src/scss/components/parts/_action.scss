@@ -16,11 +16,51 @@
 
     .btn {
       @include adaptive_size("height", 33, 30);
+
+      @include for-width(-mobile-s) {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
     }
 
-    &.avatar {
+    .avatar {
       @include for-width(-mobile-l) {
         display: none;
+      }
+    }
+
+    .btn-search {
+      @include flex-all-center;
+      @include adaptive_size("width", 33, 30);
+      @include adaptive_size("height", 33, 30);
+
+      z-index: 0;
+      padding: 0 9px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        mask-image: url("../img/sprite.svg#search-icon");
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        width: 12px;
+        height: 12px;
+        background-color: var(--color-gray-400);
+      }
+
+      @include for-width(-tablet) {
+        padding: 0 8px;
+      }
+    }
+  }
+
+  &-search {
+    &-mobile {
+      display: none;
+
+      @include for-width(-tablet) {
+        display: block;
       }
     }
   }

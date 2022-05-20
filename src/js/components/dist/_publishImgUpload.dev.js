@@ -6,6 +6,8 @@ $(".publish-inputfile").each(function () {
   $(this).on("change", function (e) {
     imgWrap = $(this).closest(".publish-action").find(".publish-img-wrap");
     var maxLength = $(this).attr("data-max-length");
+    document.querySelector('.graph-modal').classList.add("is-open");
+    document.querySelector('[data-graph-target="cropp"]').classList.add('graph-modal-open', 'fade', 'animate-open');
     var files = e.target.files;
     var filesArr = Array.prototype.slice.call(files);
     var iterator = 0;
@@ -30,6 +32,10 @@ $(".publish-inputfile").each(function () {
         } else {
           imgArray.push(f);
           var reader = new FileReader();
+          reader.addEventListener("load", function (e) {
+            window.src = reader.result;
+            $('#selectedFile').val('');
+          }, false);
 
           reader.onload = function (e) {
             document.getElementById('previewProfilePicture').src = e.target.result;
@@ -44,20 +50,28 @@ $(".publish-inputfile").each(function () {
                 height: 410
               },
               enableExif: true,
-              enableOrientation: true,
-              enableResize: true
+              enableOrientation: true
             });
-            document.getElementById('done').addEventListener('click', function () {
-              c.result('base64').then(function (base64) {
-                var html = "<div class='publish-img-box'><div class='img-bg' style='background-image: url(" + base64 + ")' data-number='" + $(".publish-img-close").length + "' data-file='" + f.name + "'><button class='publish-img-close' type='button'></button></div></div>";
-                imgWrap.append(html);
-                iterator++;
+
+            if (document.getElementById('previewProfilePicture')) {
+              document.getElementById('done').addEventListener('click', function () {
+                c.result('base64').then(function (base64) {
+                  var html = "<div class='publish-img-box'><div class='img-bg' style='background-image: url(" + base64 + ")' data-number='" + $(".publish-img-close").length + "' data-file='" + f.name + "'><button class='publish-img-close' type='button'></button></div></div>";
+                  imgWrap.append(html);
+                  iterator++;
+                });
+                c.destroy();
+                document.getElementById('previewProfilePicture').src = '';
+                document.querySelector('.graph-modal').classList.remove("is-open");
+                document.querySelector('[data-graph-target="cropp"]').classList.remove('graph-modal-open', 'fade', 'animate-open');
               });
-              c.destroy();
-              document.getElementById('previewProfilePicture').src = '';
-            });
+            }
+
             document.querySelectorAll('.graph-modal-close').forEach(function (element) {
               element.addEventListener('click', function () {
+                c.destroy();
+                document.querySelector('.graph-modal').classList.remove("is-open");
+                document.querySelector('[data-graph-target="cropp"]').classList.remove('graph-modal-open', 'fade', 'animate-open');
                 document.getElementById('previewProfilePicture').src = '';
               });
             });

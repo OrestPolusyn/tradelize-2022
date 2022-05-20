@@ -1,12 +1,12 @@
 "use strict";
 
-var chartsTrades = Array.from(document.querySelectorAll('.card-chart'));
+var chartsTrades = Array.from(document.querySelectorAll('.card-chart-demo'));
 
 if (chartsTrades.length > 0) {
   chartsTrades.forEach(function (element) {
     var options = {
       chart: {
-        height: 80,
+        height: 90,
         type: "line",
         foreColor: '#6d6d6d',
         toolbar: {

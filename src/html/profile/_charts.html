@@ -1,12 +1,12 @@
-<div class="charts inner">
-  <h3 class="charts-title title-sec">
+<div class="chart inner">
+  <h3 class="chart-title title-sec">
     Charts
   </h3>
 
-  <div class="tabs-action charts-tabs">
+  <div class="tabs-action chart-tabs">
     <div class="tabs-action-radio">
 
-      <label class="radio" data-chart="contract">
+      <label class="radio" data-chart="contracts">
         <input class="sr-only radio-btn" name="chart-radio" type="radio" checked>
 
         <span class="radio-text">
@@ -14,7 +14,7 @@
         </span>
       </label>
 
-      <label class="radio" data-chart="spot">
+      <label class="radio" data-chart="currencies">
         <input class="sr-only radio-btn" name="chart-radio" type="radio">
 
         <span class="radio-text">
@@ -31,19 +31,757 @@
       </label>
     </div>
 
-    <a class="tabs-action-all btn btn-default" href="#">
+    <a class="tabs-action-all btn btn-reset" href="portfolio-positions.html">
       All positions
     </a>
 
   </div>
 
-  <div class="chart-visual">
-    <div class="chart-visual-box">
-      <span class="sr-only">
-        Graph trade data
-      </span>
-    </div>
+  <div class="chart-donut-empty">
+    <img src="img/empty.svg" alt="" width="240" height="240">
 
-    @include("../parts/_lock-data.html")
+    <span class="chart-donut-total">$ 0</span>
   </div>
+
+  <ul class="chart-donut-tables">
+    <li class="chart-donut chart-donut-active" data-chart-target="contracts" data-total="< $ 100 000">
+      <div class="chart-donut-box chart-donut-contract">
+        <span class="sr-only">
+          Graph trade data
+        </span>
+      </div>
+
+      <div class="chart-donut-table">
+        <table class="donut-table">
+          <thead>
+            <tr>
+              <th class="donut-table-number" scope="col">
+                <span class="sr-only">
+                  Color of items
+                </span>
+              </th>
+              <th class="donut-table-exchange" scope="col">Exchange</th>
+              <th class="donut-table-market" scope="col">Market</th>
+              <th class="donut-table-size" scope="col">Size</th>
+              <th class="donut-table-portfolio" scope="col">Portfolio</th>
+              <th class="donut-table-entry" scope="col">Entry price</th>
+              <th class="donut-table-unrealized" scope="col">Unrealized</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="donut-table-row" data-donut="1">
+              <td class="donut-table-color" data-table-color="1">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Binance
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                45%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:45%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="2">
+              <td class="donut-table-color" data-table-color="2">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Bitmex
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                22%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:22%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="3">
+              <td class="donut-table-color" data-table-color="3">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                ByBit
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                15%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:15%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="4">
+              <td class="donut-table-color" data-table-color="4">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Crypto.com
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                8%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:8%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="5">
+              <td class="donut-table-color" data-table-color="5">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                KuCoin
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                6%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:6%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="6">
+              <td class="donut-table-color" data-table-color="6">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Whitebit
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                8%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:8%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+
+    <li class="chart-donut" data-chart-target="currencies" data-total="< $ 10 000">
+      <div class="chart-donut-box chart-donut-spot">
+        <span class="sr-only">
+          Graph trade data
+        </span>
+      </div>
+
+      <div class="chart-donut-table">
+        <table class="donut-table">
+          <thead>
+            <tr>
+              <th class="donut-table-number" scope="col">
+                <span class="sr-only">
+                  Color of items
+                </span>
+              </th>
+              <th class="donut-table-exchange" scope="col">Exchange</th>
+              <th class="donut-table-market" scope="col">Market</th>
+              <th class="donut-table-size" scope="col">Size</th>
+              <th class="donut-table-portfolio" scope="col">Portfolio</th>
+              <th class="donut-table-entry" scope="col">Entry price</th>
+              <th class="donut-table-unrealized" scope="col">Unrealized</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="donut-table-row" data-donut="1">
+              <td class="donut-table-color color-first">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Binance
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                45%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:45%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="2">
+              <td class="donut-table-color color-sec">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Bitmex
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                22%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:22%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="3">
+              <td class="donut-table-color color-third">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                ByBit
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                15%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:15%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="4">
+              <td class="donut-table-color color-fourth">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Crypto.com
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                8%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:8%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="5">
+              <td class="donut-table-color color-fifth">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                KuCoin
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                6%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:6%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="6">
+              <td class="donut-table-color color-fourth">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Whitebit
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                8%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:8%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+
+    <li class="chart-donut" data-chart-target="exchanges" data-total="< $ 100">
+      <div class="chart-donut-box chart-donut-exchange">
+        <span class="sr-only">
+          Graph trade data
+        </span>
+      </div>
+
+      <div class="chart-donut-table">
+        <table class="donut-table">
+          <thead>
+            <tr>
+              <th class="donut-table-number" scope="col">
+                <span class="sr-only">
+                  Color of items
+                </span>
+              </th>
+              <th class="donut-table-exchange" scope="col">Exchange</th>
+              <th class="donut-table-market" scope="col">Market</th>
+              <th class="donut-table-size" scope="col">Size</th>
+              <th class="donut-table-portfolio" scope="col">Portfolio</th>
+              <th class="donut-table-entry" scope="col">Entry price</th>
+              <th class="donut-table-unrealized" scope="col">Unrealized</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="donut-table-row" data-donut="1">
+              <td class="donut-table-color color-first">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Binance
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                45%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:45%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="2">
+              <td class="donut-table-color color-sec">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Bitmex
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                22%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:22%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="3">
+              <td class="donut-table-color color-third">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                ByBit
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                15%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:15%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="4">
+              <td class="donut-table-color color-fourth">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Crypto.com
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                8%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:8%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="5">
+              <td class="donut-table-color color-fifth">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                KuCoin
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                6%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:6%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+
+            <tr class="donut-table-row" data-donut="6">
+              <td class="donut-table-color color-fourth">
+                <span class="sr-only">
+                  Color of item
+                </span>
+              </td>
+
+              <td class="donut-table-exchange">
+                Whitebit
+              </td>
+
+              <td class="donut-table-currency">
+                ETHUSDT
+              </td>
+
+              <td class="donut-table-size">
+                12.8488811
+              </td>
+
+              <td class="donut-table-percent">
+                8%
+
+                <div class="donut-table-progress">
+                  <div class="donut-table-progress-percent" style="width:8%"></div>
+                </div>
+              </td>
+
+              <td class="donut-table-entry dollar">
+                3 900
+              </td>
+
+              <td class="donut-table-unrealized dollar">
+                14 992.02
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+  </ul>
+
+  @include("../parts/_lock-data.html")
 </div>

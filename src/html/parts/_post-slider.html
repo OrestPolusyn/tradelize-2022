@@ -19,13 +19,13 @@
       </div>
     </div>
 
-    <button class="post-btn btn" type="button">
+    <button class="post-btn btn-dropdown btn" type="button">
       <span class="sr-only">
         Post more
       </span>
     </button>
 
-    <ul class="post-dropdown">
+    <ul class="post-dropdown dropdown-list">
       <li class="post-dropdown-item">
         <button class="post-dropdown-btn" data-graph-path="complain">
           Complain
@@ -60,27 +60,24 @@
     <div class="post-slider swiper">
       <ul class="swiper-wrapper">
         <li class="swiper-slide">
-          <picture class="post-slider-picture">
-            <source srcset="img/post-slider/post-img.avif" type="image/avif">
-            <source srcset="img/post-slider/post-img.webp" type="image/webp">
+          <div class="post-slider-picture">
             <img class="post-slider-image" loading="lazy" src="img/post-slider/post-img.jpg" width="820" height="380" alt="Slider image">
-          </picture>
+          </div>
         </li>
 
         <li class="swiper-slide">
-          <picture class="post-slider-picture">
-            <source srcset="img/post-slider/post-img-white.avif" type="image/avif">
-            <source srcset="img/post-slider/post-img-white.webp" type="image/webp">
+          <div class="post-slider-picture">
             <img class="post-slider-image" loading="lazy" src="img/post-slider/post-img-white.jpg" width="820" height="280" alt="Slider image">
-          </picture>
+          </div>
         </li>
       </ul>
 
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
 
+      <div class="swiper-pagination"></div>
+
     </div>
-    <div class="swiper-pagination"></div>
 
     <ul class="post-actions">
       <li class="post-actions-item">

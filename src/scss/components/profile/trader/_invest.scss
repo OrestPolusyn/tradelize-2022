@@ -50,7 +50,7 @@
     }
 
     .radio-btn {
-      &:checked+.radio-text {
+      &:checked+.radio {
         font-weight: 400;
         background-color: var(--color-gray-100);
       }
